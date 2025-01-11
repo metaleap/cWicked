@@ -1,0 +1,18 @@
+{
+    "files.exclude": {
+        "**/.wi": true,
+        "**/.cache": true,
+        "**/subprojects": true,
+        "**/.build": true
+    },
+    "search.exclude": {
+        "**/.wi": true,
+        "**/subprojects": true,
+        "**/.cache": true,
+        "**/.build": true
+    },
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/compile_commands.json",
+    "C_Cpp.default.configurationProvider": "mesonbuild.mesonbuild",
+    "mesonbuild.configureOnOpen": false,
+    "clangd.arguments": [ "--compile-commands-dir=${workspaceFolder}" ]
+}

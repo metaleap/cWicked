@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run",
+            "type": "gdb",
+            "request": "launch",
+            "target": "cWickedDemo.exec",
+            "cwd": "${fileWorkspaceFolder}/.build/debug",
+            "valuesFormatting": "disabled",
+            "preLaunchTask": "mesonBuildDebug",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}

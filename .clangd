@@ -1,0 +1,6 @@
+CompileFlags:
+  Remove: [-fpch-prepocess, -include]
+Diagnostics:
+  UnusedIncludes: Strict
+  Includes:
+    IgnoreHeader: mo_pch\.h

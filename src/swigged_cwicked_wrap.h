@@ -42,16 +42,6 @@ typedef struct SWIGTYPE_p_wi__platform__window_type SWIGTYPE_p_wi__platform__win
 
 typedef struct SWIGTYPE_p_wi__platform__window_type SWIGTYPE_p_wi__platform__window_type;
 
-typedef struct SWIGTYPE_p_wi__RenderPath SWIGTYPE_p_wi__RenderPath;
-
-typedef struct SWIGTYPE_p_wi__Color SWIGTYPE_p_wi__Color;
-
-typedef struct SWIGTYPE_p_wi__RenderPath SWIGTYPE_p_wi__RenderPath;
-
-typedef struct SWIGTYPE_p_wi__RenderPath SWIGTYPE_p_wi__RenderPath;
-
-typedef struct SWIGTYPE_p_wi__RenderPath SWIGTYPE_p_wi__RenderPath;
-
 typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
 
 typedef struct SWIGTYPE_p_wi__platform__window_type SWIGTYPE_p_wi__platform__window_type;
@@ -59,6 +49,1173 @@ typedef struct SWIGTYPE_p_wi__platform__window_type SWIGTYPE_p_wi__platform__win
 typedef struct SWIGTYPE_p_wi__Application__InfoDisplayer SWIGTYPE_p_wi__Application__InfoDisplayer;
 
 typedef struct SWIGTYPE_p_wi__Application__InfoDisplayer SWIGTYPE_p_wi__Application__InfoDisplayer;
+
+typedef struct SwigObj_wi_Archive wi_Archive;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_wi__graphics__Texture SWIGTYPE_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+enum SUBMIX_TYPE {
+  SUBMIX_TYPE_SOUNDEFFECT,
+  SUBMIX_TYPE_MUSIC,
+  SUBMIX_TYPE_USER0,
+  SUBMIX_TYPE_USER1,
+  SUBMIX_TYPE_COUNT,
+  ENUM_FORCE_UINT32 = 0xFFFFFFFF
+};
+
+typedef struct SwigObj_wi_Sf_audio_Sound wi_Sf_audio_Sound;
+
+typedef struct SWIGTYPE_p_std__shared_ptrT_void_t SWIGTYPE_p_std__shared_ptrT_void_t;
+
+typedef struct SWIGTYPE_p_std__shared_ptrT_void_t SWIGTYPE_p_std__shared_ptrT_void_t;
+
+typedef struct SwigObj_wi_Sf_audio_SoundInstance wi_Sf_audio_SoundInstance;
+
+typedef struct SWIGTYPE_p_std__shared_ptrT_void_t SWIGTYPE_p_std__shared_ptrT_void_t;
+
+typedef struct SWIGTYPE_p_std__shared_ptrT_void_t SWIGTYPE_p_std__shared_ptrT_void_t;
+
+enum wi_Sf_audio_SoundInstance_FLAGS {
+  wi_Sf_audio_SoundInstance_EMPTY = 0,
+  wi_Sf_audio_SoundInstance_ENABLE_REVERB = 1 << 0,
+  wi_Sf_audio_SoundInstance_LOOPED = 1 << 1
+};
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SwigObj_wi_Sf_audio_SampleInfo wi_Sf_audio_SampleInfo;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SwigObj_wi_Sf_audio_SoundInstance3D wi_Sf_audio_SoundInstance3D;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+enum REVERB_PRESET {
+  REVERB_PRESET_DEFAULT,
+  REVERB_PRESET_GENERIC,
+  REVERB_PRESET_FOREST,
+  REVERB_PRESET_PADDEDCELL,
+  REVERB_PRESET_ROOM,
+  REVERB_PRESET_BATHROOM,
+  REVERB_PRESET_LIVINGROOM,
+  REVERB_PRESET_STONEROOM,
+  REVERB_PRESET_AUDITORIUM,
+  REVERB_PRESET_CONCERTHALL,
+  REVERB_PRESET_CAVE,
+  REVERB_PRESET_ARENA,
+  REVERB_PRESET_HANGAR,
+  REVERB_PRESET_CARPETEDHALLWAY,
+  REVERB_PRESET_HALLWAY,
+  REVERB_PRESET_STONECORRIDOR,
+  REVERB_PRESET_ALLEY,
+  REVERB_PRESET_CITY,
+  REVERB_PRESET_MOUNTAINS,
+  REVERB_PRESET_QUARRY,
+  REVERB_PRESET_PLAIN,
+  REVERB_PRESET_PARKINGLOT,
+  REVERB_PRESET_SEWERPIPE,
+  REVERB_PRESET_UNDERWATER,
+  REVERB_PRESET_SMALLROOM,
+  REVERB_PRESET_MEDIUMROOM,
+  REVERB_PRESET_LARGEROOM,
+  REVERB_PRESET_MEDIUMHALL,
+  REVERB_PRESET_LARGEHALL,
+  REVERB_PRESET_PLATE
+};
+
+typedef struct SwigObj_wi_BVH wi_BVH;
+
+typedef struct SWIGTYPE_p_wi__vectorT_uint8_t_t SWIGTYPE_p_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_uint8_t_t SWIGTYPE_p_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_p_wi__BVH__Node SWIGTYPE_p_wi__BVH__Node;
+
+typedef struct SWIGTYPE_p_wi__BVH__Node SWIGTYPE_p_wi__BVH__Node;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_wi__primitive__AABB SWIGTYPE_p_wi__primitive__AABB;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_wi__primitive__AABB SWIGTYPE_p_wi__primitive__AABB;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_wi__primitive__AABB SWIGTYPE_p_wi__primitive__AABB;
+
+typedef struct SwigObj_wi_Color wi_Color;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT4 SWIGTYPE_p_XMFLOAT4;
+
+typedef struct SWIGTYPE_p_wi__Color__char_returnT_9_t SWIGTYPE_p_wi__Color__char_returnT_9_t;
+
+typedef struct SWIGTYPE_XMFLOAT4 SWIGTYPE_XMFLOAT4;
+
+typedef struct SWIGTYPE_XMFLOAT3 SWIGTYPE_XMFLOAT3;
+
+typedef struct SwigObj_wi_Color16 wi_Color16;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT4 SWIGTYPE_p_XMFLOAT4;
+
+typedef struct SWIGTYPE_XMFLOAT4 SWIGTYPE_XMFLOAT4;
+
+typedef struct SWIGTYPE_XMFLOAT3 SWIGTYPE_XMFLOAT3;
+
+typedef struct SwigObj_wi_Sf_config_Section wi_Sf_config_Section;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__iterator SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__iterator;
+
+typedef struct SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__const_iterator SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__const_iterator;
+
+typedef struct SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__iterator SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__iterator;
+
+typedef struct SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__const_iterator SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__const_iterator;
+
+typedef struct SwigObj_wi_Sf_config_File wi_Sf_config_File;
+
+typedef struct SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__iterator SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__iterator;
+
+typedef struct SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__const_iterator SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__const_iterator;
+
+typedef struct SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__iterator SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__iterator;
+
+typedef struct SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__const_iterator SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__const_iterator;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SwigObj_wi_Sf_eventhandler_Handle wi_Sf_eventhandler_Handle;
+
+typedef struct SWIGTYPE_p_std__shared_ptrT_void_t SWIGTYPE_p_std__shared_ptrT_void_t;
+
+typedef struct SWIGTYPE_p_std__shared_ptrT_void_t SWIGTYPE_p_std__shared_ptrT_void_t;
+
+typedef struct SWIGTYPE_p_std__functionT_void_fuint64_tF_t SWIGTYPE_p_std__functionT_void_fuint64_tF_t;
+
+typedef struct SWIGTYPE_p_std__functionT_void_fuint64_tF_t SWIGTYPE_p_std__functionT_void_fuint64_tF_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SwigObj_wi_FadeManager wi_FadeManager;
+
+enum wi_FadeManager_FADE_STATE {
+  wi_FadeManager_FADE_IN,
+  wi_FadeManager_FADE_MID,
+  wi_FadeManager_FADE_OUT,
+  wi_FadeManager_FADE_FINISHED
+};
+
+typedef struct SWIGTYPE_p_std__functionT_void_fF_t SWIGTYPE_p_std__functionT_void_fF_t;
+
+typedef struct SWIGTYPE_p_std__functionT_void_fF_t SWIGTYPE_p_std__functionT_void_fF_t;
+
+typedef struct SWIGTYPE_p_std__functionT_void_fF_t SWIGTYPE_p_std__functionT_void_fF_t;
+
+typedef struct SWIGTYPE_wi__graphics__GPUResource SWIGTYPE_wi__graphics__GPUResource;
+
+typedef struct SWIGTYPE_wi__graphics__GPUResource SWIGTYPE_wi__graphics__GPUResource;
+
+typedef struct SWIGTYPE_wi__graphics__GPUResource SWIGTYPE_wi__graphics__GPUResource;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SwigObj_wi_GPUBVH wi_GPUBVH;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_wi__graphics__GPUBuffer SWIGTYPE_p_wi__graphics__GPUBuffer;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_wi__scene__Scene SWIGTYPE_wi__scene__Scene;
+
+typedef struct SWIGTYPE_wi__scene__Scene SWIGTYPE_wi__scene__Scene;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_wi__graphics__SwapChain SWIGTYPE_wi__graphics__SwapChain;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_wi__graphics__SwapChain SWIGTYPE_wi__graphics__SwapChain;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_wi__graphics__Texture SWIGTYPE_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_wi__graphics__Texture SWIGTYPE_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_wi__graphics__TextureDesc SWIGTYPE_wi__graphics__TextureDesc;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_wi__graphics__Texture SWIGTYPE_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_wi__graphics__TextureDesc SWIGTYPE_wi__graphics__TextureDesc;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SwigObj_wi_Sf_helper_FileDialogParams wi_Sf_helper_FileDialogParams;
+
+enum wi_Sf_helper_FileDialogParams_TYPE {
+  wi_Sf_helper_FileDialogParams_OPEN,
+  wi_Sf_helper_FileDialogParams_SAVE
+};
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_wi__vectorT_std__string_t SWIGTYPE_p_wi__vectorT_std__string_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_std__string_t SWIGTYPE_p_wi__vectorT_std__string_t;
+
+typedef struct SWIGTYPE_p_std__functionT_void_fstd__stringF_t SWIGTYPE_p_std__functionT_void_fstd__stringF_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__functionT_void_fstd__stringF_t SWIGTYPE_p_std__functionT_void_fstd__stringF_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__functionT_void_fstd__stringF_t SWIGTYPE_p_std__functionT_void_fstd__stringF_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_std__functionT_void_fstd__stringF_t SWIGTYPE_p_std__functionT_void_fstd__stringF_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__wstring SWIGTYPE_std__wstring;
+
+typedef struct SWIGTYPE_std__wstring SWIGTYPE_std__wstring;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_wchar_t SWIGTYPE_p_wchar_t;
+
+typedef struct SWIGTYPE_p_wchar_t SWIGTYPE_p_wchar_t;
+
+typedef struct SWIGTYPE_p_wchar_t SWIGTYPE_p_wchar_t;
+
+typedef struct SWIGTYPE_p_wchar_t SWIGTYPE_p_wchar_t;
+
+enum DebugLevel {
+  DebugLevel_Normal,
+  DebugLevel_Warning,
+  DebugLevel_Error
+};
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SwigObj_wi_Sf_helper_MemoryUsage wi_Sf_helper_MemoryUsage;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_wi__platform__error_type SWIGTYPE_p_wi__platform__error_type;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_wi__vectorT_uint8_t_t SWIGTYPE_wi__vectorT_uint8_t_t;
+
+enum INITIALIZED_SYSTEM {
+  INITIALIZED_SYSTEM_FONT,
+  INITIALIZED_SYSTEM_IMAGE,
+  INITIALIZED_SYSTEM_INPUT,
+  INITIALIZED_SYSTEM_RENDERER,
+  INITIALIZED_SYSTEM_TEXTUREHELPER,
+  INITIALIZED_SYSTEM_HAIRPARTICLESYSTEM,
+  INITIALIZED_SYSTEM_EMITTEDPARTICLESYSTEM,
+  INITIALIZED_SYSTEM_OCEAN,
+  INITIALIZED_SYSTEM_GPUSORTLIB,
+  INITIALIZED_SYSTEM_GPUBVH,
+  INITIALIZED_SYSTEM_PHYSICS,
+  INITIALIZED_SYSTEM_LUA,
+  INITIALIZED_SYSTEM_AUDIO,
+  INITIALIZED_SYSTEM_TRAILRENDERER,
+  INITIALIZED_SYSTEM_COUNT
+};
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SwigObj_wi_Sf_jobsystem_JobArgs wi_Sf_jobsystem_JobArgs;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+enum Priority {
+  Priority_High,
+  Priority_Low,
+  Priority_Streaming,
+  Priority_Count
+};
+
+typedef struct SwigObj_wi_Sf_jobsystem_context wi_Sf_jobsystem_context;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_std__functionT_void_fwi__jobsystem__JobArgsF_t SWIGTYPE_std__functionT_void_fwi__jobsystem__JobArgsF_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_std__functionT_void_fwi__jobsystem__JobArgsF_t SWIGTYPE_std__functionT_void_fwi__jobsystem__JobArgsF_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_std__functionT_void_fwi__jobsystem__JobArgsF_t SWIGTYPE_std__functionT_void_fwi__jobsystem__JobArgsF_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SwigObj_wi_LoadingScreen wi_LoadingScreen;
+
+typedef struct SWIGTYPE_p_wi__Resource SWIGTYPE_p_wi__Resource;
+
+typedef struct SWIGTYPE_p_wi__Resource SWIGTYPE_p_wi__Resource;
+
+enum wi_LoadingScreen_BackgroundMode {
+  wi_LoadingScreen_BackgroundMode_Fill,
+  wi_LoadingScreen_BackgroundMode_Fit,
+  wi_LoadingScreen_BackgroundMode_Stretch
+};
+
+typedef struct SWIGTYPE_p_std__functionT_void_fwi__jobsystem__JobArgsF_t SWIGTYPE_p_std__functionT_void_fwi__jobsystem__JobArgsF_t;
+
+typedef struct SWIGTYPE_p_std__functionT_void_fF_t SWIGTYPE_p_std__functionT_void_fF_t;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SwigObj_wi_Localization wi_Localization;
+
+typedef struct SWIGTYPE_p_wi__vectorT_wi__Localization__Entry_t SWIGTYPE_p_wi__vectorT_wi__Localization__Entry_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_wi__Localization__Entry_t SWIGTYPE_p_wi__vectorT_wi__Localization__Entry_t;
+
+typedef struct SWIGTYPE_p_wi__unordered_mapT_size_t_size_t_std__hashT_size_t_t_std__equal_toT_size_t_t_std__allocatorT_std__pairT_size_t_const_size_t_t_t_t SWIGTYPE_p_wi__unordered_mapT_size_t_size_t_std__hashT_size_t_t_std__equal_toT_size_t_t_std__allocatorT_std__pairT_size_t_const_size_t_t_t_t;
+
+typedef struct SWIGTYPE_p_wi__unordered_mapT_size_t_size_t_std__hashT_size_t_t_std__equal_toT_size_t_t_std__allocatorT_std__pairT_size_t_const_size_t_t_t_t SWIGTYPE_p_wi__unordered_mapT_size_t_size_t_std__hashT_size_t_t_std__equal_toT_size_t_t_std__allocatorT_std__pairT_size_t_const_size_t_t_t_t;
+
+typedef struct SWIGTYPE_p_wi__unordered_mapT_std__string_wi__Localization_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_wi__Localization_t_t_t SWIGTYPE_p_wi__unordered_mapT_std__string_wi__Localization_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_wi__Localization_t_t_t;
+
+typedef struct SWIGTYPE_p_wi__unordered_mapT_std__string_wi__Localization_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_wi__Localization_t_t_t SWIGTYPE_p_wi__unordered_mapT_std__string_wi__Localization_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_wi__Localization_t_t_t;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SwigObj_wi_Sf_network_Socket wi_Sf_network_Socket;
+
+typedef struct SWIGTYPE_p_std__shared_ptrT_void_t SWIGTYPE_p_std__shared_ptrT_void_t;
+
+typedef struct SWIGTYPE_p_std__shared_ptrT_void_t SWIGTYPE_p_std__shared_ptrT_void_t;
+
+typedef struct SwigObj_wi_Sf_network_Connection wi_Sf_network_Connection;
+
+typedef struct SWIGTYPE_p_std__arrayT_uint8_t_4_t SWIGTYPE_p_std__arrayT_uint8_t_4_t;
+
+typedef struct SWIGTYPE_p_std__arrayT_uint8_t_4_t SWIGTYPE_p_std__arrayT_uint8_t_4_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SWIGTYPE_p_uint16_t SWIGTYPE_p_uint16_t;
+
+typedef struct SwigObj_wi_Ocean wi_Ocean;
+
+typedef struct SWIGTYPE_wi__Ocean__OceanParameters SWIGTYPE_wi__Ocean__OceanParameters;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_wi__scene__CameraComponent SWIGTYPE_wi__scene__CameraComponent;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_wi__scene__CameraComponent SWIGTYPE_wi__scene__CameraComponent;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_XMFLOAT3 SWIGTYPE_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_XMFLOAT3 SWIGTYPE_p_XMFLOAT3;
+
+typedef struct SWIGTYPE_p_wi__Ocean__OceanParameters SWIGTYPE_p_wi__Ocean__OceanParameters;
+
+typedef struct SWIGTYPE_p_wi__Ocean__OceanParameters SWIGTYPE_p_wi__Ocean__OceanParameters;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SwigObj_wi_Sf_profiler_ScopedRangeCPU wi_Sf_profiler_ScopedRangeCPU;
+
+typedef struct SwigObj_wi_Sf_profiler_ScopedRangeGPU wi_Sf_profiler_ScopedRangeGPU;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_wi__Canvas SWIGTYPE_wi__Canvas;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_p_wi__graphics__ColorSpace SWIGTYPE_p_wi__graphics__ColorSpace;
+
+typedef struct SWIGTYPE_wi__Canvas SWIGTYPE_wi__Canvas;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SwigObj_wi_Sf_random_RNG wi_Sf_random_RNG;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_int64_t SWIGTYPE_p_int64_t;
+
+typedef struct SWIGTYPE_p_int64_t SWIGTYPE_p_int64_t;
+
+typedef struct SWIGTYPE_p_int64_t SWIGTYPE_p_int64_t;
+
+typedef struct SWIGTYPE_p_int64_t SWIGTYPE_p_int64_t;
+
+typedef struct SWIGTYPE_p_int32_t SWIGTYPE_p_int32_t;
+
+typedef struct SWIGTYPE_p_int32_t SWIGTYPE_p_int32_t;
+
+typedef struct SWIGTYPE_p_int32_t SWIGTYPE_p_int32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SWIGTYPE_p_uint64_t SWIGTYPE_p_uint64_t;
+
+typedef struct SwigObj_wi_Sf_rectpacker_State wi_Sf_rectpacker_State;
+
+typedef struct SWIGTYPE_p_stbrp_context SWIGTYPE_p_stbrp_context;
+
+typedef struct SWIGTYPE_p_stbrp_context SWIGTYPE_p_stbrp_context;
+
+typedef struct SWIGTYPE_p_wi__vectorT_stbrp_node_t SWIGTYPE_p_wi__vectorT_stbrp_node_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_stbrp_node_t SWIGTYPE_p_wi__vectorT_stbrp_node_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_stbrp_rect_t SWIGTYPE_p_wi__vectorT_stbrp_rect_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_stbrp_rect_t SWIGTYPE_p_wi__vectorT_stbrp_rect_t;
+
+typedef struct SWIGTYPE_stbrp_rect SWIGTYPE_stbrp_rect;
+
+typedef struct SwigObj_wi_RenderPath wi_RenderPath;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_wi__graphics__ColorSpace SWIGTYPE_p_wi__graphics__ColorSpace;
+
+typedef struct SWIGTYPE_p_wi__graphics__ColorSpace SWIGTYPE_p_wi__graphics__ColorSpace;
+
+typedef struct SwigObj_wi_RenderPath2D wi_RenderPath2D;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_wi__graphics__Texture SWIGTYPE_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_wi__vectorT_wi__RenderPath2D__RenderLayer2D_t SWIGTYPE_p_wi__vectorT_wi__RenderPath2D__RenderLayer2D_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_wi__RenderPath2D__RenderLayer2D_t SWIGTYPE_p_wi__vectorT_wi__RenderPath2D__RenderLayer2D_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_wi__gui__GUI SWIGTYPE_wi__gui__GUI;
+
+typedef struct SWIGTYPE_wi__gui__GUI SWIGTYPE_wi__gui__GUI;
+
+typedef struct SWIGTYPE_p_XMUINT2 SWIGTYPE_p_XMUINT2;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_wi__graphics__ColorSpace SWIGTYPE_p_wi__graphics__ColorSpace;
+
+typedef struct SWIGTYPE_p_wi__graphics__ColorSpace SWIGTYPE_p_wi__graphics__ColorSpace;
+
+typedef struct SwigObj_wi_RenderPath3D_PathTracing wi_RenderPath3D_PathTracing;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+enum Flags {
+  Flags_NONE = 0,
+  Flags_DISABLE_OPTIMIZATION = 1 << 0,
+  Flags_STRIP_REFLECTION = 1 << 1
+};
+
+typedef struct SwigObj_wi_Sf_shadercompiler_CompilerInput wi_Sf_shadercompiler_CompilerInput;
+
+typedef struct SWIGTYPE_p_wi__graphics__ShaderFormat SWIGTYPE_p_wi__graphics__ShaderFormat;
+
+typedef struct SWIGTYPE_p_wi__graphics__ShaderFormat SWIGTYPE_p_wi__graphics__ShaderFormat;
+
+typedef struct SWIGTYPE_p_wi__graphics__ShaderStage SWIGTYPE_p_wi__graphics__ShaderStage;
+
+typedef struct SWIGTYPE_p_wi__graphics__ShaderStage SWIGTYPE_p_wi__graphics__ShaderStage;
+
+typedef struct SWIGTYPE_p_wi__graphics__ShaderModel SWIGTYPE_p_wi__graphics__ShaderModel;
+
+typedef struct SWIGTYPE_p_wi__graphics__ShaderModel SWIGTYPE_p_wi__graphics__ShaderModel;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_wi__vectorT_std__string_t SWIGTYPE_p_wi__vectorT_std__string_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_std__string_t SWIGTYPE_p_wi__vectorT_std__string_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_std__string_t SWIGTYPE_p_wi__vectorT_std__string_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_std__string_t SWIGTYPE_p_wi__vectorT_std__string_t;
+
+typedef struct SwigObj_wi_Sf_shadercompiler_CompilerOutput wi_Sf_shadercompiler_CompilerOutput;
+
+typedef struct SWIGTYPE_p_std__shared_ptrT_void_t SWIGTYPE_p_std__shared_ptrT_void_t;
+
+typedef struct SWIGTYPE_p_std__shared_ptrT_void_t SWIGTYPE_p_std__shared_ptrT_void_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_uint8_t SWIGTYPE_p_uint8_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_uint8_t_t SWIGTYPE_p_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_uint8_t_t SWIGTYPE_p_wi__vectorT_uint8_t_t;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_wi__vectorT_std__string_t SWIGTYPE_p_wi__vectorT_std__string_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_std__string_t SWIGTYPE_p_wi__vectorT_std__string_t;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SwigObj_wi_SpinLock wi_SpinLock;
+
+typedef struct SwigObj_wi_Sprite wi_Sprite;
+
+enum wi_Sprite_FLAGS {
+  wi_Sprite_EMPTY = 0,
+  wi_Sprite_HIDDEN = 1 << 0,
+  wi_Sprite_DISABLE_UPDATE = 1 << 1,
+  wi_Sprite_CAMERA_FACING = 1 << 2,
+  wi_Sprite_CAMERA_SCALING = 1 << 3
+};
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_p_wi__image__Params SWIGTYPE_p_wi__image__Params;
+
+typedef struct SWIGTYPE_p_wi__image__Params SWIGTYPE_p_wi__image__Params;
+
+typedef struct SWIGTYPE_p_wi__Resource SWIGTYPE_p_wi__Resource;
+
+typedef struct SWIGTYPE_p_wi__Resource SWIGTYPE_p_wi__Resource;
+
+typedef struct SWIGTYPE_p_wi__Resource SWIGTYPE_p_wi__Resource;
+
+typedef struct SWIGTYPE_p_wi__Resource SWIGTYPE_p_wi__Resource;
+
+typedef struct SWIGTYPE_p_wi__Resource SWIGTYPE_p_wi__Resource;
+
+typedef struct SWIGTYPE_p_wi__Resource SWIGTYPE_p_wi__Resource;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_p_wi__Sprite__Anim SWIGTYPE_p_wi__Sprite__Anim;
+
+typedef struct SWIGTYPE_p_wi__Sprite__Anim SWIGTYPE_p_wi__Sprite__Anim;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_wi__ecs__EntitySerializer SWIGTYPE_wi__ecs__EntitySerializer;
+
+typedef struct SwigObj_wi_SpriteFont wi_SpriteFont;
+
+enum wi_SpriteFont_FLAGS {
+  wi_SpriteFont_EMPTY = 0,
+  wi_SpriteFont_HIDDEN = 1 << 0,
+  wi_SpriteFont_DISABLE_UPDATE = 1 << 1,
+  wi_SpriteFont_CAMERA_FACING = 1 << 2,
+  wi_SpriteFont_CAMERA_SCALING = 1 << 3
+};
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_std__wstring SWIGTYPE_p_std__wstring;
+
+typedef struct SWIGTYPE_p_std__wstring SWIGTYPE_p_std__wstring;
+
+typedef struct SWIGTYPE_p_wi__font__Params SWIGTYPE_p_wi__font__Params;
+
+typedef struct SWIGTYPE_p_wi__font__Params SWIGTYPE_p_wi__font__Params;
+
+typedef struct SWIGTYPE_p_wi__Resource SWIGTYPE_p_wi__Resource;
+
+typedef struct SWIGTYPE_p_wi__Resource SWIGTYPE_p_wi__Resource;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_wi__font__Params SWIGTYPE_wi__font__Params;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_wi__font__Params SWIGTYPE_wi__font__Params;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_p_XMFLOAT2 SWIGTYPE_p_XMFLOAT2;
+
+typedef struct SWIGTYPE_std__string SWIGTYPE_std__string;
+
+typedef struct SWIGTYPE_p_p_std__string SWIGTYPE_p_p_std__string;
+
+typedef struct SWIGTYPE_std__wstring SWIGTYPE_std__wstring;
+
+typedef struct SWIGTYPE_p_p_std__wstring SWIGTYPE_p_p_std__wstring;
+
+typedef struct SWIGTYPE_p_std__string SWIGTYPE_p_std__string;
+
+typedef struct SWIGTYPE_std__wstring SWIGTYPE_std__wstring;
+
+typedef struct SWIGTYPE_p_wi__SpriteFont__Animation SWIGTYPE_p_wi__SpriteFont__Animation;
+
+typedef struct SWIGTYPE_p_wi__SpriteFont__Animation SWIGTYPE_p_wi__SpriteFont__Animation;
+
+typedef struct SWIGTYPE_wi__ecs__EntitySerializer SWIGTYPE_wi__ecs__EntitySerializer;
+
+typedef struct SwigObj_wi_Timer wi_Timer;
+
+typedef struct SWIGTYPE_p_std__chrono__high_resolution_clock__time_point SWIGTYPE_p_std__chrono__high_resolution_clock__time_point;
+
+typedef struct SWIGTYPE_p_std__chrono__high_resolution_clock__time_point SWIGTYPE_p_std__chrono__high_resolution_clock__time_point;
+
+typedef struct SWIGTYPE_p_std__chrono__high_resolution_clock__time_point SWIGTYPE_p_std__chrono__high_resolution_clock__time_point;
+
+typedef struct SwigObj_wi_TrailRenderer wi_TrailRenderer;
+
+typedef struct SWIGTYPE_p_wi__vectorT_wi__TrailRenderer__TrailPoint_t SWIGTYPE_p_wi__vectorT_wi__TrailRenderer__TrailPoint_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_wi__TrailRenderer__TrailPoint_t SWIGTYPE_p_wi__vectorT_wi__TrailRenderer__TrailPoint_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_uint32_t_t SWIGTYPE_p_wi__vectorT_uint32_t_t;
+
+typedef struct SWIGTYPE_p_wi__vectorT_uint32_t_t SWIGTYPE_p_wi__vectorT_uint32_t_t;
+
+typedef struct SWIGTYPE_p_XMFLOAT4 SWIGTYPE_p_XMFLOAT4;
+
+typedef struct SWIGTYPE_p_XMFLOAT4 SWIGTYPE_p_XMFLOAT4;
+
+typedef struct SWIGTYPE_p_wi__enums__BLENDMODE SWIGTYPE_p_wi__enums__BLENDMODE;
+
+typedef struct SWIGTYPE_p_wi__enums__BLENDMODE SWIGTYPE_p_wi__enums__BLENDMODE;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_uint32_t SWIGTYPE_p_uint32_t;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_p_wi__graphics__Texture SWIGTYPE_p_wi__graphics__Texture;
+
+typedef struct SWIGTYPE_p_XMFLOAT4 SWIGTYPE_p_XMFLOAT4;
+
+typedef struct SWIGTYPE_p_XMFLOAT4 SWIGTYPE_p_XMFLOAT4;
+
+typedef struct SWIGTYPE_p_XMFLOAT4 SWIGTYPE_p_XMFLOAT4;
+
+typedef struct SWIGTYPE_p_XMFLOAT4 SWIGTYPE_p_XMFLOAT4;
+
+typedef struct SWIGTYPE_wi__scene__CameraComponent SWIGTYPE_wi__scene__CameraComponent;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
 
 #ifdef __cplusplus
 extern "C" {
@@ -100,13 +1257,13 @@ SWIGIMPORT SWIGTYPE_p_wi__platform__window_type* wi_Application_window_get(wi_Ap
 
 SWIGIMPORT void wi_Application_Run(wi_Application* carg1);
 
-SWIGIMPORT void wi_Application_ActivatePath_pwi_RenderPath_f_wi_Color(wi_Application* carg1, SWIGTYPE_p_wi__RenderPath* carg2, float carg3, SWIGTYPE_p_wi__Color* carg4);
+SWIGIMPORT void wi_Application_ActivatePath_pwi_RenderPath_f_wi_Color(wi_Application* carg1, wi_RenderPath* carg2, float carg3, wi_Color* carg4);
 
-SWIGIMPORT void wi_Application_ActivatePath_pwi_RenderPath_f(wi_Application* carg1, SWIGTYPE_p_wi__RenderPath* carg2, float carg3);
+SWIGIMPORT void wi_Application_ActivatePath_pwi_RenderPath_f(wi_Application* carg1, wi_RenderPath* carg2, float carg3);
 
-SWIGIMPORT void wi_Application_ActivatePath_pwi_RenderPath(wi_Application* carg1, SWIGTYPE_p_wi__RenderPath* carg2);
+SWIGIMPORT void wi_Application_ActivatePath_pwi_RenderPath(wi_Application* carg1, wi_RenderPath* carg2);
 
-SWIGIMPORT SWIGTYPE_p_wi__RenderPath* wi_Application_GetActivePath(wi_Application* carg1);
+SWIGIMPORT wi_RenderPath* wi_Application_GetActivePath(wi_Application* carg1);
 
 SWIGIMPORT void wi_Application_setTargetFrameRate(wi_Application* carg1, float carg2);
 
@@ -138,6 +1295,1504 @@ SWIGIMPORT bool wi_Application_IsFaded(wi_Application* carg1);
 
 SWIGIMPORT wi_Application* wi_Application_new();
 
+SWIGIMPORT wi_Archive* wi_Archive_new();
+
+SWIGIMPORT wi_Archive* wi_Archive_copy(wi_Archive* carg1);
+
+SWIGIMPORT wi_Archive* wi_Archive_new_zwi_Archive(wi_Archive* carg1);
+
+SWIGIMPORT wi_Archive* wi_Archive_new_rcstd_string_b(SWIGTYPE_std__string* carg1, bool carg2);
+
+SWIGIMPORT wi_Archive* wi_Archive_new_rcstd_string(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT wi_Archive* wi_Archive_new_pcuint8_t_size_t(SWIGTYPE_p_uint8_t* carg1, size_t carg2);
+
+SWIGIMPORT void wi_Archive_delete(wi_Archive* carg1);
+
+SWIGIMPORT void wi_Archive_WriteData(wi_Archive* carg1, SWIGTYPE_wi__vectorT_uint8_t_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint8_t* wi_Archive_GetData(wi_Archive* carg1);
+
+SWIGIMPORT size_t wi_Archive_GetSize(wi_Archive* carg1);
+
+SWIGIMPORT size_t wi_Archive_GetPos(wi_Archive* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_Archive_GetVersion(wi_Archive* carg1);
+
+SWIGIMPORT bool wi_Archive_IsReadMode(wi_Archive* carg1);
+
+SWIGIMPORT void wi_Archive_SetReadModeAndResetPos(wi_Archive* carg1, bool carg2);
+
+SWIGIMPORT bool wi_Archive_IsOpen(wi_Archive* carg1);
+
+SWIGIMPORT void wi_Archive_Close(wi_Archive* carg1);
+
+SWIGIMPORT bool wi_Archive_SaveFile(wi_Archive* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT bool wi_Archive_SaveHeaderFile(wi_Archive* carg1, SWIGTYPE_std__string* carg2, SWIGTYPE_std__string* carg3);
+
+SWIGIMPORT SWIGTYPE_std__string* wi_Archive_GetSourceDirectory(wi_Archive* carg1);
+
+SWIGIMPORT SWIGTYPE_std__string* wi_Archive_GetSourceFileName(wi_Archive* carg1);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__Texture* wi_Archive_CreateThumbnailTexture(wi_Archive* carg1);
+
+SWIGIMPORT void wi_Archive_SetThumbnailAndResetPos(wi_Archive* carg1, SWIGTYPE_wi__graphics__Texture* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__Texture* wi_Archive_PeekThumbnail(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT size_t wi_Archive_WriteUnknownJumpPosition(wi_Archive* carg1);
+
+SWIGIMPORT void wi_Archive_PatchUnknownJumpPosition(wi_Archive* carg1, size_t carg2);
+
+SWIGIMPORT void wi_Archive_Jump(wi_Archive* carg1, SWIGTYPE_p_uint64_t* carg2);
+
+SWIGIMPORT void wi_Archive_MapVector(wi_Archive* carg1, SWIGTYPE_p_uint8_t* carg2, size_t * carg3);
+
+SWIGIMPORT void wi_audio_Initialize();
+
+SWIGIMPORT void wi_audio_Sound_internal_state_set(wi_Sf_audio_Sound* carg1, SWIGTYPE_p_std__shared_ptrT_void_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__shared_ptrT_void_t* wi_audio_Sound_internal_state_get(wi_Sf_audio_Sound* carg1);
+
+SWIGIMPORT bool wi_audio_Sound_IsValid(wi_Sf_audio_Sound* carg1);
+
+SWIGIMPORT wi_Sf_audio_Sound* wi_audio_Sound_new();
+
+SWIGIMPORT void wi_audio_Sound_delete(wi_Sf_audio_Sound* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance_internal_state_set(wi_Sf_audio_SoundInstance* carg1, SWIGTYPE_p_std__shared_ptrT_void_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__shared_ptrT_void_t* wi_audio_SoundInstance_internal_state_get(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT bool wi_audio_SoundInstance_IsValid(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance_type_set(wi_Sf_audio_SoundInstance* carg1, enum wi_Sf_audio_SUBMIX_TYPE carg2);
+
+SWIGIMPORT enum wi_Sf_audio_SUBMIX_TYPE wi_audio_SoundInstance_type_get(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance_begin_set(wi_Sf_audio_SoundInstance* carg1, float carg2);
+
+SWIGIMPORT float wi_audio_SoundInstance_begin_get(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance_length_set(wi_Sf_audio_SoundInstance* carg1, float carg2);
+
+SWIGIMPORT float wi_audio_SoundInstance_length_get(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance_loop_begin_set(wi_Sf_audio_SoundInstance* carg1, float carg2);
+
+SWIGIMPORT float wi_audio_SoundInstance_loop_begin_get(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance_loop_length_set(wi_Sf_audio_SoundInstance* carg1, float carg2);
+
+SWIGIMPORT float wi_audio_SoundInstance_loop_length_get(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance__flags_set(wi_Sf_audio_SoundInstance* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_audio_SoundInstance__flags_get(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance_SetEnableReverb_b(wi_Sf_audio_SoundInstance* carg1, bool carg2);
+
+SWIGIMPORT void wi_audio_SoundInstance_SetEnableReverb(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT bool wi_audio_SoundInstance_IsEnableReverb(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance_SetLooped_b(wi_Sf_audio_SoundInstance* carg1, bool carg2);
+
+SWIGIMPORT void wi_audio_SoundInstance_SetLooped(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT bool wi_audio_SoundInstance_IsLooped(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT wi_Sf_audio_SoundInstance* wi_audio_SoundInstance_new();
+
+SWIGIMPORT void wi_audio_SoundInstance_delete(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT bool wi_audio_CreateSound_rcstd_string_pwi_audio_Sound(SWIGTYPE_std__string* carg1, wi_Sf_audio_Sound* carg2);
+
+SWIGIMPORT bool wi_audio_CreateSound_pcuint8_t_size_t_pwi_audio_Sound(SWIGTYPE_p_uint8_t* carg1, size_t carg2, wi_Sf_audio_Sound* carg3);
+
+SWIGIMPORT bool wi_audio_CreateSoundInstance(wi_Sf_audio_Sound* carg1, wi_Sf_audio_SoundInstance* carg2);
+
+SWIGIMPORT void wi_audio_Play(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_Pause(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_Stop(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SetVolume_f_pwi_audio_SoundInstance(float carg1, wi_Sf_audio_SoundInstance* carg2);
+
+SWIGIMPORT void wi_audio_SetVolume_f(float carg1);
+
+SWIGIMPORT float wi_audio_GetVolume_pcwi_audio_SoundInstance(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT float wi_audio_GetVolume();
+
+SWIGIMPORT void wi_audio_ExitLoop(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT bool wi_audio_IsEnded(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SampleInfo_samples_set(wi_Sf_audio_SampleInfo* carg1, const short * carg2);
+
+SWIGIMPORT const short * wi_audio_SampleInfo_samples_get(wi_Sf_audio_SampleInfo* carg1);
+
+SWIGIMPORT void wi_audio_SampleInfo_sample_count_set(wi_Sf_audio_SampleInfo* carg1, size_t carg2);
+
+SWIGIMPORT size_t wi_audio_SampleInfo_sample_count_get(wi_Sf_audio_SampleInfo* carg1);
+
+SWIGIMPORT void wi_audio_SampleInfo_sample_rate_set(wi_Sf_audio_SampleInfo* carg1, int carg2);
+
+SWIGIMPORT int wi_audio_SampleInfo_sample_rate_get(wi_Sf_audio_SampleInfo* carg1);
+
+SWIGIMPORT void wi_audio_SampleInfo_channel_count_set(wi_Sf_audio_SampleInfo* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_audio_SampleInfo_channel_count_get(wi_Sf_audio_SampleInfo* carg1);
+
+SWIGIMPORT wi_Sf_audio_SampleInfo* wi_audio_SampleInfo_new();
+
+SWIGIMPORT void wi_audio_SampleInfo_delete(wi_Sf_audio_SampleInfo* carg1);
+
+SWIGIMPORT wi_Sf_audio_SampleInfo* wi_audio_GetSampleInfo(wi_Sf_audio_Sound* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_audio_GetTotalSamplesPlayed(wi_Sf_audio_SoundInstance* carg1);
+
+SWIGIMPORT void wi_audio_SetSubmixVolume(enum wi_Sf_audio_SUBMIX_TYPE carg1, float carg2);
+
+SWIGIMPORT float wi_audio_GetSubmixVolume(enum wi_Sf_audio_SUBMIX_TYPE carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance3D_listenerPos_set(wi_Sf_audio_SoundInstance3D* carg1, SWIGTYPE_p_XMFLOAT3* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_audio_SoundInstance3D_listenerPos_get(wi_Sf_audio_SoundInstance3D* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance3D_listenerUp_set(wi_Sf_audio_SoundInstance3D* carg1, SWIGTYPE_p_XMFLOAT3* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_audio_SoundInstance3D_listenerUp_get(wi_Sf_audio_SoundInstance3D* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance3D_listenerFront_set(wi_Sf_audio_SoundInstance3D* carg1, SWIGTYPE_p_XMFLOAT3* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_audio_SoundInstance3D_listenerFront_get(wi_Sf_audio_SoundInstance3D* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance3D_listenerVelocity_set(wi_Sf_audio_SoundInstance3D* carg1, SWIGTYPE_p_XMFLOAT3* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_audio_SoundInstance3D_listenerVelocity_get(wi_Sf_audio_SoundInstance3D* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance3D_emitterPos_set(wi_Sf_audio_SoundInstance3D* carg1, SWIGTYPE_p_XMFLOAT3* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_audio_SoundInstance3D_emitterPos_get(wi_Sf_audio_SoundInstance3D* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance3D_emitterUp_set(wi_Sf_audio_SoundInstance3D* carg1, SWIGTYPE_p_XMFLOAT3* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_audio_SoundInstance3D_emitterUp_get(wi_Sf_audio_SoundInstance3D* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance3D_emitterFront_set(wi_Sf_audio_SoundInstance3D* carg1, SWIGTYPE_p_XMFLOAT3* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_audio_SoundInstance3D_emitterFront_get(wi_Sf_audio_SoundInstance3D* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance3D_emitterVelocity_set(wi_Sf_audio_SoundInstance3D* carg1, SWIGTYPE_p_XMFLOAT3* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_audio_SoundInstance3D_emitterVelocity_get(wi_Sf_audio_SoundInstance3D* carg1);
+
+SWIGIMPORT void wi_audio_SoundInstance3D_emitterRadius_set(wi_Sf_audio_SoundInstance3D* carg1, float carg2);
+
+SWIGIMPORT float wi_audio_SoundInstance3D_emitterRadius_get(wi_Sf_audio_SoundInstance3D* carg1);
+
+SWIGIMPORT wi_Sf_audio_SoundInstance3D* wi_audio_SoundInstance3D_new();
+
+SWIGIMPORT void wi_audio_SoundInstance3D_delete(wi_Sf_audio_SoundInstance3D* carg1);
+
+SWIGIMPORT void wi_audio_Update3D(wi_Sf_audio_SoundInstance* carg1, wi_Sf_audio_SoundInstance3D* carg2);
+
+SWIGIMPORT void wi_audio_SetReverb(enum wi_Sf_audio_REVERB_PRESET carg1);
+
+SWIGIMPORT void wi_BVH_allocation_set(wi_BVH* carg1, SWIGTYPE_p_wi__vectorT_uint8_t_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_uint8_t_t* wi_BVH_allocation_get(wi_BVH* carg1);
+
+SWIGIMPORT void wi_BVH_nodes_set(wi_BVH* carg1, SWIGTYPE_p_wi__BVH__Node* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__BVH__Node* wi_BVH_nodes_get(wi_BVH* carg1);
+
+SWIGIMPORT void wi_BVH_node_count_set(wi_BVH* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_BVH_node_count_get(wi_BVH* carg1);
+
+SWIGIMPORT void wi_BVH_leaf_indices_set(wi_BVH* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_BVH_leaf_indices_get(wi_BVH* carg1);
+
+SWIGIMPORT void wi_BVH_leaf_count_set(wi_BVH* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_BVH_leaf_count_get(wi_BVH* carg1);
+
+SWIGIMPORT bool wi_BVH_IsValid(wi_BVH* carg1);
+
+SWIGIMPORT void wi_BVH_Build(wi_BVH* carg1, SWIGTYPE_p_wi__primitive__AABB* carg2, SWIGTYPE_p_uint32_t* carg3);
+
+SWIGIMPORT void wi_BVH_Subdivide(wi_BVH* carg1, SWIGTYPE_p_uint32_t* carg2, SWIGTYPE_p_wi__primitive__AABB* carg3);
+
+SWIGIMPORT void wi_BVH_UpdateNodeBounds(wi_BVH* carg1, SWIGTYPE_p_uint32_t* carg2, SWIGTYPE_p_wi__primitive__AABB* carg3);
+
+SWIGIMPORT wi_BVH* wi_BVH_new();
+
+SWIGIMPORT void wi_BVH_delete(wi_BVH* carg1);
+
+SWIGIMPORT void wi_Color_rgba_set(wi_Color* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_Color_rgba_get(wi_Color* carg1);
+
+SWIGIMPORT wi_Color* wi_Color_new_uint32_t(SWIGTYPE_p_uint32_t* carg1);
+
+SWIGIMPORT wi_Color* wi_Color_new_uint8_t_uint8_t_uint8_t_uint8_t(SWIGTYPE_p_uint8_t* carg1, SWIGTYPE_p_uint8_t* carg2, SWIGTYPE_p_uint8_t* carg3, SWIGTYPE_p_uint8_t* carg4);
+
+SWIGIMPORT wi_Color* wi_Color_new_uint8_t_uint8_t_uint8_t(SWIGTYPE_p_uint8_t* carg1, SWIGTYPE_p_uint8_t* carg2, SWIGTYPE_p_uint8_t* carg3);
+
+SWIGIMPORT wi_Color* wi_Color_new_uint8_t_uint8_t(SWIGTYPE_p_uint8_t* carg1, SWIGTYPE_p_uint8_t* carg2);
+
+SWIGIMPORT wi_Color* wi_Color_new_uint8_t(SWIGTYPE_p_uint8_t* carg1);
+
+SWIGIMPORT wi_Color* wi_Color_new();
+
+SWIGIMPORT wi_Color* wi_Color_new_pcc(const char * carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint8_t* wi_Color_getR(wi_Color* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint8_t* wi_Color_getG(wi_Color* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint8_t* wi_Color_getB(wi_Color* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint8_t* wi_Color_getA(wi_Color* carg1);
+
+SWIGIMPORT void wi_Color_setR(wi_Color* carg1, SWIGTYPE_p_uint8_t* carg2);
+
+SWIGIMPORT void wi_Color_setG(wi_Color* carg1, SWIGTYPE_p_uint8_t* carg2);
+
+SWIGIMPORT void wi_Color_setB(wi_Color* carg1, SWIGTYPE_p_uint8_t* carg2);
+
+SWIGIMPORT void wi_Color_setA(wi_Color* carg1, SWIGTYPE_p_uint8_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_Color_toFloat3(wi_Color* carg1);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT4* wi_Color_toFloat4(wi_Color* carg1);
+
+SWIGIMPORT SWIGTYPE_p_wi__Color__char_returnT_9_t* wi_Color_to_hex(wi_Color* carg1);
+
+SWIGIMPORT wi_Color* wi_Color_fromFloat4(SWIGTYPE_XMFLOAT4* carg1);
+
+SWIGIMPORT wi_Color* wi_Color_fromFloat3(SWIGTYPE_XMFLOAT3* carg1);
+
+SWIGIMPORT wi_Color* wi_Color_lerp(wi_Color* carg1, wi_Color* carg2, float carg3);
+
+SWIGIMPORT wi_Color* wi_Color_Red();
+
+SWIGIMPORT wi_Color* wi_Color_Green();
+
+SWIGIMPORT wi_Color* wi_Color_Blue();
+
+SWIGIMPORT wi_Color* wi_Color_Black();
+
+SWIGIMPORT wi_Color* wi_Color_White();
+
+SWIGIMPORT wi_Color* wi_Color_Yellow();
+
+SWIGIMPORT wi_Color* wi_Color_Purple();
+
+SWIGIMPORT wi_Color* wi_Color_Cyan();
+
+SWIGIMPORT wi_Color* wi_Color_Transparent();
+
+SWIGIMPORT wi_Color* wi_Color_Gray();
+
+SWIGIMPORT wi_Color* wi_Color_Ghost();
+
+SWIGIMPORT wi_Color* wi_Color_Booger();
+
+SWIGIMPORT wi_Color* wi_Color_Shadow();
+
+SWIGIMPORT wi_Color* wi_Color_Warning();
+
+SWIGIMPORT wi_Color* wi_Color_Error();
+
+SWIGIMPORT void wi_Color_delete(wi_Color* carg1);
+
+SWIGIMPORT void wi_Color16_rgba_set(wi_Color16* carg1, SWIGTYPE_p_uint64_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_Color16_rgba_get(wi_Color16* carg1);
+
+SWIGIMPORT wi_Color16* wi_Color16_new_uint64_t(SWIGTYPE_p_uint64_t* carg1);
+
+SWIGIMPORT wi_Color16* wi_Color16_new_uint16_t_uint16_t_uint16_t_uint16_t(SWIGTYPE_p_uint16_t* carg1, SWIGTYPE_p_uint16_t* carg2, SWIGTYPE_p_uint16_t* carg3, SWIGTYPE_p_uint16_t* carg4);
+
+SWIGIMPORT wi_Color16* wi_Color16_new_uint16_t_uint16_t_uint16_t(SWIGTYPE_p_uint16_t* carg1, SWIGTYPE_p_uint16_t* carg2, SWIGTYPE_p_uint16_t* carg3);
+
+SWIGIMPORT wi_Color16* wi_Color16_new_uint16_t_uint16_t(SWIGTYPE_p_uint16_t* carg1, SWIGTYPE_p_uint16_t* carg2);
+
+SWIGIMPORT wi_Color16* wi_Color16_new_uint16_t(SWIGTYPE_p_uint16_t* carg1);
+
+SWIGIMPORT wi_Color16* wi_Color16_new();
+
+SWIGIMPORT wi_Color16* wi_Color16_new_wi_Color(wi_Color* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint16_t* wi_Color16_getR(wi_Color16* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint16_t* wi_Color16_getG(wi_Color16* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint16_t* wi_Color16_getB(wi_Color16* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint16_t* wi_Color16_getA(wi_Color16* carg1);
+
+SWIGIMPORT void wi_Color16_setR(wi_Color16* carg1, SWIGTYPE_p_uint16_t* carg2);
+
+SWIGIMPORT void wi_Color16_setG(wi_Color16* carg1, SWIGTYPE_p_uint16_t* carg2);
+
+SWIGIMPORT void wi_Color16_setB(wi_Color16* carg1, SWIGTYPE_p_uint16_t* carg2);
+
+SWIGIMPORT void wi_Color16_setA(wi_Color16* carg1, SWIGTYPE_p_uint16_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_Color16_toFloat3(wi_Color16* carg1);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT4* wi_Color16_toFloat4(wi_Color16* carg1);
+
+SWIGIMPORT wi_Color16* wi_Color16_fromFloat4(SWIGTYPE_XMFLOAT4* carg1);
+
+SWIGIMPORT wi_Color16* wi_Color16_fromFloat3(SWIGTYPE_XMFLOAT3* carg1);
+
+SWIGIMPORT wi_Color16* wi_Color16_lerp(wi_Color16* carg1, wi_Color16* carg2, float carg3);
+
+SWIGIMPORT void wi_Color16_delete(wi_Color16* carg1);
+
+SWIGIMPORT void wi_config_Section_delete(wi_Sf_config_Section* carg1);
+
+SWIGIMPORT bool wi_config_Section_Has(wi_Sf_config_Section* carg1, const char * carg2);
+
+SWIGIMPORT bool wi_config_Section_GetBool(wi_Sf_config_Section* carg1, const char * carg2);
+
+SWIGIMPORT int wi_config_Section_GetInt(wi_Sf_config_Section* carg1, const char * carg2);
+
+SWIGIMPORT float wi_config_Section_GetFloat(wi_Sf_config_Section* carg1, const char * carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_config_Section_GetText(wi_Sf_config_Section* carg1, const char * carg2);
+
+SWIGIMPORT void wi_config_Section_Set_pcc_b(wi_Sf_config_Section* carg1, const char * carg2, bool carg3);
+
+SWIGIMPORT void wi_config_Section_Set_pcc_i(wi_Sf_config_Section* carg1, const char * carg2, int carg3);
+
+SWIGIMPORT void wi_config_Section_Set_pcc_f(wi_Sf_config_Section* carg1, const char * carg2, float carg3);
+
+SWIGIMPORT void wi_config_Section_Set_pcc_pcc(wi_Sf_config_Section* carg1, const char * carg2, const char * carg3);
+
+SWIGIMPORT void wi_config_Section_Set_pcc_rcstd_string(wi_Sf_config_Section* carg1, const char * carg2, SWIGTYPE_std__string* carg3);
+
+SWIGIMPORT SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__iterator* wi_config_Section_begin(wi_Sf_config_Section* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__const_iterator* wi_config_Section_begin_const(wi_Sf_config_Section* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__iterator* wi_config_Section_end(wi_Sf_config_Section* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__unordered_mapT_std__string_std__string_t__const_iterator* wi_config_Section_end_const(wi_Sf_config_Section* carg1);
+
+SWIGIMPORT wi_Sf_config_Section* wi_config_Section_new();
+
+SWIGIMPORT bool wi_config_File_Open(wi_Sf_config_File* carg1, const char * carg2);
+
+SWIGIMPORT void wi_config_File_Commit(wi_Sf_config_File* carg1);
+
+SWIGIMPORT wi_Sf_config_Section* wi_config_File_GetSection(wi_Sf_config_File* carg1, const char * carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__iterator* wi_config_File_begin(wi_Sf_config_File* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__const_iterator* wi_config_File_begin_const(wi_Sf_config_File* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__iterator* wi_config_File_end(wi_Sf_config_File* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__unordered_mapT_std__string_wi__config__Section_t__const_iterator* wi_config_File_end_const(wi_Sf_config_File* carg1);
+
+SWIGIMPORT wi_Sf_config_File* wi_config_File_new();
+
+SWIGIMPORT void wi_config_File_delete(wi_Sf_config_File* carg1);
+
+SWIGIMPORT bool wi_config_File_Has(wi_Sf_config_File* carg1, const char * carg2);
+
+SWIGIMPORT bool wi_config_File_GetBool(wi_Sf_config_File* carg1, const char * carg2);
+
+SWIGIMPORT int wi_config_File_GetInt(wi_Sf_config_File* carg1, const char * carg2);
+
+SWIGIMPORT float wi_config_File_GetFloat(wi_Sf_config_File* carg1, const char * carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_config_File_GetText(wi_Sf_config_File* carg1, const char * carg2);
+
+SWIGIMPORT void wi_config_File_Set(wi_Sf_config_File* carg1, const char * carg2, bool carg3);
+
+SWIGIMPORT int EVENT_THREAD_SAFE_POINT_get();
+
+SWIGIMPORT int EVENT_RELOAD_SHADERS_get();
+
+SWIGIMPORT int EVENT_SET_VSYNC_get();
+
+SWIGIMPORT void wi_eventhandler_Handle_internal_state_set(wi_Sf_eventhandler_Handle* carg1, SWIGTYPE_p_std__shared_ptrT_void_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__shared_ptrT_void_t* wi_eventhandler_Handle_internal_state_get(wi_Sf_eventhandler_Handle* carg1);
+
+SWIGIMPORT bool wi_eventhandler_Handle_IsValid(wi_Sf_eventhandler_Handle* carg1);
+
+SWIGIMPORT wi_Sf_eventhandler_Handle* wi_eventhandler_Handle_new();
+
+SWIGIMPORT void wi_eventhandler_Handle_delete(wi_Sf_eventhandler_Handle* carg1);
+
+SWIGIMPORT wi_Sf_eventhandler_Handle* wi_eventhandler_Subscribe(int carg1, SWIGTYPE_p_std__functionT_void_fuint64_tF_t* carg2);
+
+SWIGIMPORT void wi_eventhandler_Subscribe_Once(int carg1, SWIGTYPE_p_std__functionT_void_fuint64_tF_t* carg2);
+
+SWIGIMPORT void wi_eventhandler_FireEvent(int carg1, SWIGTYPE_p_uint64_t* carg2);
+
+SWIGIMPORT void wi_eventhandler_SetVSync(bool carg1);
+
+SWIGIMPORT void wi_FadeManager_opacity_set(wi_FadeManager* carg1, float carg2);
+
+SWIGIMPORT float wi_FadeManager_opacity_get(wi_FadeManager* carg1);
+
+SWIGIMPORT void wi_FadeManager_timer_set(wi_FadeManager* carg1, float carg2);
+
+SWIGIMPORT float wi_FadeManager_timer_get(wi_FadeManager* carg1);
+
+SWIGIMPORT void wi_FadeManager_targetFadeTimeInSeconds_set(wi_FadeManager* carg1, float carg2);
+
+SWIGIMPORT float wi_FadeManager_targetFadeTimeInSeconds_get(wi_FadeManager* carg1);
+
+SWIGIMPORT void wi_FadeManager_state_set(wi_FadeManager* carg1, enum wi_FadeManager_FADE_STATE carg2);
+
+SWIGIMPORT enum wi_FadeManager_FADE_STATE wi_FadeManager_state_get(wi_FadeManager* carg1);
+
+SWIGIMPORT void wi_FadeManager_color_set(wi_FadeManager* carg1, wi_Color* carg2);
+
+SWIGIMPORT wi_Color* wi_FadeManager_color_get(wi_FadeManager* carg1);
+
+SWIGIMPORT void wi_FadeManager_onFade_set(wi_FadeManager* carg1, SWIGTYPE_p_std__functionT_void_fF_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__functionT_void_fF_t* wi_FadeManager_onFade_get(wi_FadeManager* carg1);
+
+SWIGIMPORT void wi_FadeManager_fadeEventTriggeredThisFrame_set(wi_FadeManager* carg1, bool carg2);
+
+SWIGIMPORT bool wi_FadeManager_fadeEventTriggeredThisFrame_get(wi_FadeManager* carg1);
+
+SWIGIMPORT wi_FadeManager* wi_FadeManager_new();
+
+SWIGIMPORT void wi_FadeManager_Clear(wi_FadeManager* carg1);
+
+SWIGIMPORT void wi_FadeManager_Start(wi_FadeManager* carg1, float carg2, wi_Color* carg3, SWIGTYPE_p_std__functionT_void_fF_t* carg4);
+
+SWIGIMPORT void wi_FadeManager_Update(wi_FadeManager* carg1, float carg2);
+
+SWIGIMPORT bool wi_FadeManager_IsFaded(wi_FadeManager* carg1);
+
+SWIGIMPORT bool wi_FadeManager_IsActive(wi_FadeManager* carg1);
+
+SWIGIMPORT void wi_FadeManager_delete(wi_FadeManager* carg1);
+
+SWIGIMPORT void wi_fftgenerator_fft_512x512_c2c(SWIGTYPE_wi__graphics__GPUResource* carg1, SWIGTYPE_wi__graphics__GPUResource* carg2, SWIGTYPE_wi__graphics__GPUResource* carg3, SWIGTYPE_p_wi__graphics__CommandList* carg4);
+
+SWIGIMPORT void wi_fftgenerator_LoadShaders();
+
+SWIGIMPORT void wi_GPUBVH_bvhNodeBuffer_set(wi_GPUBVH* carg1, SWIGTYPE_p_wi__graphics__GPUBuffer* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__GPUBuffer* wi_GPUBVH_bvhNodeBuffer_get(wi_GPUBVH* carg1);
+
+SWIGIMPORT void wi_GPUBVH_bvhParentBuffer_set(wi_GPUBVH* carg1, SWIGTYPE_p_wi__graphics__GPUBuffer* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__GPUBuffer* wi_GPUBVH_bvhParentBuffer_get(wi_GPUBVH* carg1);
+
+SWIGIMPORT void wi_GPUBVH_bvhFlagBuffer_set(wi_GPUBVH* carg1, SWIGTYPE_p_wi__graphics__GPUBuffer* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__GPUBuffer* wi_GPUBVH_bvhFlagBuffer_get(wi_GPUBVH* carg1);
+
+SWIGIMPORT void wi_GPUBVH_primitiveCounterBuffer_set(wi_GPUBVH* carg1, SWIGTYPE_p_wi__graphics__GPUBuffer* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__GPUBuffer* wi_GPUBVH_primitiveCounterBuffer_get(wi_GPUBVH* carg1);
+
+SWIGIMPORT void wi_GPUBVH_primitiveIDBuffer_set(wi_GPUBVH* carg1, SWIGTYPE_p_wi__graphics__GPUBuffer* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__GPUBuffer* wi_GPUBVH_primitiveIDBuffer_get(wi_GPUBVH* carg1);
+
+SWIGIMPORT void wi_GPUBVH_primitiveBuffer_set(wi_GPUBVH* carg1, SWIGTYPE_p_wi__graphics__GPUBuffer* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__GPUBuffer* wi_GPUBVH_primitiveBuffer_get(wi_GPUBVH* carg1);
+
+SWIGIMPORT void wi_GPUBVH_primitiveMortonBuffer_set(wi_GPUBVH* carg1, SWIGTYPE_p_wi__graphics__GPUBuffer* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__GPUBuffer* wi_GPUBVH_primitiveMortonBuffer_get(wi_GPUBVH* carg1);
+
+SWIGIMPORT void wi_GPUBVH_primitiveCapacity_set(wi_GPUBVH* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_GPUBVH_primitiveCapacity_get(wi_GPUBVH* carg1);
+
+SWIGIMPORT bool wi_GPUBVH_IsValid(wi_GPUBVH* carg1);
+
+SWIGIMPORT void wi_GPUBVH_Update(wi_GPUBVH* carg1, SWIGTYPE_wi__scene__Scene* carg2);
+
+SWIGIMPORT void wi_GPUBVH_Build(wi_GPUBVH* carg1, SWIGTYPE_wi__scene__Scene* carg2, SWIGTYPE_p_wi__graphics__CommandList* carg3);
+
+SWIGIMPORT void wi_GPUBVH_Clear(wi_GPUBVH* carg1);
+
+SWIGIMPORT void wi_GPUBVH_Initialize();
+
+SWIGIMPORT wi_GPUBVH* wi_GPUBVH_new();
+
+SWIGIMPORT void wi_GPUBVH_delete(wi_GPUBVH* carg1);
+
+SWIGIMPORT size_t wi_helper_string_hash(const char * carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_toUpper(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_toLower(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT void wi_helper_messageBox_rcstd_string_rcstd_string(SWIGTYPE_std__string* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT void wi_helper_messageBox_rcstd_string(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_screenshot_rcwi_graphics_SwapChain_rcstd_string(SWIGTYPE_wi__graphics__SwapChain* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_screenshot_rcwi_graphics_SwapChain(SWIGTYPE_wi__graphics__SwapChain* carg1);
+
+SWIGIMPORT bool wi_helper_saveTextureToMemory(SWIGTYPE_wi__graphics__Texture* carg1, SWIGTYPE_wi__vectorT_uint8_t_t* carg2);
+
+SWIGIMPORT bool wi_helper_saveTextureToMemoryFile_rcwi_graphics_Texture_rcstd_string_rwi_vector_Sl_uint8_t_Sg_(SWIGTYPE_wi__graphics__Texture* carg1, SWIGTYPE_std__string* carg2, SWIGTYPE_wi__vectorT_uint8_t_t* carg3);
+
+SWIGIMPORT bool wi_helper_saveTextureToMemoryFile_rcwi_vector_Sl_uint8_t_Sg__rcwi_graphics_TextureDesc_rcstd_string_rwi_vector_Sl_uint8_t_Sg_(SWIGTYPE_wi__vectorT_uint8_t_t* carg1, SWIGTYPE_wi__graphics__TextureDesc* carg2, SWIGTYPE_std__string* carg3, SWIGTYPE_wi__vectorT_uint8_t_t* carg4);
+
+SWIGIMPORT bool wi_helper_saveTextureToFile_rcwi_graphics_Texture_rcstd_string(SWIGTYPE_wi__graphics__Texture* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT bool wi_helper_saveTextureToFile_rcwi_vector_Sl_uint8_t_Sg__rcwi_graphics_TextureDesc_rcstd_string(SWIGTYPE_wi__vectorT_uint8_t_t* carg1, SWIGTYPE_wi__graphics__TextureDesc* carg2, SWIGTYPE_std__string* carg3);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_getCurrentDateTimeAsString();
+
+SWIGIMPORT void wi_helper_SplitPath(SWIGTYPE_std__string* carg1, SWIGTYPE_std__string* carg2, SWIGTYPE_std__string* carg3);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_GetFileNameFromPath(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_GetDirectoryFromPath(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_GetExtensionFromFileName(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_ReplaceExtension(SWIGTYPE_std__string* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_ForceExtension(SWIGTYPE_std__string* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_RemoveExtension(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_GetPathRelative(SWIGTYPE_std__string* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT void wi_helper_MakePathRelative(SWIGTYPE_std__string* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT void wi_helper_MakePathAbsolute(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT void wi_helper_DirectoryCreate(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sg__size_t_size_t(SWIGTYPE_std__string* carg1, SWIGTYPE_wi__vectorT_uint8_t_t* carg2, size_t carg3, size_t carg4);
+
+SWIGIMPORT bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sg__size_t(SWIGTYPE_std__string* carg1, SWIGTYPE_wi__vectorT_uint8_t_t* carg2, size_t carg3);
+
+SWIGIMPORT bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sg_(SWIGTYPE_std__string* carg1, SWIGTYPE_wi__vectorT_uint8_t_t* carg2);
+
+SWIGIMPORT bool wi_helper_FileWrite(SWIGTYPE_std__string* carg1, SWIGTYPE_p_uint8_t* carg2, size_t carg3);
+
+SWIGIMPORT bool wi_helper_FileExists(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT bool wi_helper_DirectoryExists(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_helper_FileTimestamp(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_GetTempDirectoryPath();
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_GetCacheDirectoryPath();
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_GetCurrentPath();
+
+SWIGIMPORT void wi_helper_FileDialogParams_type_set(wi_Sf_helper_FileDialogParams* carg1, enum wi_Sf_helper_FileDialogParams_TYPE carg2);
+
+SWIGIMPORT enum wi_Sf_helper_FileDialogParams_TYPE wi_helper_FileDialogParams_type_get(wi_Sf_helper_FileDialogParams* carg1);
+
+SWIGIMPORT void wi_helper_FileDialogParams_description_set(wi_Sf_helper_FileDialogParams* carg1, SWIGTYPE_p_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_FileDialogParams_description_get(wi_Sf_helper_FileDialogParams* carg1);
+
+SWIGIMPORT void wi_helper_FileDialogParams_extensions_set(wi_Sf_helper_FileDialogParams* carg1, SWIGTYPE_p_wi__vectorT_std__string_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_std__string_t* wi_helper_FileDialogParams_extensions_get(wi_Sf_helper_FileDialogParams* carg1);
+
+SWIGIMPORT wi_Sf_helper_FileDialogParams* wi_helper_FileDialogParams_new();
+
+SWIGIMPORT void wi_helper_FileDialogParams_delete(wi_Sf_helper_FileDialogParams* carg1);
+
+SWIGIMPORT void wi_helper_FileDialog(wi_Sf_helper_FileDialogParams* carg1, SWIGTYPE_p_std__functionT_void_fstd__stringF_t* carg2);
+
+SWIGIMPORT void wi_helper_GetFileNamesInDirectory_rcstd_string_std_function_Sl_void_Sp_std_string_SP__Sg__rcstd_string(SWIGTYPE_std__string* carg1, SWIGTYPE_p_std__functionT_void_fstd__stringF_t* carg2, SWIGTYPE_std__string* carg3);
+
+SWIGIMPORT void wi_helper_GetFileNamesInDirectory_rcstd_string_std_function_Sl_void_Sp_std_string_SP__Sg_(SWIGTYPE_std__string* carg1, SWIGTYPE_p_std__functionT_void_fstd__stringF_t* carg2);
+
+SWIGIMPORT void wi_helper_GetFolderNamesInDirectory(SWIGTYPE_std__string* carg1, SWIGTYPE_p_std__functionT_void_fstd__stringF_t* carg2);
+
+SWIGIMPORT bool wi_helper_Bin2H(SWIGTYPE_p_uint8_t* carg1, size_t carg2, SWIGTYPE_std__string* carg3, const char * carg4);
+
+SWIGIMPORT void wi_helper_StringConvert_rcstd_string_rstd_wstring(SWIGTYPE_std__string* carg1, SWIGTYPE_std__wstring* carg2);
+
+SWIGIMPORT void wi_helper_StringConvert_rcstd_wstring_rstd_string(SWIGTYPE_std__wstring* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT int wi_helper_StringConvert_pcc_pwchar_t_i(const char * carg1, SWIGTYPE_p_wchar_t* carg2, int carg3);
+
+SWIGIMPORT int wi_helper_StringConvert_pcc_pwchar_t(const char * carg1, SWIGTYPE_p_wchar_t* carg2);
+
+SWIGIMPORT int wi_helper_StringConvert_pcwchar_t_pc_i(SWIGTYPE_p_wchar_t* carg1, char * carg2, int carg3);
+
+SWIGIMPORT int wi_helper_StringConvert_pcwchar_t_pc(SWIGTYPE_p_wchar_t* carg1, char * carg2);
+
+SWIGIMPORT void wi_helper_DebugOut_rcstd_string_eDebugLevel(SWIGTYPE_std__string* carg1, enum wi_Sf_helper_DebugLevel carg2);
+
+SWIGIMPORT void wi_helper_DebugOut_rcstd_string(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT void wi_helper_Sleep(float carg1);
+
+SWIGIMPORT void wi_helper_Spin(float carg1);
+
+SWIGIMPORT void wi_helper_QuickSleep(float carg1);
+
+SWIGIMPORT void wi_helper_OpenUrl(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT void wi_helper_MemoryUsage_total_physical_set(wi_Sf_helper_MemoryUsage* carg1, SWIGTYPE_p_uint64_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_helper_MemoryUsage_total_physical_get(wi_Sf_helper_MemoryUsage* carg1);
+
+SWIGIMPORT void wi_helper_MemoryUsage_total_virtual_set(wi_Sf_helper_MemoryUsage* carg1, SWIGTYPE_p_uint64_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_helper_MemoryUsage_total_virtual_get(wi_Sf_helper_MemoryUsage* carg1);
+
+SWIGIMPORT void wi_helper_MemoryUsage_process_physical_set(wi_Sf_helper_MemoryUsage* carg1, SWIGTYPE_p_uint64_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_helper_MemoryUsage_process_physical_get(wi_Sf_helper_MemoryUsage* carg1);
+
+SWIGIMPORT void wi_helper_MemoryUsage_process_virtual_set(wi_Sf_helper_MemoryUsage* carg1, SWIGTYPE_p_uint64_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_helper_MemoryUsage_process_virtual_get(wi_Sf_helper_MemoryUsage* carg1);
+
+SWIGIMPORT wi_Sf_helper_MemoryUsage* wi_helper_MemoryUsage_new();
+
+SWIGIMPORT void wi_helper_MemoryUsage_delete(wi_Sf_helper_MemoryUsage* carg1);
+
+SWIGIMPORT wi_Sf_helper_MemoryUsage* wi_helper_GetMemoryUsage();
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_GetMemorySizeText(size_t carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_GetTimerDurationText(float carg1);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_helper_GetPlatformErrorString(SWIGTYPE_p_wi__platform__error_type* carg1);
+
+SWIGIMPORT bool wi_helper_Compress(SWIGTYPE_p_uint8_t* carg1, size_t carg2, SWIGTYPE_wi__vectorT_uint8_t_t* carg3);
+
+SWIGIMPORT bool wi_helper_Decompress(SWIGTYPE_p_uint8_t* carg1, size_t carg2, SWIGTYPE_wi__vectorT_uint8_t_t* carg3);
+
+SWIGIMPORT void wi_initializer_InitializeComponentsImmediate();
+
+SWIGIMPORT void wi_initializer_InitializeComponentsAsync();
+
+SWIGIMPORT bool wi_initializer_IsInitializeFinished_eINITIALIZED_SYSTEM(enum wi_Sf_initializer_INITIALIZED_SYSTEM carg1);
+
+SWIGIMPORT bool wi_initializer_IsInitializeFinished();
+
+SWIGIMPORT void wi_initializer_WaitForInitializationsToFinish();
+
+SWIGIMPORT void wi_jobsystem_Initialize_uint32_t(SWIGTYPE_p_uint32_t* carg1);
+
+SWIGIMPORT void wi_jobsystem_Initialize();
+
+SWIGIMPORT void wi_jobsystem_ShutDown();
+
+SWIGIMPORT void wi_jobsystem_JobArgs_jobIndex_set(wi_Sf_jobsystem_JobArgs* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_jobsystem_JobArgs_jobIndex_get(wi_Sf_jobsystem_JobArgs* carg1);
+
+SWIGIMPORT void wi_jobsystem_JobArgs_groupID_set(wi_Sf_jobsystem_JobArgs* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_jobsystem_JobArgs_groupID_get(wi_Sf_jobsystem_JobArgs* carg1);
+
+SWIGIMPORT void wi_jobsystem_JobArgs_groupIndex_set(wi_Sf_jobsystem_JobArgs* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_jobsystem_JobArgs_groupIndex_get(wi_Sf_jobsystem_JobArgs* carg1);
+
+SWIGIMPORT void wi_jobsystem_JobArgs_isFirstJobInGroup_set(wi_Sf_jobsystem_JobArgs* carg1, bool carg2);
+
+SWIGIMPORT bool wi_jobsystem_JobArgs_isFirstJobInGroup_get(wi_Sf_jobsystem_JobArgs* carg1);
+
+SWIGIMPORT void wi_jobsystem_JobArgs_isLastJobInGroup_set(wi_Sf_jobsystem_JobArgs* carg1, bool carg2);
+
+SWIGIMPORT bool wi_jobsystem_JobArgs_isLastJobInGroup_get(wi_Sf_jobsystem_JobArgs* carg1);
+
+SWIGIMPORT void wi_jobsystem_JobArgs_sharedmemory_set(wi_Sf_jobsystem_JobArgs* carg1, void * carg2);
+
+SWIGIMPORT void * wi_jobsystem_JobArgs_sharedmemory_get(wi_Sf_jobsystem_JobArgs* carg1);
+
+SWIGIMPORT wi_Sf_jobsystem_JobArgs* wi_jobsystem_JobArgs_new();
+
+SWIGIMPORT void wi_jobsystem_JobArgs_delete(wi_Sf_jobsystem_JobArgs* carg1);
+
+SWIGIMPORT void wi_jobsystem_context_counter_set(wi_Sf_jobsystem_context* carg1, long carg2);
+
+SWIGIMPORT long wi_jobsystem_context_counter_get(wi_Sf_jobsystem_context* carg1);
+
+SWIGIMPORT void wi_jobsystem_context_priority_set(wi_Sf_jobsystem_context* carg1, enum wi_Sf_jobsystem_Priority carg2);
+
+SWIGIMPORT enum wi_Sf_jobsystem_Priority wi_jobsystem_context_priority_get(wi_Sf_jobsystem_context* carg1);
+
+SWIGIMPORT wi_Sf_jobsystem_context* wi_jobsystem_context_new();
+
+SWIGIMPORT void wi_jobsystem_context_delete(wi_Sf_jobsystem_context* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_jobsystem_GetThreadCount_ePriority(enum wi_Sf_jobsystem_Priority carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_jobsystem_GetThreadCount();
+
+SWIGIMPORT void wi_jobsystem_Execute(wi_Sf_jobsystem_context* carg1, SWIGTYPE_std__functionT_void_fwi__jobsystem__JobArgsF_t* carg2);
+
+SWIGIMPORT void wi_jobsystem_Dispatch_rwi_jobsystem_context_uint32_t_uint32_t_rcstd_function_Sl_void_Sp_wi_jobsystem_JobArgs_SP__Sg__size_t(wi_Sf_jobsystem_context* carg1, SWIGTYPE_p_uint32_t* carg2, SWIGTYPE_p_uint32_t* carg3, SWIGTYPE_std__functionT_void_fwi__jobsystem__JobArgsF_t* carg4, size_t carg5);
+
+SWIGIMPORT void wi_jobsystem_Dispatch_rwi_jobsystem_context_uint32_t_uint32_t_rcstd_function_Sl_void_Sp_wi_jobsystem_JobArgs_SP__Sg_(wi_Sf_jobsystem_context* carg1, SWIGTYPE_p_uint32_t* carg2, SWIGTYPE_p_uint32_t* carg3, SWIGTYPE_std__functionT_void_fwi__jobsystem__JobArgsF_t* carg4);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_jobsystem_DispatchGroupCount(SWIGTYPE_p_uint32_t* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT bool wi_jobsystem_IsBusy(wi_Sf_jobsystem_context* carg1);
+
+SWIGIMPORT void wi_jobsystem_Wait(wi_Sf_jobsystem_context* carg1);
+
+SWIGIMPORT void wi_LoadingScreen_backgroundTexture_set(wi_LoadingScreen* carg1, SWIGTYPE_p_wi__Resource* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__Resource* wi_LoadingScreen_backgroundTexture_get(wi_LoadingScreen* carg1);
+
+SWIGIMPORT void wi_LoadingScreen_background_mode_set(wi_LoadingScreen* carg1, enum wi_LoadingScreen_BackgroundMode carg2);
+
+SWIGIMPORT enum wi_LoadingScreen_BackgroundMode wi_LoadingScreen_background_mode_get(wi_LoadingScreen* carg1);
+
+SWIGIMPORT void wi_LoadingScreen_addLoadingFunction(wi_LoadingScreen* carg1, SWIGTYPE_p_std__functionT_void_fwi__jobsystem__JobArgsF_t* carg2);
+
+SWIGIMPORT void wi_LoadingScreen_addLoadingComponent_pwi_RenderPath_pwi_Application_f_wi_Color(wi_LoadingScreen* carg1, wi_RenderPath* carg2, wi_Application* carg3, float carg4, wi_Color* carg5);
+
+SWIGIMPORT void wi_LoadingScreen_addLoadingComponent_pwi_RenderPath_pwi_Application_f(wi_LoadingScreen* carg1, wi_RenderPath* carg2, wi_Application* carg3, float carg4);
+
+SWIGIMPORT void wi_LoadingScreen_addLoadingComponent_pwi_RenderPath_pwi_Application(wi_LoadingScreen* carg1, wi_RenderPath* carg2, wi_Application* carg3);
+
+SWIGIMPORT void wi_LoadingScreen_onFinished(wi_LoadingScreen* carg1, SWIGTYPE_p_std__functionT_void_fF_t* carg2);
+
+SWIGIMPORT bool wi_LoadingScreen_isActive(wi_LoadingScreen* carg1);
+
+SWIGIMPORT bool wi_LoadingScreen_isFinished(wi_LoadingScreen* carg1);
+
+SWIGIMPORT int wi_LoadingScreen_getProgress(wi_LoadingScreen* carg1);
+
+SWIGIMPORT void wi_LoadingScreen_Start(wi_LoadingScreen* carg1);
+
+SWIGIMPORT void wi_LoadingScreen_Compose(wi_LoadingScreen* carg1, SWIGTYPE_p_wi__graphics__CommandList* carg2);
+
+SWIGIMPORT wi_LoadingScreen* wi_LoadingScreen_new();
+
+SWIGIMPORT void wi_LoadingScreen_delete(wi_LoadingScreen* carg1);
+
+SWIGIMPORT void wi_Localization_entries_set(wi_Localization* carg1, SWIGTYPE_p_wi__vectorT_wi__Localization__Entry_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_wi__Localization__Entry_t* wi_Localization_entries_get(wi_Localization* carg1);
+
+SWIGIMPORT void wi_Localization_lookup_set(wi_Localization* carg1, SWIGTYPE_p_wi__unordered_mapT_size_t_size_t_std__hashT_size_t_t_std__equal_toT_size_t_t_std__allocatorT_std__pairT_size_t_const_size_t_t_t_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__unordered_mapT_size_t_size_t_std__hashT_size_t_t_std__equal_toT_size_t_t_std__allocatorT_std__pairT_size_t_const_size_t_t_t_t* wi_Localization_lookup_get(wi_Localization* carg1);
+
+SWIGIMPORT void wi_Localization_sections_set(wi_Localization* carg1, SWIGTYPE_p_wi__unordered_mapT_std__string_wi__Localization_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_wi__Localization_t_t_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__unordered_mapT_std__string_wi__Localization_std__hashT_std__string_t_std__equal_toT_std__string_t_std__allocatorT_std__pairT_std__string_const_wi__Localization_t_t_t* wi_Localization_sections_get(wi_Localization* carg1);
+
+SWIGIMPORT void wi_Localization_section_hint_set(wi_Localization* carg1, SWIGTYPE_p_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_Localization_section_hint_get(wi_Localization* carg1);
+
+SWIGIMPORT bool wi_Localization_IsValid(wi_Localization* carg1);
+
+SWIGIMPORT wi_Localization* wi_Localization_GetSection_pcc(wi_Localization* carg1, const char * carg2);
+
+SWIGIMPORT wi_Localization* wi_Localization_GetSection_rcstd_string(wi_Localization* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT wi_Localization* wi_Localization_CheckSection_pcc(wi_Localization* carg1, const char * carg2);
+
+SWIGIMPORT wi_Localization* wi_Localization_CheckSection_rcstd_string(wi_Localization* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT void wi_Localization_SetSectionHint_pcc(wi_Localization* carg1, const char * carg2);
+
+SWIGIMPORT void wi_Localization_SetSectionHint_rcstd_string(wi_Localization* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT void wi_Localization_Add_size_t_pcc_pcc(wi_Localization* carg1, size_t carg2, const char * carg3, const char * carg4);
+
+SWIGIMPORT void wi_Localization_Add_size_t_pcc(wi_Localization* carg1, size_t carg2, const char * carg3);
+
+SWIGIMPORT const char * wi_Localization_Get(wi_Localization* carg1, size_t carg2);
+
+SWIGIMPORT bool wi_Localization_Import(wi_Localization* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT bool wi_Localization_Export(wi_Localization* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT wi_Localization* wi_Localization_new();
+
+SWIGIMPORT void wi_Localization_delete(wi_Localization* carg1);
+
+SWIGIMPORT void wi_network_Socket_internal_state_set(wi_Sf_network_Socket* carg1, SWIGTYPE_p_std__shared_ptrT_void_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__shared_ptrT_void_t* wi_network_Socket_internal_state_get(wi_Sf_network_Socket* carg1);
+
+SWIGIMPORT bool wi_network_Socket_IsValid(wi_Sf_network_Socket* carg1);
+
+SWIGIMPORT wi_Sf_network_Socket* wi_network_Socket_new();
+
+SWIGIMPORT void wi_network_Socket_delete(wi_Sf_network_Socket* carg1);
+
+SWIGIMPORT void wi_network_Connection_ipaddress_set(wi_Sf_network_Connection* carg1, SWIGTYPE_p_std__arrayT_uint8_t_4_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__arrayT_uint8_t_4_t* wi_network_Connection_ipaddress_get(wi_Sf_network_Connection* carg1);
+
+SWIGIMPORT void wi_network_Connection_port_set(wi_Sf_network_Connection* carg1, SWIGTYPE_p_uint16_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint16_t* wi_network_Connection_port_get(wi_Sf_network_Connection* carg1);
+
+SWIGIMPORT wi_Sf_network_Connection* wi_network_Connection_new();
+
+SWIGIMPORT void wi_network_Connection_delete(wi_Sf_network_Connection* carg1);
+
+SWIGIMPORT bool wi_network_CreateSocket(wi_Sf_network_Socket* carg1);
+
+SWIGIMPORT bool wi_network_Send(wi_Sf_network_Socket* carg1, wi_Sf_network_Connection* carg2, const void * carg3, size_t carg4);
+
+SWIGIMPORT bool wi_network_ListenPort_pcwi_network_Socket_uint16_t(wi_Sf_network_Socket* carg1, SWIGTYPE_p_uint16_t* carg2);
+
+SWIGIMPORT bool wi_network_ListenPort_pcwi_network_Socket(wi_Sf_network_Socket* carg1);
+
+SWIGIMPORT bool wi_network_CanReceive_pcwi_network_Socket_l(wi_Sf_network_Socket* carg1, long carg2);
+
+SWIGIMPORT bool wi_network_CanReceive_pcwi_network_Socket(wi_Sf_network_Socket* carg1);
+
+SWIGIMPORT bool wi_network_Receive(wi_Sf_network_Socket* carg1, wi_Sf_network_Connection* carg2, void * carg3, size_t carg4);
+
+SWIGIMPORT void wi_Ocean_Create(wi_Ocean* carg1, SWIGTYPE_wi__Ocean__OceanParameters* carg2);
+
+SWIGIMPORT void wi_Ocean_UpdateDisplacementMap(wi_Ocean* carg1, SWIGTYPE_p_wi__graphics__CommandList* carg2);
+
+SWIGIMPORT void wi_Ocean_RenderForOcclusionTest(wi_Ocean* carg1, SWIGTYPE_wi__scene__CameraComponent* carg2, SWIGTYPE_p_wi__graphics__CommandList* carg3);
+
+SWIGIMPORT void wi_Ocean_Render(wi_Ocean* carg1, SWIGTYPE_wi__scene__CameraComponent* carg2, SWIGTYPE_p_wi__graphics__CommandList* carg3);
+
+SWIGIMPORT void wi_Ocean_CopyDisplacementMapReadback(wi_Ocean* carg1, SWIGTYPE_p_wi__graphics__CommandList* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__Texture* wi_Ocean_getDisplacementMap(wi_Ocean* carg1);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__Texture* wi_Ocean_getGradientMap(wi_Ocean* carg1);
+
+SWIGIMPORT void wi_Ocean_Initialize();
+
+SWIGIMPORT bool wi_Ocean_IsValid(wi_Ocean* carg1);
+
+SWIGIMPORT void wi_Ocean_occlusionHistory_set(wi_Ocean* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_Ocean_occlusionHistory_get(wi_Ocean* carg1);
+
+SWIGIMPORT void wi_Ocean_occlusionQueries_set(wi_Ocean* carg1, int * carg2);
+
+SWIGIMPORT int * wi_Ocean_occlusionQueries_get(wi_Ocean* carg1);
+
+SWIGIMPORT bool wi_Ocean_IsOccluded(wi_Ocean* carg1);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT3* wi_Ocean_GetDisplacedPosition(wi_Ocean* carg1, SWIGTYPE_XMFLOAT3* carg2);
+
+SWIGIMPORT void wi_Ocean_params_set(wi_Ocean* carg1, SWIGTYPE_p_wi__Ocean__OceanParameters* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__Ocean__OceanParameters* wi_Ocean_params_get(wi_Ocean* carg1);
+
+SWIGIMPORT wi_Ocean* wi_Ocean_new();
+
+SWIGIMPORT void wi_Ocean_delete(wi_Ocean* carg1);
+
+SWIGIMPORT void wi_profiler_BeginFrame();
+
+SWIGIMPORT void wi_profiler_EndFrame(SWIGTYPE_p_wi__graphics__CommandList* carg1);
+
+SWIGIMPORT size_t wi_profiler_BeginRangeCPU(const char * carg1);
+
+SWIGIMPORT size_t wi_profiler_BeginRangeGPU(const char * carg1, SWIGTYPE_p_wi__graphics__CommandList* carg2);
+
+SWIGIMPORT void wi_profiler_EndRange(size_t carg1);
+
+SWIGIMPORT void wi_profiler_ScopedRangeCPU_id_set(wi_Sf_profiler_ScopedRangeCPU* carg1, size_t carg2);
+
+SWIGIMPORT size_t wi_profiler_ScopedRangeCPU_id_get(wi_Sf_profiler_ScopedRangeCPU* carg1);
+
+SWIGIMPORT wi_Sf_profiler_ScopedRangeCPU* wi_profiler_ScopedRangeCPU_new(const char * carg1);
+
+SWIGIMPORT void wi_profiler_ScopedRangeCPU_delete(wi_Sf_profiler_ScopedRangeCPU* carg1);
+
+SWIGIMPORT void wi_profiler_ScopedRangeGPU_id_set(wi_Sf_profiler_ScopedRangeGPU* carg1, size_t carg2);
+
+SWIGIMPORT size_t wi_profiler_ScopedRangeGPU_id_get(wi_Sf_profiler_ScopedRangeGPU* carg1);
+
+SWIGIMPORT wi_Sf_profiler_ScopedRangeGPU* wi_profiler_ScopedRangeGPU_new(const char * carg1, SWIGTYPE_p_wi__graphics__CommandList* carg2);
+
+SWIGIMPORT void wi_profiler_ScopedRangeGPU_delete(wi_Sf_profiler_ScopedRangeGPU* carg1);
+
+SWIGIMPORT void wi_profiler_DrawData_rcwi_Canvas_f_f_wi_graphics_CommandList_wi_graphics_ColorSpace(SWIGTYPE_wi__Canvas* carg1, float carg2, float carg3, SWIGTYPE_p_wi__graphics__CommandList* carg4, SWIGTYPE_p_wi__graphics__ColorSpace* carg5);
+
+SWIGIMPORT void wi_profiler_DrawData_rcwi_Canvas_f_f_wi_graphics_CommandList(SWIGTYPE_wi__Canvas* carg1, float carg2, float carg3, SWIGTYPE_p_wi__graphics__CommandList* carg4);
+
+SWIGIMPORT void wi_profiler_DisableDrawForThisFrame();
+
+SWIGIMPORT void wi_profiler_SetEnabled(bool carg1);
+
+SWIGIMPORT bool wi_profiler_IsEnabled();
+
+SWIGIMPORT void wi_profiler_SetBackgroundColor(wi_Color* carg1);
+
+SWIGIMPORT void wi_profiler_SetTextColor(wi_Color* carg1);
+
+SWIGIMPORT void wi_random_RNG_state_set(wi_Sf_random_RNG* carg1, SWIGTYPE_p_uint64_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_random_RNG_state_get(wi_Sf_random_RNG* carg1);
+
+SWIGIMPORT wi_Sf_random_RNG* wi_random_RNG_new_uint64_t(SWIGTYPE_p_uint64_t* carg1);
+
+SWIGIMPORT wi_Sf_random_RNG* wi_random_RNG_new();
+
+SWIGIMPORT void wi_random_RNG_seed(wi_Sf_random_RNG* carg1, SWIGTYPE_p_uint64_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_random_RNG_next_uint(wi_Sf_random_RNG* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_random_RNG_next_uint_uint64_t_uint64_t(wi_Sf_random_RNG* carg1, SWIGTYPE_p_uint64_t* carg2, SWIGTYPE_p_uint64_t* carg3);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_random_RNG_next_uint_uint32_t_uint32_t(wi_Sf_random_RNG* carg1, SWIGTYPE_p_uint32_t* carg2, SWIGTYPE_p_uint32_t* carg3);
+
+SWIGIMPORT SWIGTYPE_p_int64_t* wi_random_RNG_next_int(wi_Sf_random_RNG* carg1);
+
+SWIGIMPORT SWIGTYPE_p_int64_t* wi_random_RNG_next_int_int64_t_int64_t(wi_Sf_random_RNG* carg1, SWIGTYPE_p_int64_t* carg2, SWIGTYPE_p_int64_t* carg3);
+
+SWIGIMPORT SWIGTYPE_p_int32_t* wi_random_RNG_next_int_int32_t_int32_t(wi_Sf_random_RNG* carg1, SWIGTYPE_p_int32_t* carg2, SWIGTYPE_p_int32_t* carg3);
+
+SWIGIMPORT float wi_random_RNG_next_float(wi_Sf_random_RNG* carg1);
+
+SWIGIMPORT float wi_random_RNG_next_float_f_f(wi_Sf_random_RNG* carg1, float carg2, float carg3);
+
+SWIGIMPORT void wi_random_RNG_delete(wi_Sf_random_RNG* carg1);
+
+SWIGIMPORT int wi_random_GetRandom_i_i(int carg1, int carg2);
+
+SWIGIMPORT int wi_random_GetRandom_i(int carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_random_GetRandom_uint32_t_uint32_t(SWIGTYPE_p_uint32_t* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_random_GetRandom_uint32_t(SWIGTYPE_p_uint32_t* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_random_GetRandom_uint64_t_uint64_t(SWIGTYPE_p_uint64_t* carg1, SWIGTYPE_p_uint64_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint64_t* wi_random_GetRandom_uint64_t(SWIGTYPE_p_uint64_t* carg1);
+
+SWIGIMPORT float wi_random_GetRandom_f_f(float carg1, float carg2);
+
+SWIGIMPORT float wi_random_GetRandom_f(float carg1);
+
+SWIGIMPORT void wi_rectpacker_State_context_set(wi_Sf_rectpacker_State* carg1, SWIGTYPE_p_stbrp_context* carg2);
+
+SWIGIMPORT SWIGTYPE_p_stbrp_context* wi_rectpacker_State_context_get(wi_Sf_rectpacker_State* carg1);
+
+SWIGIMPORT void wi_rectpacker_State_nodes_set(wi_Sf_rectpacker_State* carg1, SWIGTYPE_p_wi__vectorT_stbrp_node_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_stbrp_node_t* wi_rectpacker_State_nodes_get(wi_Sf_rectpacker_State* carg1);
+
+SWIGIMPORT void wi_rectpacker_State_rects_set(wi_Sf_rectpacker_State* carg1, SWIGTYPE_p_wi__vectorT_stbrp_rect_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_stbrp_rect_t* wi_rectpacker_State_rects_get(wi_Sf_rectpacker_State* carg1);
+
+SWIGIMPORT void wi_rectpacker_State_width_set(wi_Sf_rectpacker_State* carg1, int carg2);
+
+SWIGIMPORT int wi_rectpacker_State_width_get(wi_Sf_rectpacker_State* carg1);
+
+SWIGIMPORT void wi_rectpacker_State_height_set(wi_Sf_rectpacker_State* carg1, int carg2);
+
+SWIGIMPORT int wi_rectpacker_State_height_get(wi_Sf_rectpacker_State* carg1);
+
+SWIGIMPORT void wi_rectpacker_State_clear(wi_Sf_rectpacker_State* carg1);
+
+SWIGIMPORT void wi_rectpacker_State_add_rect(wi_Sf_rectpacker_State* carg1, SWIGTYPE_stbrp_rect* carg2);
+
+SWIGIMPORT bool wi_rectpacker_State_pack(wi_Sf_rectpacker_State* carg1, int carg2);
+
+SWIGIMPORT wi_Sf_rectpacker_State* wi_rectpacker_State_new();
+
+SWIGIMPORT void wi_rectpacker_State_delete(wi_Sf_rectpacker_State* carg1);
+
+SWIGIMPORT void wi_RenderPath_delete(wi_RenderPath* carg1);
+
+SWIGIMPORT void wi_RenderPath_Load(wi_RenderPath* carg1);
+
+SWIGIMPORT void wi_RenderPath_Start(wi_RenderPath* carg1);
+
+SWIGIMPORT void wi_RenderPath_Stop(wi_RenderPath* carg1);
+
+SWIGIMPORT void wi_RenderPath_PreUpdate(wi_RenderPath* carg1);
+
+SWIGIMPORT void wi_RenderPath_FixedUpdate(wi_RenderPath* carg1);
+
+SWIGIMPORT void wi_RenderPath_Update(wi_RenderPath* carg1, float carg2);
+
+SWIGIMPORT void wi_RenderPath_PostUpdate(wi_RenderPath* carg1);
+
+SWIGIMPORT void wi_RenderPath_Render(wi_RenderPath* carg1);
+
+SWIGIMPORT void wi_RenderPath_Compose(wi_RenderPath* carg1, SWIGTYPE_p_wi__graphics__CommandList* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_RenderPath_getLayerMask(wi_RenderPath* carg1);
+
+SWIGIMPORT void wi_RenderPath_setlayerMask(wi_RenderPath* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT void wi_RenderPath_colorspace_set(wi_RenderPath* carg1, SWIGTYPE_p_wi__graphics__ColorSpace* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__ColorSpace* wi_RenderPath_colorspace_get(wi_RenderPath* carg1);
+
+SWIGIMPORT wi_RenderPath* wi_RenderPath_new();
+
+SWIGIMPORT void wi_RenderPath2D_DeleteGPUResources(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_ResizeBuffers(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_ResizeLayout(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_setMSAASampleCount(wi_RenderPath2D* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_RenderPath2D_getMSAASampleCount(wi_RenderPath2D* carg1);
+
+SWIGIMPORT SWIGTYPE_wi__graphics__Texture* wi_RenderPath2D_GetRenderResult(wi_RenderPath2D* carg1);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__Texture* wi_RenderPath2D_GetDepthStencil(wi_RenderPath2D* carg1);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__Texture* wi_RenderPath2D_GetGUIBlurredBackground(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_AddSprite_pwi_Sprite_rcstd_string(wi_RenderPath2D* carg1, wi_Sprite* carg2, SWIGTYPE_std__string* carg3);
+
+SWIGIMPORT void wi_RenderPath2D_AddSprite_pwi_Sprite(wi_RenderPath2D* carg1, wi_Sprite* carg2);
+
+SWIGIMPORT void wi_RenderPath2D_RemoveSprite(wi_RenderPath2D* carg1, wi_Sprite* carg2);
+
+SWIGIMPORT void wi_RenderPath2D_ClearSprites(wi_RenderPath2D* carg1);
+
+SWIGIMPORT int wi_RenderPath2D_GetSpriteOrder(wi_RenderPath2D* carg1, wi_Sprite* carg2);
+
+SWIGIMPORT void wi_RenderPath2D_AddFont_pwi_SpriteFont_rcstd_string(wi_RenderPath2D* carg1, wi_SpriteFont* carg2, SWIGTYPE_std__string* carg3);
+
+SWIGIMPORT void wi_RenderPath2D_AddFont_pwi_SpriteFont(wi_RenderPath2D* carg1, wi_SpriteFont* carg2);
+
+SWIGIMPORT void wi_RenderPath2D_RemoveFont(wi_RenderPath2D* carg1, wi_SpriteFont* carg2);
+
+SWIGIMPORT void wi_RenderPath2D_ClearFonts(wi_RenderPath2D* carg1);
+
+SWIGIMPORT int wi_RenderPath2D_GetFontOrder(wi_RenderPath2D* carg1, wi_SpriteFont* carg2);
+
+SWIGIMPORT void wi_RenderPath2D_layers_set(wi_RenderPath2D* carg1, SWIGTYPE_p_wi__vectorT_wi__RenderPath2D__RenderLayer2D_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_wi__RenderPath2D__RenderLayer2D_t* wi_RenderPath2D_layers_get(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_AddLayer(wi_RenderPath2D* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT void wi_RenderPath2D_SetLayerOrder(wi_RenderPath2D* carg1, SWIGTYPE_std__string* carg2, int carg3);
+
+SWIGIMPORT void wi_RenderPath2D_SetSpriteOrder(wi_RenderPath2D* carg1, wi_Sprite* carg2, int carg3);
+
+SWIGIMPORT void wi_RenderPath2D_SetFontOrder(wi_RenderPath2D* carg1, wi_SpriteFont* carg2, int carg3);
+
+SWIGIMPORT void wi_RenderPath2D_SortLayers(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_CleanLayers(wi_RenderPath2D* carg1);
+
+SWIGIMPORT SWIGTYPE_wi__gui__GUI* wi_RenderPath2D_GetGUI_const(wi_RenderPath2D* carg1);
+
+SWIGIMPORT SWIGTYPE_wi__gui__GUI* wi_RenderPath2D_GetGUI(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_resolutionScale_set(wi_RenderPath2D* carg1, float carg2);
+
+SWIGIMPORT float wi_RenderPath2D_resolutionScale_get(wi_RenderPath2D* carg1);
+
+SWIGIMPORT SWIGTYPE_p_XMUINT2* wi_RenderPath2D_GetInternalResolution(wi_RenderPath2D* carg1);
+
+SWIGIMPORT float wi_RenderPath2D_GetHDRScaling(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_SetHDRScaling(wi_RenderPath2D* carg1, float carg2);
+
+SWIGIMPORT wi_RenderPath2D* wi_RenderPath2D_new();
+
+SWIGIMPORT void wi_RenderPath2D_delete(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_Load(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_Start(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_Stop(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_PreUpdate(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_PostUpdate(wi_RenderPath2D* carg1);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_RenderPath2D_getLayerMask(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath2D_setlayerMask(wi_RenderPath2D* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT void wi_RenderPath2D_colorspace_set(wi_RenderPath2D* carg1, SWIGTYPE_p_wi__graphics__ColorSpace* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__ColorSpace* wi_RenderPath2D_colorspace_get(wi_RenderPath2D* carg1);
+
+SWIGIMPORT void wi_RenderPath3D_PathTracing_Update(wi_RenderPath3D_PathTracing* carg1, float carg2);
+
+SWIGIMPORT void wi_RenderPath3D_PathTracing_Render(wi_RenderPath3D_PathTracing* carg1);
+
+SWIGIMPORT void wi_RenderPath3D_PathTracing_Compose(wi_RenderPath3D_PathTracing* carg1, SWIGTYPE_p_wi__graphics__CommandList* carg2);
+
+SWIGIMPORT int wi_RenderPath3D_PathTracing_getCurrentSampleCount(wi_RenderPath3D_PathTracing* carg1);
+
+SWIGIMPORT void wi_RenderPath3D_PathTracing_setTargetSampleCount(wi_RenderPath3D_PathTracing* carg1, int carg2);
+
+SWIGIMPORT float wi_RenderPath3D_PathTracing_getProgress(wi_RenderPath3D_PathTracing* carg1);
+
+SWIGIMPORT void wi_RenderPath3D_PathTracing_denoiserProgress_set(wi_RenderPath3D_PathTracing* carg1, float carg2);
+
+SWIGIMPORT float wi_RenderPath3D_PathTracing_denoiserProgress_get(wi_RenderPath3D_PathTracing* carg1);
+
+SWIGIMPORT float wi_RenderPath3D_PathTracing_getDenoiserProgress(wi_RenderPath3D_PathTracing* carg1);
+
+SWIGIMPORT bool wi_RenderPath3D_PathTracing_isDenoiserAvailable(wi_RenderPath3D_PathTracing* carg1);
+
+SWIGIMPORT void wi_RenderPath3D_PathTracing_resetProgress(wi_RenderPath3D_PathTracing* carg1);
+
+SWIGIMPORT void wi_RenderPath3D_PathTracing_instanceInclusionMask_PathTrace_set(wi_RenderPath3D_PathTracing* carg1, SWIGTYPE_p_uint8_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint8_t* wi_RenderPath3D_PathTracing_instanceInclusionMask_PathTrace_get(wi_RenderPath3D_PathTracing* carg1);
+
+SWIGIMPORT wi_RenderPath3D_PathTracing* wi_RenderPath3D_PathTracing_new();
+
+SWIGIMPORT void wi_RenderPath3D_PathTracing_delete(wi_RenderPath3D_PathTracing* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerInput_flags_set(wi_Sf_shadercompiler_CompilerInput* carg1, enum wi_Sf_shadercompiler_Flags carg2);
+
+SWIGIMPORT enum wi_Sf_shadercompiler_Flags wi_shadercompiler_CompilerInput_flags_get(wi_Sf_shadercompiler_CompilerInput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerInput_format_set(wi_Sf_shadercompiler_CompilerInput* carg1, SWIGTYPE_p_wi__graphics__ShaderFormat* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__ShaderFormat* wi_shadercompiler_CompilerInput_format_get(wi_Sf_shadercompiler_CompilerInput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerInput_stage_set(wi_Sf_shadercompiler_CompilerInput* carg1, SWIGTYPE_p_wi__graphics__ShaderStage* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__ShaderStage* wi_shadercompiler_CompilerInput_stage_get(wi_Sf_shadercompiler_CompilerInput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerInput_minshadermodel_set(wi_Sf_shadercompiler_CompilerInput* carg1, SWIGTYPE_p_wi__graphics__ShaderModel* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__ShaderModel* wi_shadercompiler_CompilerInput_minshadermodel_get(wi_Sf_shadercompiler_CompilerInput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerInput_shadersourcefilename_set(wi_Sf_shadercompiler_CompilerInput* carg1, SWIGTYPE_p_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_shadercompiler_CompilerInput_shadersourcefilename_get(wi_Sf_shadercompiler_CompilerInput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerInput_entrypoint_set(wi_Sf_shadercompiler_CompilerInput* carg1, SWIGTYPE_p_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_shadercompiler_CompilerInput_entrypoint_get(wi_Sf_shadercompiler_CompilerInput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerInput_include_directories_set(wi_Sf_shadercompiler_CompilerInput* carg1, SWIGTYPE_p_wi__vectorT_std__string_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_std__string_t* wi_shadercompiler_CompilerInput_include_directories_get(wi_Sf_shadercompiler_CompilerInput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerInput_defines_set(wi_Sf_shadercompiler_CompilerInput* carg1, SWIGTYPE_p_wi__vectorT_std__string_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_std__string_t* wi_shadercompiler_CompilerInput_defines_get(wi_Sf_shadercompiler_CompilerInput* carg1);
+
+SWIGIMPORT wi_Sf_shadercompiler_CompilerInput* wi_shadercompiler_CompilerInput_new();
+
+SWIGIMPORT void wi_shadercompiler_CompilerInput_delete(wi_Sf_shadercompiler_CompilerInput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerOutput_internal_state_set(wi_Sf_shadercompiler_CompilerOutput* carg1, SWIGTYPE_p_std__shared_ptrT_void_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__shared_ptrT_void_t* wi_shadercompiler_CompilerOutput_internal_state_get(wi_Sf_shadercompiler_CompilerOutput* carg1);
+
+SWIGIMPORT bool wi_shadercompiler_CompilerOutput_IsValid(wi_Sf_shadercompiler_CompilerOutput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerOutput_shaderdata_set(wi_Sf_shadercompiler_CompilerOutput* carg1, SWIGTYPE_p_uint8_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint8_t* wi_shadercompiler_CompilerOutput_shaderdata_get(wi_Sf_shadercompiler_CompilerOutput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerOutput_shadersize_set(wi_Sf_shadercompiler_CompilerOutput* carg1, size_t carg2);
+
+SWIGIMPORT size_t wi_shadercompiler_CompilerOutput_shadersize_get(wi_Sf_shadercompiler_CompilerOutput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerOutput_shaderhash_set(wi_Sf_shadercompiler_CompilerOutput* carg1, SWIGTYPE_p_wi__vectorT_uint8_t_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_uint8_t_t* wi_shadercompiler_CompilerOutput_shaderhash_get(wi_Sf_shadercompiler_CompilerOutput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerOutput_error_message_set(wi_Sf_shadercompiler_CompilerOutput* carg1, SWIGTYPE_p_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_shadercompiler_CompilerOutput_error_message_get(wi_Sf_shadercompiler_CompilerOutput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_CompilerOutput_dependencies_set(wi_Sf_shadercompiler_CompilerOutput* carg1, SWIGTYPE_p_wi__vectorT_std__string_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_std__string_t* wi_shadercompiler_CompilerOutput_dependencies_get(wi_Sf_shadercompiler_CompilerOutput* carg1);
+
+SWIGIMPORT wi_Sf_shadercompiler_CompilerOutput* wi_shadercompiler_CompilerOutput_new();
+
+SWIGIMPORT void wi_shadercompiler_CompilerOutput_delete(wi_Sf_shadercompiler_CompilerOutput* carg1);
+
+SWIGIMPORT void wi_shadercompiler_Compile(wi_Sf_shadercompiler_CompilerInput* carg1, wi_Sf_shadercompiler_CompilerOutput* carg2);
+
+SWIGIMPORT bool wi_shadercompiler_SaveShaderAndMetadata(SWIGTYPE_std__string* carg1, wi_Sf_shadercompiler_CompilerOutput* carg2);
+
+SWIGIMPORT bool wi_shadercompiler_IsShaderOutdated(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT void wi_shadercompiler_RegisterShader(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT size_t wi_shadercompiler_GetRegisteredShaderCount();
+
+SWIGIMPORT bool wi_shadercompiler_CheckRegisteredShadersOutdated();
+
+SWIGIMPORT void wi_SpinLock_lock(wi_SpinLock* carg1);
+
+SWIGIMPORT bool wi_SpinLock_try_lock(wi_SpinLock* carg1);
+
+SWIGIMPORT void wi_SpinLock_unlock(wi_SpinLock* carg1);
+
+SWIGIMPORT wi_SpinLock* wi_SpinLock_new();
+
+SWIGIMPORT void wi_SpinLock_delete(wi_SpinLock* carg1);
+
+SWIGIMPORT void wi_Sprite__flags_set(wi_Sprite* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_Sprite__flags_get(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_textureName_set(wi_Sprite* carg1, SWIGTYPE_p_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_Sprite_textureName_get(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_maskName_set(wi_Sprite* carg1, SWIGTYPE_p_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_Sprite_maskName_get(wi_Sprite* carg1);
+
+SWIGIMPORT wi_Sprite* wi_Sprite_new_rcstd_string_rcstd_string(SWIGTYPE_std__string* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT wi_Sprite* wi_Sprite_new_rcstd_string(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT wi_Sprite* wi_Sprite_new();
+
+SWIGIMPORT void wi_Sprite_delete(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_FixedUpdate(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_Update(wi_Sprite* carg1, float carg2);
+
+SWIGIMPORT void wi_Sprite_Draw(wi_Sprite* carg1, SWIGTYPE_p_wi__graphics__CommandList* carg2);
+
+SWIGIMPORT void wi_Sprite_SetHidden_b(wi_Sprite* carg1, bool carg2);
+
+SWIGIMPORT void wi_Sprite_SetHidden(wi_Sprite* carg1);
+
+SWIGIMPORT bool wi_Sprite_IsHidden(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_SetDisableUpdate_b(wi_Sprite* carg1, bool carg2);
+
+SWIGIMPORT void wi_Sprite_SetDisableUpdate(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_SetCameraFacing_b(wi_Sprite* carg1, bool carg2);
+
+SWIGIMPORT void wi_Sprite_SetCameraFacing(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_SetCameraScaling_b(wi_Sprite* carg1, bool carg2);
+
+SWIGIMPORT void wi_Sprite_SetCameraScaling(wi_Sprite* carg1);
+
+SWIGIMPORT bool wi_Sprite_IsDisableUpdate(wi_Sprite* carg1);
+
+SWIGIMPORT bool wi_Sprite_IsCameraFacing(wi_Sprite* carg1);
+
+SWIGIMPORT bool wi_Sprite_IsCameraScaling(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_params_set(wi_Sprite* carg1, SWIGTYPE_p_wi__image__Params* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__image__Params* wi_Sprite_params_get(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_textureResource_set(wi_Sprite* carg1, SWIGTYPE_p_wi__Resource* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__Resource* wi_Sprite_textureResource_get(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_maskResource_set(wi_Sprite* carg1, SWIGTYPE_p_wi__Resource* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__Resource* wi_Sprite_maskResource_get(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_backgroundResource_set(wi_Sprite* carg1, SWIGTYPE_p_wi__Resource* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__Resource* wi_Sprite_backgroundResource_get(wi_Sprite* carg1);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__Texture* wi_Sprite_GetTexture(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_anim_set(wi_Sprite* carg1, SWIGTYPE_p_wi__Sprite__Anim* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__Sprite__Anim* wi_Sprite_anim_get(wi_Sprite* carg1);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__Texture* wi_Sprite_getTexture(wi_Sprite* carg1);
+
+SWIGIMPORT void wi_Sprite_Serialize(wi_Sprite* carg1, wi_Archive* carg2, SWIGTYPE_wi__ecs__EntitySerializer* carg3);
+
+SWIGIMPORT void wi_SpriteFont__flags_set(wi_SpriteFont* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_SpriteFont__flags_get(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_text_set(wi_SpriteFont* carg1, SWIGTYPE_p_std__wstring* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__wstring* wi_SpriteFont_text_get(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_params_set(wi_SpriteFont* carg1, SWIGTYPE_p_wi__font__Params* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__font__Params* wi_SpriteFont_params_get(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_fontStyleResource_set(wi_SpriteFont* carg1, SWIGTYPE_p_wi__Resource* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__Resource* wi_SpriteFont_fontStyleResource_get(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_fontStyleName_set(wi_SpriteFont* carg1, SWIGTYPE_p_std__string* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_SpriteFont_fontStyleName_get(wi_SpriteFont* carg1);
+
+SWIGIMPORT wi_SpriteFont* wi_SpriteFont_new();
+
+SWIGIMPORT wi_SpriteFont* wi_SpriteFont_new_rcstd_string_rcwi_font_Params_rcstd_string(SWIGTYPE_std__string* carg1, SWIGTYPE_wi__font__Params* carg2, SWIGTYPE_std__string* carg3);
+
+SWIGIMPORT wi_SpriteFont* wi_SpriteFont_new_rcstd_string_rcwi_font_Params(SWIGTYPE_std__string* carg1, SWIGTYPE_wi__font__Params* carg2);
+
+SWIGIMPORT wi_SpriteFont* wi_SpriteFont_new_rcstd_string(SWIGTYPE_std__string* carg1);
+
+SWIGIMPORT void wi_SpriteFont_delete(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_FixedUpdate(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_Update(wi_SpriteFont* carg1, float carg2);
+
+SWIGIMPORT void wi_SpriteFont_Draw(wi_SpriteFont* carg1, SWIGTYPE_p_wi__graphics__CommandList* carg2);
+
+SWIGIMPORT void wi_SpriteFont_SetHidden_b(wi_SpriteFont* carg1, bool carg2);
+
+SWIGIMPORT void wi_SpriteFont_SetHidden(wi_SpriteFont* carg1);
+
+SWIGIMPORT bool wi_SpriteFont_IsHidden(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_SetDisableUpdate_b(wi_SpriteFont* carg1, bool carg2);
+
+SWIGIMPORT void wi_SpriteFont_SetDisableUpdate(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_SetCameraFacing_b(wi_SpriteFont* carg1, bool carg2);
+
+SWIGIMPORT void wi_SpriteFont_SetCameraFacing(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_SetCameraScaling_b(wi_SpriteFont* carg1, bool carg2);
+
+SWIGIMPORT void wi_SpriteFont_SetCameraScaling(wi_SpriteFont* carg1);
+
+SWIGIMPORT bool wi_SpriteFont_IsDisableUpdate(wi_SpriteFont* carg1);
+
+SWIGIMPORT bool wi_SpriteFont_IsCameraFacing(wi_SpriteFont* carg1);
+
+SWIGIMPORT bool wi_SpriteFont_IsCameraScaling(wi_SpriteFont* carg1);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT2* wi_SpriteFont_TextSize(wi_SpriteFont* carg1);
+
+SWIGIMPORT float wi_SpriteFont_TextWidth(wi_SpriteFont* carg1);
+
+SWIGIMPORT float wi_SpriteFont_TextHeight(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_SetText_rcstd_string(wi_SpriteFont* carg1, SWIGTYPE_std__string* carg2);
+
+SWIGIMPORT void wi_SpriteFont_SetText_zstd_string(wi_SpriteFont* carg1, SWIGTYPE_p_p_std__string* carg2);
+
+SWIGIMPORT void wi_SpriteFont_SetText_rcstd_wstring(wi_SpriteFont* carg1, SWIGTYPE_std__wstring* carg2);
+
+SWIGIMPORT void wi_SpriteFont_SetText_zstd_wstring(wi_SpriteFont* carg1, SWIGTYPE_p_p_std__wstring* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__string* wi_SpriteFont_GetTextA(wi_SpriteFont* carg1);
+
+SWIGIMPORT SWIGTYPE_std__wstring* wi_SpriteFont_GetText(wi_SpriteFont* carg1);
+
+SWIGIMPORT size_t wi_SpriteFont_GetCurrentTextLength(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_anim_set(wi_SpriteFont* carg1, SWIGTYPE_p_wi__SpriteFont__Animation* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__SpriteFont__Animation* wi_SpriteFont_anim_get(wi_SpriteFont* carg1);
+
+SWIGIMPORT void wi_SpriteFont_Serialize(wi_SpriteFont* carg1, wi_Archive* carg2, SWIGTYPE_wi__ecs__EntitySerializer* carg3);
+
+SWIGIMPORT void wi_Timer_timestamp_set(wi_Timer* carg1, SWIGTYPE_p_std__chrono__high_resolution_clock__time_point* carg2);
+
+SWIGIMPORT SWIGTYPE_p_std__chrono__high_resolution_clock__time_point* wi_Timer_timestamp_get(wi_Timer* carg1);
+
+SWIGIMPORT void wi_Timer_record(wi_Timer* carg1);
+
+SWIGIMPORT double wi_Timer_elapsed_seconds_since(wi_Timer* carg1, SWIGTYPE_p_std__chrono__high_resolution_clock__time_point* carg2);
+
+SWIGIMPORT double wi_Timer_elapsed_seconds(wi_Timer* carg1);
+
+SWIGIMPORT double wi_Timer_elapsed_milliseconds(wi_Timer* carg1);
+
+SWIGIMPORT double wi_Timer_elapsed(wi_Timer* carg1);
+
+SWIGIMPORT double wi_Timer_record_elapsed_seconds(wi_Timer* carg1);
+
+SWIGIMPORT wi_Timer* wi_Timer_new();
+
+SWIGIMPORT void wi_Timer_delete(wi_Timer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_points_set(wi_TrailRenderer* carg1, SWIGTYPE_p_wi__vectorT_wi__TrailRenderer__TrailPoint_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_wi__TrailRenderer__TrailPoint_t* wi_TrailRenderer_points_get(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_cuts_set(wi_TrailRenderer* carg1, SWIGTYPE_p_wi__vectorT_uint32_t_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__vectorT_uint32_t_t* wi_TrailRenderer_cuts_get(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_color_set(wi_TrailRenderer* carg1, SWIGTYPE_p_XMFLOAT4* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT4* wi_TrailRenderer_color_get(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_blendMode_set(wi_TrailRenderer* carg1, SWIGTYPE_p_wi__enums__BLENDMODE* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__enums__BLENDMODE* wi_TrailRenderer_blendMode_get(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_subdivision_set(wi_TrailRenderer* carg1, SWIGTYPE_p_uint32_t* carg2);
+
+SWIGIMPORT SWIGTYPE_p_uint32_t* wi_TrailRenderer_subdivision_get(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_width_set(wi_TrailRenderer* carg1, float carg2);
+
+SWIGIMPORT float wi_TrailRenderer_width_get(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_texture_set(wi_TrailRenderer* carg1, SWIGTYPE_p_wi__graphics__Texture* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__Texture* wi_TrailRenderer_texture_get(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_texture2_set(wi_TrailRenderer* carg1, SWIGTYPE_p_wi__graphics__Texture* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__Texture* wi_TrailRenderer_texture2_get(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_texMulAdd_set(wi_TrailRenderer* carg1, SWIGTYPE_p_XMFLOAT4* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT4* wi_TrailRenderer_texMulAdd_get(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_texMulAdd2_set(wi_TrailRenderer* carg1, SWIGTYPE_p_XMFLOAT4* carg2);
+
+SWIGIMPORT SWIGTYPE_p_XMFLOAT4* wi_TrailRenderer_texMulAdd2_get(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_Cut(wi_TrailRenderer* carg1);
+
+SWIGIMPORT void wi_TrailRenderer_Draw(wi_TrailRenderer* carg1, SWIGTYPE_wi__scene__CameraComponent* carg2, SWIGTYPE_p_wi__graphics__CommandList* carg3);
+
+SWIGIMPORT void wi_TrailRenderer_Initialize();
+
+SWIGIMPORT wi_TrailRenderer* wi_TrailRenderer_new();
+
+SWIGIMPORT void wi_TrailRenderer_delete(wi_TrailRenderer* carg1);
+
+#define WI_UNORDERED_MAP_TYPE 1
+#define WI_UNORDERED_SET_TYPE 1
 SWIGIMPORT void wi_arguments_Parse(int carg1, char ** carg2);
 
 #ifdef __cplusplus

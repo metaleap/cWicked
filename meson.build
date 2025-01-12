@@ -9,16 +9,17 @@ dep_sdl2 = dependency('SDL2', include_type: 'system', static: false)
 dep_pthread = dependency('threads')
 
 compiler = meson.get_compiler('cpp')
+wi_build_dir = get_option('WICKED_BUILD_DIR')
 dep_wicked = compiler.find_library(
     'WickedEngine_Linux',
-    dirs: [meson.project_source_root() / '.wi/.build_RelWithDebInfo/WickedEngine'],
+    dirs: [meson.project_source_root() / wi_build_dir / 'WickedEngine'],
     header_include_directories: include_directories('.wi/WickedEngine'),
     required: true,
     static: true,
 )
 dep_jolt = compiler.find_library(
     'Jolt',
-    dirs: [meson.project_source_root() / '.wi/.build_RelWithDebInfo/WickedEngine'],
+    dirs: [meson.project_source_root() / wi_build_dir / 'WickedEngine'],
     header_include_directories: include_directories('.wi/WickedEngine', '.wi/WickedEngine/Jolt'),
     required: true,
     static: true,
@@ -26,7 +27,7 @@ dep_jolt = compiler.find_library(
 dep_lua = compiler.find_library(
     'LUA',
     dirs: [
-        meson.project_source_root() / '.wi/.build_RelWithDebInfo/WickedEngine/LUA',
+        meson.project_source_root() / wi_build_dir / 'WickedEngine/LUA',
     ],
     header_include_directories: include_directories('.wi/WickedEngine', '.wi/WickedEngine/LUA'),
     required: true,
@@ -35,7 +36,7 @@ dep_lua = compiler.find_library(
 dep_faudio = compiler.find_library(
     'FAudio',
     dirs: [
-        meson.project_source_root() / '.wi/.build_RelWithDebInfo/WickedEngine/Utility/FAudio',
+        meson.project_source_root() / wi_build_dir / 'WickedEngine/Utility/FAudio',
     ],
     header_include_directories: include_directories(
         '.wi/WickedEngine',
@@ -50,7 +51,7 @@ dep_faudio = compiler.find_library(
 dep_utility = compiler.find_library(
     'Utility',
     dirs: [
-        meson.project_source_root() / '.wi/.build_RelWithDebInfo/WickedEngine/Utility',
+        meson.project_source_root() / wi_build_dir / 'WickedEngine/Utility',
     ],
     header_include_directories: include_directories(
         '.wi/WickedEngine',
@@ -83,8 +84,8 @@ lib_cwicked = shared_library(
     ],
     cpp_pch: 'pch/wi_pch.h',
     include_directories: include_directories('.wi/WickedEngine'),
-    c_args: ['-gsplit-dwarf', '-fms-extensions', '-Wstrict-prototypes', '-DSDL2'],
-    cpp_args: ['-gsplit-dwarf', '-fms-extensions', '-Wstrict-prototypes', '-DSDL2'],
+    c_args: ['-gsplit-dwarf', '-fms-extensions', '-DSDL2'],
+    cpp_args: ['-gsplit-dwarf', '-fms-extensions', '-DSDL2'],
     sources: ['src/cWicked.cpp'],
 )
 
@@ -94,6 +95,6 @@ executable(
     link_with: [lib_cwicked],
     implicit_include_directories: true,
     link_language: 'c',
-    c_args: ['-gsplit-dwarf', '-fms-extensions', '-Wstrict-prototypes', '-DSDL2'],
+    c_args: ['-gsplit-dwarf', '-fms-extensions', '-DSDL2'],
     sources: ['src/demo/main.c'],
 )

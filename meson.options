@@ -1,0 +1,1 @@
+option('WICKED_BUILD_DIR', type: 'string', value: '.wi/.build_RelWithDebInfo')

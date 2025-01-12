@@ -1,5 +1,6 @@
 CompileFlags:
-  Remove: [-fpch-prepocess, -include]
+  Remove: [-fpch-preprocess, -include]
+  Add: [-Wstrict-prototypes,-Wextra]
 Diagnostics:
   UnusedIncludes: Strict
   Includes:

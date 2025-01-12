@@ -1,11 +1,13 @@
 #!/usr/bin/bash
 set -e
 
-# pre-requisite: you ran `./setup_wicked.sh` which creates the `./.wi` dir
-
 thisScriptsFilePath="$(readlink --canonicalize-existing "$0")"
 thisScriptsDirPath="$(dirname "$thisScriptsFilePath")"
 cd $thisScriptsDirPath
+
+
+
+# pre-requisite: you ran `./refresh_wicked.sh` which creates the `./.wi` dir
 
 rm -rf .cache
 rm -rf .build

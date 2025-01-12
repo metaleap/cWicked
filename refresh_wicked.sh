@@ -6,6 +6,8 @@ thisScriptsFilePath="$(readlink --canonicalize-existing "$0")"
 thisScriptsDirPath="$(dirname "$thisScriptsFilePath")"
 cd $thisScriptsDirPath
 
+
+
 # clean up, fetch zip, extract zip:
 
 # rm -rf .wi

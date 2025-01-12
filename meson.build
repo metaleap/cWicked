@@ -86,7 +86,7 @@ lib_cwicked = shared_library(
     include_directories: include_directories('.wi/WickedEngine'),
     c_args: ['-gsplit-dwarf', '-fms-extensions', '-DSDL2'],
     cpp_args: ['-gsplit-dwarf', '-fms-extensions', '-DSDL2'],
-    sources: ['src/cWicked.cpp'],
+    sources: ['src/cWicked.cpp', 'src/swigged_cwicked_wrap.cxx'],
 )
 
 executable(

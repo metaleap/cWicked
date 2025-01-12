@@ -27,17 +27,116 @@
 
 typedef struct SwigObj SwigObj;
 
+#include <stdbool.h>
 typedef struct SwigObj_wi_Application wi_Application;
+
+typedef struct SWIGTYPE_p_wi__graphics__SwapChain SWIGTYPE_p_wi__graphics__SwapChain;
+
+typedef struct SWIGTYPE_p_wi__graphics__SwapChain SWIGTYPE_p_wi__graphics__SwapChain;
+
+typedef struct SWIGTYPE_p_wi__Canvas SWIGTYPE_p_wi__Canvas;
+
+typedef struct SWIGTYPE_p_wi__Canvas SWIGTYPE_p_wi__Canvas;
+
+typedef struct SWIGTYPE_p_wi__platform__window_type SWIGTYPE_p_wi__platform__window_type;
+
+typedef struct SWIGTYPE_p_wi__platform__window_type SWIGTYPE_p_wi__platform__window_type;
+
+typedef struct SWIGTYPE_p_wi__RenderPath SWIGTYPE_p_wi__RenderPath;
+
+typedef struct SWIGTYPE_p_wi__Color SWIGTYPE_p_wi__Color;
+
+typedef struct SWIGTYPE_p_wi__RenderPath SWIGTYPE_p_wi__RenderPath;
+
+typedef struct SWIGTYPE_p_wi__RenderPath SWIGTYPE_p_wi__RenderPath;
+
+typedef struct SWIGTYPE_p_wi__RenderPath SWIGTYPE_p_wi__RenderPath;
+
+typedef struct SWIGTYPE_p_wi__graphics__CommandList SWIGTYPE_p_wi__graphics__CommandList;
+
+typedef struct SWIGTYPE_p_wi__platform__window_type SWIGTYPE_p_wi__platform__window_type;
+
+typedef struct SWIGTYPE_p_wi__Application__InfoDisplayer SWIGTYPE_p_wi__Application__InfoDisplayer;
+
+typedef struct SWIGTYPE_p_wi__Application__InfoDisplayer SWIGTYPE_p_wi__Application__InfoDisplayer;
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-SWIGIMPORT void wi_Application_Initialize(wi_Application* carg1);
+SWIGIMPORT long wi_version_GetVersion();
 
-SWIGIMPORT wi_Application* wi_Application_new();
+SWIGIMPORT int wi_version_GetMajor();
+
+SWIGIMPORT int wi_version_GetMinor();
+
+SWIGIMPORT int wi_version_GetRevision();
+
+SWIGIMPORT const char * wi_version_GetVersionString();
+
+SWIGIMPORT const char * wi_version_GetCreditsString();
 
 SWIGIMPORT void wi_Application_delete(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_is_window_active_set(wi_Application* carg1, bool carg2);
+
+SWIGIMPORT bool wi_Application_is_window_active_get(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_allow_hdr_set(wi_Application* carg1, bool carg2);
+
+SWIGIMPORT bool wi_Application_allow_hdr_get(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_swapChain_set(wi_Application* carg1, SWIGTYPE_p_wi__graphics__SwapChain* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__graphics__SwapChain* wi_Application_swapChain_get(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_canvas_set(wi_Application* carg1, SWIGTYPE_p_wi__Canvas* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__Canvas* wi_Application_canvas_get(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_window_set(wi_Application* carg1, SWIGTYPE_p_wi__platform__window_type* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__platform__window_type* wi_Application_window_get(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_Run(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_ActivatePath_pwi_RenderPath_f_wi_Color(wi_Application* carg1, SWIGTYPE_p_wi__RenderPath* carg2, float carg3, SWIGTYPE_p_wi__Color* carg4);
+
+SWIGIMPORT void wi_Application_ActivatePath_pwi_RenderPath_f(wi_Application* carg1, SWIGTYPE_p_wi__RenderPath* carg2, float carg3);
+
+SWIGIMPORT void wi_Application_ActivatePath_pwi_RenderPath(wi_Application* carg1, SWIGTYPE_p_wi__RenderPath* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__RenderPath* wi_Application_GetActivePath(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_setTargetFrameRate(wi_Application* carg1, float carg2);
+
+SWIGIMPORT float wi_Application_getTargetFrameRate(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_setFrameSkip(wi_Application* carg1, bool carg2);
+
+SWIGIMPORT void wi_Application_setFrameRateLock(wi_Application* carg1, bool carg2);
+
+SWIGIMPORT void wi_Application_Initialize(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_Update(wi_Application* carg1, float carg2);
+
+SWIGIMPORT void wi_Application_FixedUpdate(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_Render(wi_Application* carg1);
+
+SWIGIMPORT void wi_Application_Compose(wi_Application* carg1, SWIGTYPE_p_wi__graphics__CommandList* carg2);
+
+SWIGIMPORT void wi_Application_SetWindow(wi_Application* carg1, SWIGTYPE_p_wi__platform__window_type* carg2);
+
+SWIGIMPORT void wi_Application_SetFullScreen(wi_Application* carg1, bool carg2);
+
+SWIGIMPORT void wi_Application_infoDisplay_set(wi_Application* carg1, SWIGTYPE_p_wi__Application__InfoDisplayer* carg2);
+
+SWIGIMPORT SWIGTYPE_p_wi__Application__InfoDisplayer* wi_Application_infoDisplay_get(wi_Application* carg1);
+
+SWIGIMPORT bool wi_Application_IsFaded(wi_Application* carg1);
+
+SWIGIMPORT wi_Application* wi_Application_new();
 
 SWIGIMPORT void wi_arguments_Parse(int carg1, char ** carg2);
 

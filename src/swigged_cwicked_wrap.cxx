@@ -267,15 +267,388 @@ template <typename T> T SwigValueInit() {
 
 #include "../pch/wi_pch.h"
 
+
+namespace wi::version {
+	long GetVersion() {
+		return 0;
+	}
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+SWIGEXPORTC long wi_version_GetVersion() {
+  long cppresult;
+  long result;
+  
+  cppresult = (long)wi::version::GetVersion();
+  result = (long)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC int wi_version_GetMajor() {
+  int cppresult;
+  int result;
+  
+  cppresult = (int)wi::version::GetMajor();
+  result = (int)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC int wi_version_GetMinor() {
+  int cppresult;
+  int result;
+  
+  cppresult = (int)wi::version::GetMinor();
+  result = (int)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC int wi_version_GetRevision() {
+  int cppresult;
+  int result;
+  
+  cppresult = (int)wi::version::GetRevision();
+  result = (int)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC const char * wi_version_GetVersionString() {
+  char *cppresult;
+  const char * result;
+  
+  cppresult = (char *)wi::version::GetVersionString();
+  result = (const char *)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC const char * wi_version_GetCreditsString() {
+  char *cppresult;
+  const char * result;
+  
+  cppresult = (char *)wi::version::GetCreditsString();
+  result = (const char *)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_Application_delete(SwigObj* carg1) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  
+  arg1 = (wi::Application *) carg1;
+  delete arg1;
+}
+
+
+SWIGEXPORTC void wi_Application_is_window_active_set(SwigObj* carg1, bool carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  bool arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (bool) carg2;
+  if (arg1) (arg1)->is_window_active = arg2;
+}
+
+
+SWIGEXPORTC bool wi_Application_is_window_active_get(SwigObj* carg1) {
+  bool cppresult;
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  bool result;
+  
+  arg1 = (wi::Application *) carg1;
+  cppresult = (bool) ((arg1)->is_window_active);
+  result = (bool) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_Application_allow_hdr_set(SwigObj* carg1, bool carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  bool arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (bool) carg2;
+  if (arg1) (arg1)->allow_hdr = arg2;
+}
+
+
+SWIGEXPORTC bool wi_Application_allow_hdr_get(SwigObj* carg1) {
+  bool cppresult;
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  bool result;
+  
+  arg1 = (wi::Application *) carg1;
+  cppresult = (bool) ((arg1)->allow_hdr);
+  result = (bool) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_Application_swapChain_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  wi::graphics::SwapChain arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = *(wi::graphics::SwapChain *)carg2;
+  if (arg1) (arg1)->swapChain = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_Application_swapChain_get(SwigObj* carg1) {
+  wi::graphics::SwapChain cppresult;
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::Application *) carg1;
+  cppresult =  ((arg1)->swapChain);
+  result = (SwigObj*)new wi::graphics::SwapChain(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_Application_canvas_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  wi::Canvas arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = *(wi::Canvas *)carg2;
+  if (arg1) (arg1)->canvas = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_Application_canvas_get(SwigObj* carg1) {
+  wi::Canvas cppresult;
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::Application *) carg1;
+  cppresult =  ((arg1)->canvas);
+  result = (SwigObj*)new wi::Canvas(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_Application_window_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  wi::platform::window_type arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = *(wi::platform::window_type *)carg2;
+  if (arg1) (arg1)->window = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_Application_window_get(SwigObj* carg1) {
+  wi::platform::window_type cppresult;
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::Application *) carg1;
+  cppresult =  ((arg1)->window);
+  result = (SwigObj*)new wi::platform::window_type(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_Application_Run(SwigObj* carg1) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  
+  arg1 = (wi::Application *) carg1;
+  (arg1)->Run();
+}
+
+
+SWIGEXPORTC void wi_Application_ActivatePath_pwi_RenderPath_f_wi_Color(SwigObj* carg1, SwigObj* carg2, float carg3, SwigObj* carg4) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  wi::RenderPath *arg2 = (wi::RenderPath *) 0 ;
+  float arg3 ;
+  wi::Color arg4 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (wi::RenderPath *) carg2;
+  arg3 = (float) carg3;
+  arg4 = *(wi::Color *)carg4;
+  (arg1)->ActivatePath(arg2,arg3,SWIG_STD_MOVE(arg4));
+}
+
+
+SWIGEXPORTC void wi_Application_ActivatePath_pwi_RenderPath_f(SwigObj* carg1, SwigObj* carg2, float carg3) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  wi::RenderPath *arg2 = (wi::RenderPath *) 0 ;
+  float arg3 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (wi::RenderPath *) carg2;
+  arg3 = (float) carg3;
+  (arg1)->ActivatePath(arg2,arg3);
+}
+
+
+SWIGEXPORTC void wi_Application_ActivatePath_pwi_RenderPath(SwigObj* carg1, SwigObj* carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  wi::RenderPath *arg2 = (wi::RenderPath *) 0 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (wi::RenderPath *) carg2;
+  (arg1)->ActivatePath(arg2);
+}
+
+
+SWIGEXPORTC SwigObj* wi_Application_GetActivePath(SwigObj* carg1) {
+  wi::RenderPath *cppresult;
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::Application *) carg1;
+  cppresult = (wi::RenderPath *)(arg1)->GetActivePath();
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_Application_setTargetFrameRate(SwigObj* carg1, float carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  float arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (float) carg2;
+  (arg1)->setTargetFrameRate(arg2);
+}
+
+
+SWIGEXPORTC float wi_Application_getTargetFrameRate(SwigObj* carg1) {
+  float cppresult;
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  float result;
+  
+  arg1 = (wi::Application *) carg1;
+  cppresult = (float)((wi::Application const *)arg1)->getTargetFrameRate();
+  result = (float)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_Application_setFrameSkip(SwigObj* carg1, bool carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  bool arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (bool) carg2;
+  (arg1)->setFrameSkip(arg2);
+}
+
+
+SWIGEXPORTC void wi_Application_setFrameRateLock(SwigObj* carg1, bool carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  bool arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (bool) carg2;
+  (arg1)->setFrameRateLock(arg2);
+}
+
 
 SWIGEXPORTC void wi_Application_Initialize(SwigObj* carg1) {
   wi::Application *arg1 = (wi::Application *) 0 ;
   
   arg1 = (wi::Application *) carg1;
   (arg1)->Initialize();
+}
+
+
+SWIGEXPORTC void wi_Application_Update(SwigObj* carg1, float carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  float arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (float) carg2;
+  (arg1)->Update(arg2);
+}
+
+
+SWIGEXPORTC void wi_Application_FixedUpdate(SwigObj* carg1) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  
+  arg1 = (wi::Application *) carg1;
+  (arg1)->FixedUpdate();
+}
+
+
+SWIGEXPORTC void wi_Application_Render(SwigObj* carg1) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  
+  arg1 = (wi::Application *) carg1;
+  (arg1)->Render();
+}
+
+
+SWIGEXPORTC void wi_Application_Compose(SwigObj* carg1, SwigObj* carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  wi::graphics::CommandList arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = *(wi::graphics::CommandList *)carg2;
+  (arg1)->Compose(SWIG_STD_MOVE(arg2));
+}
+
+
+SWIGEXPORTC void wi_Application_SetWindow(SwigObj* carg1, SwigObj* carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  wi::platform::window_type arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = *(wi::platform::window_type *)carg2;
+  (arg1)->SetWindow(SWIG_STD_MOVE(arg2));
+}
+
+
+SWIGEXPORTC void wi_Application_SetFullScreen(SwigObj* carg1, bool carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  bool arg2 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (bool) carg2;
+  (arg1)->SetFullScreen(arg2);
+}
+
+
+SWIGEXPORTC void wi_Application_infoDisplay_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  wi::Application::InfoDisplayer *arg2 = (wi::Application::InfoDisplayer *) 0 ;
+  
+  arg1 = (wi::Application *) carg1;
+  arg2 = (wi::Application::InfoDisplayer *) carg2;
+  if (arg1) (arg1)->infoDisplay = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_Application_infoDisplay_get(SwigObj* carg1) {
+  wi::Application::InfoDisplayer *cppresult;
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::Application *) carg1;
+  cppresult = (wi::Application::InfoDisplayer *)& ((arg1)->infoDisplay);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC bool wi_Application_IsFaded(SwigObj* carg1) {
+  bool cppresult;
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  bool result;
+  
+  arg1 = (wi::Application *) carg1;
+  cppresult = (bool)((wi::Application const *)arg1)->IsFaded();
+  result = (bool) cppresult;
+  return result;
 }
 
 
@@ -286,14 +659,6 @@ SWIGEXPORTC SwigObj* wi_Application_new() {
   cppresult = (wi::Application *)new wi::Application();
   result = (SwigObj*) cppresult;
   return result;
-}
-
-
-SWIGEXPORTC void wi_Application_delete(SwigObj* carg1) {
-  wi::Application *arg1 = (wi::Application *) 0 ;
-  
-  arg1 = (wi::Application *) carg1;
-  delete arg1;
 }
 
 

@@ -19,8 +19,8 @@
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "ccache cc -IcWickedDemo.exec.p -I. -I../.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c23 -O0 -g -pthread -isystem/usr/include/SDL2 -D_REENTRANT -gsplit-dwarf -fms-extensions -DSDL2 -MD -MQ cWickedDemo.exec.p/src_demo_main.c.o -MF cWickedDemo.exec.p/src_demo_main.c.o.d -o cWickedDemo.exec.p/src_demo_main.c.o -c ../../src/demo/main.c",
-    "file": "../../src/demo/main.c",
-    "output": "cWickedDemo.exec.p/src_demo_main.c.o"
+    "command": "ccache cc -IcWickedDemo.exec.p -I. -I../.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c23 -O0 -g -pthread -isystem/usr/include/SDL2 -D_REENTRANT -gsplit-dwarf -fms-extensions -DSDL2 -MD -MQ cWickedDemo.exec.p/src_demos_main.c.o -MF cWickedDemo.exec.p/src_demos_main.c.o.d -o cWickedDemo.exec.p/src_demos_main.c.o -c ../../src/demos/main.c",
+    "file": "../../src/demos/main.c",
+    "output": "cWickedDemo.exec.p/src_demos_main.c.o"
   }
 ]

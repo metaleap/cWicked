@@ -1,7 +1,5 @@
+Diagnostics:
+  UnusedIncludes: None
 CompileFlags:
   Remove: [-fpch-preprocess, -include]
   Add: [-Wstrict-prototypes,-Wextra]
-Diagnostics:
-  UnusedIncludes: Strict
-  Includes:
-    IgnoreHeader: mo_pch\.h

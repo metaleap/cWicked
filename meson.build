@@ -84,7 +84,7 @@ lib_cwicked = shared_library(
     ],
     cpp_pch: 'pch/wi_pch.h',
     include_directories: include_directories('.wi/WickedEngine'),
-    c_args: ['-gsplit-dwarf', '-fms-extensions', '-DSDL2'],
+    c_args: ['-gsplit-dwarf', '-fms-extensions', '-DSDL2q'],
     cpp_args: ['-gsplit-dwarf', '-fms-extensions', '-DSDL2'],
     sources: ['src/cWicked.cpp', 'src/swigged_cwicked_wrap.cxx'],
 )
@@ -96,5 +96,5 @@ executable(
     implicit_include_directories: true,
     link_language: 'c',
     c_args: ['-gsplit-dwarf', '-fms-extensions', '-DSDL2'],
-    sources: ['src/demo/main.c'],
+    sources: ['src/demos/main.c'],
 )

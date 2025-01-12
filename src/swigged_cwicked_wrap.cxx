@@ -297,6 +297,16 @@ SWIGEXPORTC void wi_Application_Initialize(SwigObj* carg1) {
 }
 
 
+SWIGEXPORTC void wi_arguments_Parse(int carg1, char ** carg2) {
+  int arg1 ;
+  char **arg2 = (char **) (char **)0 ;
+  
+  arg1 = (int) carg1;
+  arg2 = (char * *) carg2;
+  wi::arguments::Parse(arg1,arg2);
+}
+
+
 #ifdef __cplusplus
 }
 #endif

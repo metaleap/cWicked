@@ -39,6 +39,8 @@ SWIGIMPORT void wi_Application_delete(wi_Application* carg1);
 
 SWIGIMPORT void wi_Application_Initialize(wi_Application* carg1);
 
+SWIGIMPORT void wi_arguments_Parse(int carg1, char ** carg2);
+
 #ifdef __cplusplus
 }
 #endif

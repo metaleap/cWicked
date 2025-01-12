@@ -2,12 +2,12 @@
     "files.exclude": {
         "**/.wi": true,
         "**/.cache": true,
-        "**/subprojects": true,
         "**/.build": true
     },
     "search.exclude": {
+        "compile_commands.json": true,
+        ".*": true,
         "**/.wi": true,
-        "**/subprojects": true,
         "**/.cache": true,
         "**/.build": true
     },

@@ -9,4 +9,4 @@ cd $thisScriptsDirPath
 
 cd src
 rm -f ./swigged_cwicked_wrap.*
-swig -c++ -c -nocxx -noexcept -namespace wi ./swigged_cwicked.swg
+swig -c++ -c -nocxx -noexcept ./swigged_cwicked.swg

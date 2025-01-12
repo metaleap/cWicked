@@ -1,4 +1,5 @@
 #include "../pch/wi_pch.h"
+#include <unistd.h>
 
 #include "cWicked.h"
 
@@ -37,7 +38,7 @@ void wi_tmp_main(SDL_Window* win, int argc, char** argv) {
   wi::renderer::SetShaderSourcePath(WickedEngine_SHADER_DIR);
 #endif
 
-  wi::renderer::SetShaderPath("../../.cache/.shaders/");
+  wi::renderer::SetShaderPath("../../.wi/.shaders/");
   app.infoDisplay.active = true;
   app.infoDisplay.colorspace = true;
   app.infoDisplay.device_name = true;
@@ -58,4 +59,5 @@ void wi_tmp_main(SDL_Window* win, int argc, char** argv) {
   app.ActivatePath(&game);
   SDL_SetWindowTitle(win, wi::version::GetVersionString());
   app.SetFullScreen(true);
+  sleep(22);
 }

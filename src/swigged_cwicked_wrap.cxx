@@ -271,6 +271,14 @@ template <typename T> T SwigValueInit() {
 extern "C" {
 #endif
 
+SWIGEXPORTC void wi_Application_Initialize(SwigObj* carg1) {
+  wi::Application *arg1 = (wi::Application *) 0 ;
+  
+  arg1 = (wi::Application *) carg1;
+  (arg1)->Initialize();
+}
+
+
 SWIGEXPORTC SwigObj* wi_Application_new() {
   wi::Application *cppresult;
   SwigObj* result;
@@ -286,14 +294,6 @@ SWIGEXPORTC void wi_Application_delete(SwigObj* carg1) {
   
   arg1 = (wi::Application *) carg1;
   delete arg1;
-}
-
-
-SWIGEXPORTC void wi_Application_Initialize(SwigObj* carg1) {
-  wi::Application *arg1 = (wi::Application *) 0 ;
-  
-  arg1 = (wi::Application *) carg1;
-  (arg1)->Initialize();
 }
 
 

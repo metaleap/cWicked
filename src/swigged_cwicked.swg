@@ -8,8 +8,6 @@
 namespace wi {
   class Application {
     public:
-      Application();
-      ~Application();
       void Initialize();
   };
 

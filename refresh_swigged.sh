@@ -8,5 +8,5 @@ cd $thisScriptsDirPath
 
 
 cd src
-rm -f ./swigged_cwicked_wrap.*
-swig -c++ -c -nocxx -noexcept ./swigged_cwicked.swg
+# rm -f ./swigged_cwicked_wrap.*
+swig -c++ -c -nocxx -noexcept -fastdispatch -fvirtual -templatereduce -std=c++17 ./swigged_cwicked.swg

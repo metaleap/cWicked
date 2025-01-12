@@ -33,11 +33,11 @@ typedef struct SwigObj_wi_Application wi_Application;
 extern "C" {
 #endif
 
+SWIGIMPORT void wi_Application_Initialize(wi_Application* carg1);
+
 SWIGIMPORT wi_Application* wi_Application_new();
 
 SWIGIMPORT void wi_Application_delete(wi_Application* carg1);
-
-SWIGIMPORT void wi_Application_Initialize(wi_Application* carg1);
 
 SWIGIMPORT void wi_arguments_Parse(int carg1, char ** carg2);
 

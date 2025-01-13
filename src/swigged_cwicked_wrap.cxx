@@ -268,11 +268,44 @@ template <typename T> T SwigValueInit() {
 #include "../pch/wi_pch.h"
 
 
+
 namespace wi::version {
 	long GetVersion() {
 		return 0;
 	}
 }
+
+const char* wi_renderer_GetShaderSourcePath() {
+  return wi::renderer::GetShaderSourcePath().c_str();
+}
+
+const char* wi_renderer_GetShaderPath() {
+  return wi::renderer::GetShaderPath().c_str();
+}
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+SWIGEXPORTC void wi_Application_infoDisplay(SwigObj* wiApp, bool active, bool watermark, bool fpsInfo, bool deviceName, bool resolution, bool logicalSize, bool colorSpace, bool heapAllocCounter, bool pipelineCount, bool pipelineCreation, bool vramUsage, int textSize, bool colorGradingHelper) {
+  wi::Application *app = (wi::Application *) wiApp;
+  app->infoDisplay.active = active;
+  app->infoDisplay.colorspace = colorSpace;
+  app->infoDisplay.device_name = deviceName;
+  app->infoDisplay.fpsinfo = fpsInfo;
+  app->infoDisplay.heap_allocation_counter = heapAllocCounter;
+  app->infoDisplay.logical_size = logicalSize;
+  app->infoDisplay.pipeline_count = pipelineCount;
+  app->infoDisplay.pipeline_creation = pipelineCreation;
+  app->infoDisplay.resolution = resolution;
+  app->infoDisplay.vram_usage = vramUsage;
+  app->infoDisplay.watermark = watermark;
+  app->infoDisplay.size = textSize;
+  app->infoDisplay.colorgrading_helper = colorGradingHelper;
+}
+#ifdef __cplusplus
+}
+#endif
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -752,11 +785,11 @@ SWIGEXPORTC void wi_Archive_delete(SwigObj* carg1) {
 
 SWIGEXPORTC void wi_Archive_WriteData(SwigObj* carg1, SwigObj* carg2) {
   wi::Archive *arg1 = (wi::Archive *) 0 ;
-  wi::vector< uint8_t > *arg2 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg2 = 0 ;
   
   arg1 = (wi::Archive *) carg1;
   
-  arg2 = (wi::vector< uint8_t > *) carg2;
+  arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg2;
   
   ((wi::Archive const *)arg1)->WriteData(*arg2);
 }
@@ -1817,22 +1850,22 @@ SWIGEXPORTC void wi_audio_SetReverb(int carg1) {
 
 SWIGEXPORTC void wi_BVH_allocation_set(SwigObj* carg1, SwigObj* carg2) {
   wi::BVH *arg1 = (wi::BVH *) 0 ;
-  wi::vector< uint8_t > arg2 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) 0 ;
   
   arg1 = (wi::BVH *) carg1;
-  arg2 = *(wi::vector< uint8_t > *)carg2;
-  if (arg1) (arg1)->allocation = arg2;
+  arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg2;
+  if (arg1) (arg1)->allocation = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_BVH_allocation_get(SwigObj* carg1) {
-  wi::vector< uint8_t > cppresult;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *cppresult;
   wi::BVH *arg1 = (wi::BVH *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::BVH *) carg1;
-  cppresult =  ((arg1)->allocation);
-  result = (SwigObj*)new wi::vector< uint8_t >(cppresult);
+  cppresult = (wi::vector< uint8_t,std::allocator< uint8_t > > *)& ((arg1)->allocation);
+  result = (SwigObj*) cppresult;
   return result;
 }
 
@@ -3816,14 +3849,14 @@ SWIGEXPORTC SwigObj* wi_helper_screenshot_rcwi_graphics_SwapChain(SwigObj* carg1
 SWIGEXPORTC bool wi_helper_saveTextureToMemory(SwigObj* carg1, SwigObj* carg2) {
   bool cppresult;
   wi::graphics::Texture *arg1 = 0 ;
-  wi::vector< uint8_t > *arg2 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg2 = 0 ;
   bool result;
   
   
   arg1 = (wi::graphics::Texture *) carg1;
   
   
-  arg2 = (wi::vector< uint8_t > *) carg2;
+  arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg2;
   
   cppresult = (bool)wi::helper::saveTextureToMemory((wi::graphics::Texture const &)*arg1,*arg2);
   result = (bool) cppresult;
@@ -3831,11 +3864,11 @@ SWIGEXPORTC bool wi_helper_saveTextureToMemory(SwigObj* carg1, SwigObj* carg2) {
 }
 
 
-SWIGEXPORTC bool wi_helper_saveTextureToMemoryFile_rcwi_graphics_Texture_rcstd_string_rwi_vector_Sl_uint8_t_Sg_(SwigObj* carg1, SwigObj* carg2, SwigObj* carg3) {
+SWIGEXPORTC bool wi_helper_saveTextureToMemoryFile_rcwi_graphics_Texture_rcstd_string_rwi_vector_Sl_uint8_t_Sc_std_allocator_Sl_uint8_t_Sg__Sg_(SwigObj* carg1, SwigObj* carg2, SwigObj* carg3) {
   bool cppresult;
   wi::graphics::Texture *arg1 = 0 ;
   std::string *arg2 = 0 ;
-  wi::vector< uint8_t > *arg3 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg3 = 0 ;
   bool result;
   
   
@@ -3845,7 +3878,7 @@ SWIGEXPORTC bool wi_helper_saveTextureToMemoryFile_rcwi_graphics_Texture_rcstd_s
   arg2 = (std::string *) carg2;
   
   
-  arg3 = (wi::vector< uint8_t > *) carg3;
+  arg3 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg3;
   
   cppresult = (bool)wi::helper::saveTextureToMemoryFile((wi::graphics::Texture const &)*arg1,(std::string const &)*arg2,*arg3);
   result = (bool) cppresult;
@@ -3853,16 +3886,16 @@ SWIGEXPORTC bool wi_helper_saveTextureToMemoryFile_rcwi_graphics_Texture_rcstd_s
 }
 
 
-SWIGEXPORTC bool wi_helper_saveTextureToMemoryFile_rcwi_vector_Sl_uint8_t_Sg__rcwi_graphics_TextureDesc_rcstd_string_rwi_vector_Sl_uint8_t_Sg_(SwigObj* carg1, SwigObj* carg2, SwigObj* carg3, SwigObj* carg4) {
+SWIGEXPORTC bool wi_helper_saveTextureToMemoryFile_rcwi_vector_Sl_uint8_t_Sc_std_allocator_Sl_uint8_t_Sg__Sg__rcwi_graphics_TextureDesc_rcstd_string_rwi_vector_Sl_uint8_t_Sc_std_allocator_Sl_uint8_t_Sg__Sg_(SwigObj* carg1, SwigObj* carg2, SwigObj* carg3, SwigObj* carg4) {
   bool cppresult;
-  wi::vector< uint8_t > *arg1 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg1 = 0 ;
   wi::graphics::TextureDesc *arg2 = 0 ;
   std::string *arg3 = 0 ;
-  wi::vector< uint8_t > *arg4 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg4 = 0 ;
   bool result;
   
   
-  arg1 = (wi::vector< uint8_t > *) carg1;
+  arg1 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg1;
   
   
   arg2 = (wi::graphics::TextureDesc *) carg2;
@@ -3871,9 +3904,9 @@ SWIGEXPORTC bool wi_helper_saveTextureToMemoryFile_rcwi_vector_Sl_uint8_t_Sg__rc
   arg3 = (std::string *) carg3;
   
   
-  arg4 = (wi::vector< uint8_t > *) carg4;
+  arg4 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg4;
   
-  cppresult = (bool)wi::helper::saveTextureToMemoryFile((wi::vector< uint8_t > const &)*arg1,(wi::graphics::TextureDesc const &)*arg2,(std::string const &)*arg3,*arg4);
+  cppresult = (bool)wi::helper::saveTextureToMemoryFile((wi::vector< uint8_t,std::allocator< uint8_t > > const &)*arg1,(wi::graphics::TextureDesc const &)*arg2,(std::string const &)*arg3,*arg4);
   result = (bool) cppresult;
   return result;
 }
@@ -3897,15 +3930,15 @@ SWIGEXPORTC bool wi_helper_saveTextureToFile_rcwi_graphics_Texture_rcstd_string(
 }
 
 
-SWIGEXPORTC bool wi_helper_saveTextureToFile_rcwi_vector_Sl_uint8_t_Sg__rcwi_graphics_TextureDesc_rcstd_string(SwigObj* carg1, SwigObj* carg2, SwigObj* carg3) {
+SWIGEXPORTC bool wi_helper_saveTextureToFile_rcwi_vector_Sl_uint8_t_Sc_std_allocator_Sl_uint8_t_Sg__Sg__rcwi_graphics_TextureDesc_rcstd_string(SwigObj* carg1, SwigObj* carg2, SwigObj* carg3) {
   bool cppresult;
-  wi::vector< uint8_t > *arg1 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg1 = 0 ;
   wi::graphics::TextureDesc *arg2 = 0 ;
   std::string *arg3 = 0 ;
   bool result;
   
   
-  arg1 = (wi::vector< uint8_t > *) carg1;
+  arg1 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg1;
   
   
   arg2 = (wi::graphics::TextureDesc *) carg2;
@@ -3913,7 +3946,7 @@ SWIGEXPORTC bool wi_helper_saveTextureToFile_rcwi_vector_Sl_uint8_t_Sg__rcwi_gra
   
   arg3 = (std::string *) carg3;
   
-  cppresult = (bool)wi::helper::saveTextureToFile((wi::vector< uint8_t > const &)*arg1,(wi::graphics::TextureDesc const &)*arg2,(std::string const &)*arg3);
+  cppresult = (bool)wi::helper::saveTextureToFile((wi::vector< uint8_t,std::allocator< uint8_t > > const &)*arg1,(wi::graphics::TextureDesc const &)*arg2,(std::string const &)*arg3);
   result = (bool) cppresult;
   return result;
 }
@@ -4091,10 +4124,10 @@ SWIGEXPORTC void wi_helper_DirectoryCreate(SwigObj* carg1) {
 }
 
 
-SWIGEXPORTC bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sg__size_t_size_t(SwigObj* carg1, SwigObj* carg2, size_t carg3, size_t carg4) {
+SWIGEXPORTC bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sc_std_allocator_Sl_uint8_t_Sg__Sg__size_t_size_t(SwigObj* carg1, SwigObj* carg2, size_t carg3, size_t carg4) {
   bool cppresult;
   std::string *arg1 = 0 ;
-  wi::vector< uint8_t > *arg2 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg2 = 0 ;
   size_t arg3 ;
   size_t arg4 ;
   bool result;
@@ -4103,7 +4136,7 @@ SWIGEXPORTC bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sg__size_
   arg1 = (std::string *) carg1;
   
   
-  arg2 = (wi::vector< uint8_t > *) carg2;
+  arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg2;
   
   arg3 = (size_t) carg3;
   arg4 = (size_t) carg4;
@@ -4113,10 +4146,10 @@ SWIGEXPORTC bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sg__size_
 }
 
 
-SWIGEXPORTC bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sg__size_t(SwigObj* carg1, SwigObj* carg2, size_t carg3) {
+SWIGEXPORTC bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sc_std_allocator_Sl_uint8_t_Sg__Sg__size_t(SwigObj* carg1, SwigObj* carg2, size_t carg3) {
   bool cppresult;
   std::string *arg1 = 0 ;
-  wi::vector< uint8_t > *arg2 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg2 = 0 ;
   size_t arg3 ;
   bool result;
   
@@ -4124,7 +4157,7 @@ SWIGEXPORTC bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sg__size_
   arg1 = (std::string *) carg1;
   
   
-  arg2 = (wi::vector< uint8_t > *) carg2;
+  arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg2;
   
   arg3 = (size_t) carg3;
   cppresult = (bool)wi::helper::FileRead((std::string const &)*arg1,*arg2,SWIG_STD_MOVE(arg3));
@@ -4133,17 +4166,17 @@ SWIGEXPORTC bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sg__size_
 }
 
 
-SWIGEXPORTC bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sg_(SwigObj* carg1, SwigObj* carg2) {
+SWIGEXPORTC bool wi_helper_FileRead_rcstd_string_rwi_vector_Sl_uint8_t_Sc_std_allocator_Sl_uint8_t_Sg__Sg_(SwigObj* carg1, SwigObj* carg2) {
   bool cppresult;
   std::string *arg1 = 0 ;
-  wi::vector< uint8_t > *arg2 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg2 = 0 ;
   bool result;
   
   
   arg1 = (std::string *) carg1;
   
   
-  arg2 = (wi::vector< uint8_t > *) carg2;
+  arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg2;
   
   cppresult = (bool)wi::helper::FileRead((std::string const &)*arg1,*arg2);
   result = (bool) cppresult;
@@ -4287,22 +4320,22 @@ SWIGEXPORTC SwigObj* wi_helper_FileDialogParams_description_get(SwigObj* carg1) 
 
 SWIGEXPORTC void wi_helper_FileDialogParams_extensions_set(SwigObj* carg1, SwigObj* carg2) {
   wi::helper::FileDialogParams *arg1 = (wi::helper::FileDialogParams *) 0 ;
-  wi::vector< std::string > arg2 ;
+  wi::vector< std::string,std::allocator< std::string > > *arg2 = (wi::vector< std::string,std::allocator< std::string > > *) 0 ;
   
   arg1 = (wi::helper::FileDialogParams *) carg1;
-  arg2 = *(wi::vector< std::string > *)carg2;
-  if (arg1) (arg1)->extensions = arg2;
+  arg2 = (wi::vector< std::string,std::allocator< std::string > > *) carg2;
+  if (arg1) (arg1)->extensions = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_helper_FileDialogParams_extensions_get(SwigObj* carg1) {
-  wi::vector< std::string > cppresult;
+  wi::vector< std::string,std::allocator< std::string > > *cppresult;
   wi::helper::FileDialogParams *arg1 = (wi::helper::FileDialogParams *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::helper::FileDialogParams *) carg1;
-  cppresult =  ((arg1)->extensions);
-  result = (SwigObj*)new wi::vector< std::string >(cppresult);
+  cppresult = (wi::vector< std::string,std::allocator< std::string > > *)& ((arg1)->extensions);
+  result = (SwigObj*) cppresult;
   return result;
 }
 
@@ -4697,13 +4730,13 @@ SWIGEXPORTC bool wi_helper_Compress(SwigObj* carg1, size_t carg2, SwigObj* carg3
   bool cppresult;
   uint8_t *arg1 = (uint8_t *) 0 ;
   size_t arg2 ;
-  wi::vector< uint8_t > *arg3 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg3 = 0 ;
   bool result;
   
   arg1 = (uint8_t *) carg1;
   arg2 = (size_t) carg2;
   
-  arg3 = (wi::vector< uint8_t > *) carg3;
+  arg3 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg3;
   
   cppresult = (bool)wi::helper::Compress((uint8_t const *)arg1,SWIG_STD_MOVE(arg2),*arg3);
   result = (bool) cppresult;
@@ -4715,13 +4748,13 @@ SWIGEXPORTC bool wi_helper_Decompress(SwigObj* carg1, size_t carg2, SwigObj* car
   bool cppresult;
   uint8_t *arg1 = (uint8_t *) 0 ;
   size_t arg2 ;
-  wi::vector< uint8_t > *arg3 = 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg3 = 0 ;
   bool result;
   
   arg1 = (uint8_t *) carg1;
   arg2 = (size_t) carg2;
   
-  arg3 = (wi::vector< uint8_t > *) carg3;
+  arg3 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg3;
   
   cppresult = (bool)wi::helper::Decompress((uint8_t const *)arg1,SWIG_STD_MOVE(arg2),*arg3);
   result = (bool) cppresult;
@@ -5288,21 +5321,21 @@ SWIGEXPORTC void wi_LoadingScreen_delete(SwigObj* carg1) {
 
 SWIGEXPORTC void wi_Localization_entries_set(SwigObj* carg1, SwigObj* carg2) {
   wi::Localization *arg1 = (wi::Localization *) 0 ;
-  wi::vector< wi::Localization::Entry > *arg2 = (wi::vector< wi::Localization::Entry > *) 0 ;
+  wi::vector< wi::Localization::Entry,std::allocator< wi::Localization::Entry > > *arg2 = (wi::vector< wi::Localization::Entry,std::allocator< wi::Localization::Entry > > *) 0 ;
   
   arg1 = (wi::Localization *) carg1;
-  arg2 = (wi::vector< wi::Localization::Entry > *) carg2;
+  arg2 = (wi::vector< wi::Localization::Entry,std::allocator< wi::Localization::Entry > > *) carg2;
   if (arg1) (arg1)->entries = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_Localization_entries_get(SwigObj* carg1) {
-  wi::vector< wi::Localization::Entry > *cppresult;
+  wi::vector< wi::Localization::Entry,std::allocator< wi::Localization::Entry > > *cppresult;
   wi::Localization *arg1 = (wi::Localization *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::Localization *) carg1;
-  cppresult = (wi::vector< wi::Localization::Entry > *)& ((arg1)->entries);
+  cppresult = (wi::vector< wi::Localization::Entry,std::allocator< wi::Localization::Entry > > *)& ((arg1)->entries);
   result = (SwigObj*) cppresult;
   return result;
 }
@@ -6501,44 +6534,44 @@ SWIGEXPORTC SwigObj* wi_rectpacker_State_context_get(SwigObj* carg1) {
 
 SWIGEXPORTC void wi_rectpacker_State_nodes_set(SwigObj* carg1, SwigObj* carg2) {
   wi::rectpacker::State *arg1 = (wi::rectpacker::State *) 0 ;
-  wi::vector< stbrp_node > arg2 ;
+  wi::vector< stbrp_node,std::allocator< stbrp_node > > *arg2 = (wi::vector< stbrp_node,std::allocator< stbrp_node > > *) 0 ;
   
   arg1 = (wi::rectpacker::State *) carg1;
-  arg2 = *(wi::vector< stbrp_node > *)carg2;
-  if (arg1) (arg1)->nodes = arg2;
+  arg2 = (wi::vector< stbrp_node,std::allocator< stbrp_node > > *) carg2;
+  if (arg1) (arg1)->nodes = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_rectpacker_State_nodes_get(SwigObj* carg1) {
-  wi::vector< stbrp_node > cppresult;
+  wi::vector< stbrp_node,std::allocator< stbrp_node > > *cppresult;
   wi::rectpacker::State *arg1 = (wi::rectpacker::State *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::rectpacker::State *) carg1;
-  cppresult =  ((arg1)->nodes);
-  result = (SwigObj*)new wi::vector< stbrp_node >(cppresult);
+  cppresult = (wi::vector< stbrp_node,std::allocator< stbrp_node > > *)& ((arg1)->nodes);
+  result = (SwigObj*) cppresult;
   return result;
 }
 
 
 SWIGEXPORTC void wi_rectpacker_State_rects_set(SwigObj* carg1, SwigObj* carg2) {
   wi::rectpacker::State *arg1 = (wi::rectpacker::State *) 0 ;
-  wi::vector< stbrp_rect > arg2 ;
+  wi::vector< stbrp_rect,std::allocator< stbrp_rect > > *arg2 = (wi::vector< stbrp_rect,std::allocator< stbrp_rect > > *) 0 ;
   
   arg1 = (wi::rectpacker::State *) carg1;
-  arg2 = *(wi::vector< stbrp_rect > *)carg2;
-  if (arg1) (arg1)->rects = arg2;
+  arg2 = (wi::vector< stbrp_rect,std::allocator< stbrp_rect > > *) carg2;
+  if (arg1) (arg1)->rects = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_rectpacker_State_rects_get(SwigObj* carg1) {
-  wi::vector< stbrp_rect > cppresult;
+  wi::vector< stbrp_rect,std::allocator< stbrp_rect > > *cppresult;
   wi::rectpacker::State *arg1 = (wi::rectpacker::State *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::rectpacker::State *) carg1;
-  cppresult =  ((arg1)->rects);
-  result = (SwigObj*)new wi::vector< stbrp_rect >(cppresult);
+  cppresult = (wi::vector< stbrp_rect,std::allocator< stbrp_rect > > *)& ((arg1)->rects);
+  result = (SwigObj*) cppresult;
   return result;
 }
 
@@ -6973,21 +7006,21 @@ SWIGEXPORTC int wi_RenderPath2D_GetFontOrder(SwigObj* carg1, SwigObj* carg2) {
 
 SWIGEXPORTC void wi_RenderPath2D_layers_set(SwigObj* carg1, SwigObj* carg2) {
   wi::RenderPath2D *arg1 = (wi::RenderPath2D *) 0 ;
-  wi::vector< wi::RenderPath2D::RenderLayer2D > *arg2 = (wi::vector< wi::RenderPath2D::RenderLayer2D > *) 0 ;
+  wi::vector< wi::RenderPath2D::RenderLayer2D,std::allocator< wi::RenderPath2D::RenderLayer2D > > *arg2 = (wi::vector< wi::RenderPath2D::RenderLayer2D,std::allocator< wi::RenderPath2D::RenderLayer2D > > *) 0 ;
   
   arg1 = (wi::RenderPath2D *) carg1;
-  arg2 = (wi::vector< wi::RenderPath2D::RenderLayer2D > *) carg2;
+  arg2 = (wi::vector< wi::RenderPath2D::RenderLayer2D,std::allocator< wi::RenderPath2D::RenderLayer2D > > *) carg2;
   if (arg1) (arg1)->layers = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_RenderPath2D_layers_get(SwigObj* carg1) {
-  wi::vector< wi::RenderPath2D::RenderLayer2D > *cppresult;
+  wi::vector< wi::RenderPath2D::RenderLayer2D,std::allocator< wi::RenderPath2D::RenderLayer2D > > *cppresult;
   wi::RenderPath2D *arg1 = (wi::RenderPath2D *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::RenderPath2D *) carg1;
-  cppresult = (wi::vector< wi::RenderPath2D::RenderLayer2D > *)& ((arg1)->layers);
+  cppresult = (wi::vector< wi::RenderPath2D::RenderLayer2D,std::allocator< wi::RenderPath2D::RenderLayer2D > > *)& ((arg1)->layers);
   result = (SwigObj*) cppresult;
   return result;
 }
@@ -7531,44 +7564,44 @@ SWIGEXPORTC SwigObj* wi_shadercompiler_CompilerInput_entrypoint_get(SwigObj* car
 
 SWIGEXPORTC void wi_shadercompiler_CompilerInput_include_directories_set(SwigObj* carg1, SwigObj* carg2) {
   wi::shadercompiler::CompilerInput *arg1 = (wi::shadercompiler::CompilerInput *) 0 ;
-  wi::vector< std::string > arg2 ;
+  wi::vector< std::string,std::allocator< std::string > > *arg2 = (wi::vector< std::string,std::allocator< std::string > > *) 0 ;
   
   arg1 = (wi::shadercompiler::CompilerInput *) carg1;
-  arg2 = *(wi::vector< std::string > *)carg2;
-  if (arg1) (arg1)->include_directories = arg2;
+  arg2 = (wi::vector< std::string,std::allocator< std::string > > *) carg2;
+  if (arg1) (arg1)->include_directories = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_shadercompiler_CompilerInput_include_directories_get(SwigObj* carg1) {
-  wi::vector< std::string > cppresult;
+  wi::vector< std::string,std::allocator< std::string > > *cppresult;
   wi::shadercompiler::CompilerInput *arg1 = (wi::shadercompiler::CompilerInput *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::shadercompiler::CompilerInput *) carg1;
-  cppresult =  ((arg1)->include_directories);
-  result = (SwigObj*)new wi::vector< std::string >(cppresult);
+  cppresult = (wi::vector< std::string,std::allocator< std::string > > *)& ((arg1)->include_directories);
+  result = (SwigObj*) cppresult;
   return result;
 }
 
 
 SWIGEXPORTC void wi_shadercompiler_CompilerInput_defines_set(SwigObj* carg1, SwigObj* carg2) {
   wi::shadercompiler::CompilerInput *arg1 = (wi::shadercompiler::CompilerInput *) 0 ;
-  wi::vector< std::string > arg2 ;
+  wi::vector< std::string,std::allocator< std::string > > *arg2 = (wi::vector< std::string,std::allocator< std::string > > *) 0 ;
   
   arg1 = (wi::shadercompiler::CompilerInput *) carg1;
-  arg2 = *(wi::vector< std::string > *)carg2;
-  if (arg1) (arg1)->defines = arg2;
+  arg2 = (wi::vector< std::string,std::allocator< std::string > > *) carg2;
+  if (arg1) (arg1)->defines = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_shadercompiler_CompilerInput_defines_get(SwigObj* carg1) {
-  wi::vector< std::string > cppresult;
+  wi::vector< std::string,std::allocator< std::string > > *cppresult;
   wi::shadercompiler::CompilerInput *arg1 = (wi::shadercompiler::CompilerInput *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::shadercompiler::CompilerInput *) carg1;
-  cppresult =  ((arg1)->defines);
-  result = (SwigObj*)new wi::vector< std::string >(cppresult);
+  cppresult = (wi::vector< std::string,std::allocator< std::string > > *)& ((arg1)->defines);
+  result = (SwigObj*) cppresult;
   return result;
 }
 
@@ -7671,22 +7704,22 @@ SWIGEXPORTC size_t wi_shadercompiler_CompilerOutput_shadersize_get(SwigObj* carg
 
 SWIGEXPORTC void wi_shadercompiler_CompilerOutput_shaderhash_set(SwigObj* carg1, SwigObj* carg2) {
   wi::shadercompiler::CompilerOutput *arg1 = (wi::shadercompiler::CompilerOutput *) 0 ;
-  wi::vector< uint8_t > arg2 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) 0 ;
   
   arg1 = (wi::shadercompiler::CompilerOutput *) carg1;
-  arg2 = *(wi::vector< uint8_t > *)carg2;
-  if (arg1) (arg1)->shaderhash = arg2;
+  arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg2;
+  if (arg1) (arg1)->shaderhash = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_shadercompiler_CompilerOutput_shaderhash_get(SwigObj* carg1) {
-  wi::vector< uint8_t > cppresult;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *cppresult;
   wi::shadercompiler::CompilerOutput *arg1 = (wi::shadercompiler::CompilerOutput *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::shadercompiler::CompilerOutput *) carg1;
-  cppresult =  ((arg1)->shaderhash);
-  result = (SwigObj*)new wi::vector< uint8_t >(cppresult);
+  cppresult = (wi::vector< uint8_t,std::allocator< uint8_t > > *)& ((arg1)->shaderhash);
+  result = (SwigObj*) cppresult;
   return result;
 }
 
@@ -7715,22 +7748,22 @@ SWIGEXPORTC SwigObj* wi_shadercompiler_CompilerOutput_error_message_get(SwigObj*
 
 SWIGEXPORTC void wi_shadercompiler_CompilerOutput_dependencies_set(SwigObj* carg1, SwigObj* carg2) {
   wi::shadercompiler::CompilerOutput *arg1 = (wi::shadercompiler::CompilerOutput *) 0 ;
-  wi::vector< std::string > arg2 ;
+  wi::vector< std::string,std::allocator< std::string > > *arg2 = (wi::vector< std::string,std::allocator< std::string > > *) 0 ;
   
   arg1 = (wi::shadercompiler::CompilerOutput *) carg1;
-  arg2 = *(wi::vector< std::string > *)carg2;
-  if (arg1) (arg1)->dependencies = arg2;
+  arg2 = (wi::vector< std::string,std::allocator< std::string > > *) carg2;
+  if (arg1) (arg1)->dependencies = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_shadercompiler_CompilerOutput_dependencies_get(SwigObj* carg1) {
-  wi::vector< std::string > cppresult;
+  wi::vector< std::string,std::allocator< std::string > > *cppresult;
   wi::shadercompiler::CompilerOutput *arg1 = (wi::shadercompiler::CompilerOutput *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::shadercompiler::CompilerOutput *) carg1;
-  cppresult =  ((arg1)->dependencies);
-  result = (SwigObj*)new wi::vector< std::string >(cppresult);
+  cppresult = (wi::vector< std::string,std::allocator< std::string > > *)& ((arg1)->dependencies);
+  result = (SwigObj*) cppresult;
   return result;
 }
 
@@ -8885,21 +8918,21 @@ SWIGEXPORTC void wi_Timer_delete(SwigObj* carg1) {
 
 SWIGEXPORTC void wi_TrailRenderer_points_set(SwigObj* carg1, SwigObj* carg2) {
   wi::TrailRenderer *arg1 = (wi::TrailRenderer *) 0 ;
-  wi::vector< wi::TrailRenderer::TrailPoint > *arg2 = (wi::vector< wi::TrailRenderer::TrailPoint > *) 0 ;
+  wi::vector< wi::TrailRenderer::TrailPoint,std::allocator< wi::TrailRenderer::TrailPoint > > *arg2 = (wi::vector< wi::TrailRenderer::TrailPoint,std::allocator< wi::TrailRenderer::TrailPoint > > *) 0 ;
   
   arg1 = (wi::TrailRenderer *) carg1;
-  arg2 = (wi::vector< wi::TrailRenderer::TrailPoint > *) carg2;
+  arg2 = (wi::vector< wi::TrailRenderer::TrailPoint,std::allocator< wi::TrailRenderer::TrailPoint > > *) carg2;
   if (arg1) (arg1)->points = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_TrailRenderer_points_get(SwigObj* carg1) {
-  wi::vector< wi::TrailRenderer::TrailPoint > *cppresult;
+  wi::vector< wi::TrailRenderer::TrailPoint,std::allocator< wi::TrailRenderer::TrailPoint > > *cppresult;
   wi::TrailRenderer *arg1 = (wi::TrailRenderer *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::TrailRenderer *) carg1;
-  cppresult = (wi::vector< wi::TrailRenderer::TrailPoint > *)& ((arg1)->points);
+  cppresult = (wi::vector< wi::TrailRenderer::TrailPoint,std::allocator< wi::TrailRenderer::TrailPoint > > *)& ((arg1)->points);
   result = (SwigObj*) cppresult;
   return result;
 }
@@ -8907,22 +8940,22 @@ SWIGEXPORTC SwigObj* wi_TrailRenderer_points_get(SwigObj* carg1) {
 
 SWIGEXPORTC void wi_TrailRenderer_cuts_set(SwigObj* carg1, SwigObj* carg2) {
   wi::TrailRenderer *arg1 = (wi::TrailRenderer *) 0 ;
-  wi::vector< uint32_t > arg2 ;
+  wi::vector< uint32_t,std::allocator< uint32_t > > *arg2 = (wi::vector< uint32_t,std::allocator< uint32_t > > *) 0 ;
   
   arg1 = (wi::TrailRenderer *) carg1;
-  arg2 = *(wi::vector< uint32_t > *)carg2;
-  if (arg1) (arg1)->cuts = arg2;
+  arg2 = (wi::vector< uint32_t,std::allocator< uint32_t > > *) carg2;
+  if (arg1) (arg1)->cuts = *arg2;
 }
 
 
 SWIGEXPORTC SwigObj* wi_TrailRenderer_cuts_get(SwigObj* carg1) {
-  wi::vector< uint32_t > cppresult;
+  wi::vector< uint32_t,std::allocator< uint32_t > > *cppresult;
   wi::TrailRenderer *arg1 = (wi::TrailRenderer *) 0 ;
   SwigObj* result;
   
   arg1 = (wi::TrailRenderer *) carg1;
-  cppresult =  ((arg1)->cuts);
-  result = (SwigObj*)new wi::vector< uint32_t >(cppresult);
+  cppresult = (wi::vector< uint32_t,std::allocator< uint32_t > > *)& ((arg1)->cuts);
+  result = (SwigObj*) cppresult;
   return result;
 }
 
@@ -9145,6 +9178,975 @@ SWIGEXPORTC void wi_TrailRenderer_delete(SwigObj* carg1) {
   
   arg1 = (wi::TrailRenderer *) carg1;
   delete arg1;
+}
+
+
+SWIGEXPORTC void wi_video_Video_title_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  std::string arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(std::string *)carg2;
+  if (arg1) (arg1)->title = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_title_get(SwigObj* carg1) {
+  std::string cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->title);
+  result = (SwigObj*)new std::string(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_album_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  std::string arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(std::string *)carg2;
+  if (arg1) (arg1)->album = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_album_get(SwigObj* carg1) {
+  std::string cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->album);
+  result = (SwigObj*)new std::string(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_artist_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  std::string arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(std::string *)carg2;
+  if (arg1) (arg1)->artist = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_artist_get(SwigObj* carg1) {
+  std::string cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->artist);
+  result = (SwigObj*)new std::string(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_year_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  std::string arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(std::string *)carg2;
+  if (arg1) (arg1)->year = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_year_get(SwigObj* carg1) {
+  std::string cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->year);
+  result = (SwigObj*)new std::string(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_comment_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  std::string arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(std::string *)carg2;
+  if (arg1) (arg1)->comment = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_comment_get(SwigObj* carg1) {
+  std::string cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->comment);
+  result = (SwigObj*)new std::string(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_genre_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  std::string arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(std::string *)carg2;
+  if (arg1) (arg1)->genre = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_genre_get(SwigObj* carg1) {
+  std::string cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->genre);
+  result = (SwigObj*)new std::string(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_padded_width_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  uint32_t arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(uint32_t *)carg2;
+  if (arg1) (arg1)->padded_width = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_padded_width_get(SwigObj* carg1) {
+  uint32_t cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->padded_width);
+  result = (SwigObj*)new uint32_t(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_padded_height_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  uint32_t arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(uint32_t *)carg2;
+  if (arg1) (arg1)->padded_height = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_padded_height_get(SwigObj* carg1) {
+  uint32_t cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->padded_height);
+  result = (SwigObj*)new uint32_t(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_width_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  uint32_t arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(uint32_t *)carg2;
+  if (arg1) (arg1)->width = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_width_get(SwigObj* carg1) {
+  uint32_t cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->width);
+  result = (SwigObj*)new uint32_t(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_height_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  uint32_t arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(uint32_t *)carg2;
+  if (arg1) (arg1)->height = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_height_get(SwigObj* carg1) {
+  uint32_t cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->height);
+  result = (SwigObj*)new uint32_t(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_bit_rate_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  uint32_t arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(uint32_t *)carg2;
+  if (arg1) (arg1)->bit_rate = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_bit_rate_get(SwigObj* carg1) {
+  uint32_t cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->bit_rate);
+  result = (SwigObj*)new uint32_t(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_profile_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  wi::graphics::VideoProfile arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(wi::graphics::VideoProfile *)carg2;
+  if (arg1) (arg1)->profile = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_profile_get(SwigObj* carg1) {
+  wi::graphics::VideoProfile cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->profile);
+  result = (SwigObj*)new wi::graphics::VideoProfile(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_sps_datas_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) 0 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg2;
+  if (arg1) (arg1)->sps_datas = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_sps_datas_get(SwigObj* carg1) {
+  wi::vector< uint8_t,std::allocator< uint8_t > > *cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult = (wi::vector< uint8_t,std::allocator< uint8_t > > *)& ((arg1)->sps_datas);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_pps_datas_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) 0 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg2;
+  if (arg1) (arg1)->pps_datas = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_pps_datas_get(SwigObj* carg1) {
+  wi::vector< uint8_t,std::allocator< uint8_t > > *cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult = (wi::vector< uint8_t,std::allocator< uint8_t > > *)& ((arg1)->pps_datas);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_slice_header_datas_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  wi::vector< uint8_t,std::allocator< uint8_t > > *arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) 0 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = (wi::vector< uint8_t,std::allocator< uint8_t > > *) carg2;
+  if (arg1) (arg1)->slice_header_datas = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_slice_header_datas_get(SwigObj* carg1) {
+  wi::vector< uint8_t,std::allocator< uint8_t > > *cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult = (wi::vector< uint8_t,std::allocator< uint8_t > > *)& ((arg1)->slice_header_datas);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_sps_count_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  uint32_t arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(uint32_t *)carg2;
+  if (arg1) (arg1)->sps_count = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_sps_count_get(SwigObj* carg1) {
+  uint32_t cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->sps_count);
+  result = (SwigObj*)new uint32_t(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_pps_count_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  uint32_t arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(uint32_t *)carg2;
+  if (arg1) (arg1)->pps_count = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_pps_count_get(SwigObj* carg1) {
+  uint32_t cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->pps_count);
+  result = (SwigObj*)new uint32_t(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_slice_header_count_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  uint32_t arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(uint32_t *)carg2;
+  if (arg1) (arg1)->slice_header_count = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_slice_header_count_get(SwigObj* carg1) {
+  uint32_t cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->slice_header_count);
+  result = (SwigObj*)new uint32_t(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_data_stream_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  wi::graphics::GPUBuffer arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(wi::graphics::GPUBuffer *)carg2;
+  if (arg1) (arg1)->data_stream = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_data_stream_get(SwigObj* carg1) {
+  wi::graphics::GPUBuffer cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->data_stream);
+  result = (SwigObj*)new wi::graphics::GPUBuffer(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_average_frames_per_second_set(SwigObj* carg1, float carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  float arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = (float) carg2;
+  if (arg1) (arg1)->average_frames_per_second = arg2;
+}
+
+
+SWIGEXPORTC float wi_video_Video_average_frames_per_second_get(SwigObj* carg1) {
+  float cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  float result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult = (float) ((arg1)->average_frames_per_second);
+  result = (float)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_duration_seconds_set(SwigObj* carg1, float carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  float arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = (float) carg2;
+  if (arg1) (arg1)->duration_seconds = arg2;
+}
+
+
+SWIGEXPORTC float wi_video_Video_duration_seconds_get(SwigObj* carg1) {
+  float cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  float result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult = (float) ((arg1)->duration_seconds);
+  result = (float)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_frames_infos_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  wi::vector< wi::video::Video::FrameInfo,std::allocator< wi::video::Video::FrameInfo > > *arg2 = (wi::vector< wi::video::Video::FrameInfo,std::allocator< wi::video::Video::FrameInfo > > *) 0 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = (wi::vector< wi::video::Video::FrameInfo,std::allocator< wi::video::Video::FrameInfo > > *) carg2;
+  if (arg1) (arg1)->frames_infos = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_frames_infos_get(SwigObj* carg1) {
+  wi::vector< wi::video::Video::FrameInfo,std::allocator< wi::video::Video::FrameInfo > > *cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult = (wi::vector< wi::video::Video::FrameInfo,std::allocator< wi::video::Video::FrameInfo > > *)& ((arg1)->frames_infos);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_frame_display_order_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  wi::vector< size_t,std::allocator< size_t > > *arg2 = (wi::vector< size_t,std::allocator< size_t > > *) 0 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = (wi::vector< size_t,std::allocator< size_t > > *) carg2;
+  if (arg1) (arg1)->frame_display_order = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_frame_display_order_get(SwigObj* carg1) {
+  wi::vector< size_t,std::allocator< size_t > > *cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult = (wi::vector< size_t,std::allocator< size_t > > *)& ((arg1)->frame_display_order);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_num_dpb_slots_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  uint32_t arg2 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = *(uint32_t *)carg2;
+  if (arg1) (arg1)->num_dpb_slots = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_num_dpb_slots_get(SwigObj* carg1) {
+  uint32_t cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult =  ((arg1)->num_dpb_slots);
+  result = (SwigObj*)new uint32_t(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC bool wi_video_Video_IsValid(SwigObj* carg1) {
+  bool cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  bool result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  cppresult = (bool)((wi::video::Video const *)arg1)->IsValid();
+  result = (bool) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_Video_new() {
+  wi::video::Video *cppresult;
+  SwigObj* result;
+  
+  cppresult = (wi::video::Video *)new wi::video::Video();
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_Video_delete(SwigObj* carg1) {
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  
+  arg1 = (wi::video::Video *) carg1;
+  delete arg1;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_video_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  wi::video::Video *arg2 = (wi::video::Video *) 0 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (wi::video::Video *) carg2;
+  if (arg1) (arg1)->video = (wi::video::Video const *)arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_VideoInstance_video_get(SwigObj* carg1) {
+  wi::video::Video *cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (wi::video::Video *) ((arg1)->video);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_decoder_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  wi::graphics::VideoDecoder arg2 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = *(wi::graphics::VideoDecoder *)carg2;
+  if (arg1) (arg1)->decoder = arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_VideoInstance_decoder_get(SwigObj* carg1) {
+  wi::graphics::VideoDecoder cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult =  ((arg1)->decoder);
+  result = (SwigObj*)new wi::graphics::VideoDecoder(cppresult);
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_dpb_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  wi::video::VideoInstance::DPB *arg2 = (wi::video::VideoInstance::DPB *) 0 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (wi::video::VideoInstance::DPB *) carg2;
+  if (arg1) (arg1)->dpb = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_VideoInstance_dpb_get(SwigObj* carg1) {
+  wi::video::VideoInstance::DPB *cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (wi::video::VideoInstance::DPB *)& ((arg1)->dpb);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_output_textures_free_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  wi::vector< wi::video::VideoInstance::OutputTexture,std::allocator< wi::video::VideoInstance::OutputTexture > > *arg2 = (wi::vector< wi::video::VideoInstance::OutputTexture,std::allocator< wi::video::VideoInstance::OutputTexture > > *) 0 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (wi::vector< wi::video::VideoInstance::OutputTexture,std::allocator< wi::video::VideoInstance::OutputTexture > > *) carg2;
+  if (arg1) (arg1)->output_textures_free = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_VideoInstance_output_textures_free_get(SwigObj* carg1) {
+  wi::vector< wi::video::VideoInstance::OutputTexture,std::allocator< wi::video::VideoInstance::OutputTexture > > *cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (wi::vector< wi::video::VideoInstance::OutputTexture,std::allocator< wi::video::VideoInstance::OutputTexture > > *)& ((arg1)->output_textures_free);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_output_textures_used_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  wi::vector< wi::video::VideoInstance::OutputTexture,std::allocator< wi::video::VideoInstance::OutputTexture > > *arg2 = (wi::vector< wi::video::VideoInstance::OutputTexture,std::allocator< wi::video::VideoInstance::OutputTexture > > *) 0 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (wi::vector< wi::video::VideoInstance::OutputTexture,std::allocator< wi::video::VideoInstance::OutputTexture > > *) carg2;
+  if (arg1) (arg1)->output_textures_used = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_VideoInstance_output_textures_used_get(SwigObj* carg1) {
+  wi::vector< wi::video::VideoInstance::OutputTexture,std::allocator< wi::video::VideoInstance::OutputTexture > > *cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (wi::vector< wi::video::VideoInstance::OutputTexture,std::allocator< wi::video::VideoInstance::OutputTexture > > *)& ((arg1)->output_textures_used);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_output_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  wi::video::VideoInstance::OutputTexture *arg2 = (wi::video::VideoInstance::OutputTexture *) 0 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (wi::video::VideoInstance::OutputTexture *) carg2;
+  if (arg1) (arg1)->output = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_VideoInstance_output_get(SwigObj* carg1) {
+  wi::video::VideoInstance::OutputTexture *cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (wi::video::VideoInstance::OutputTexture *)& ((arg1)->output);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_target_display_order_set(SwigObj* carg1, int carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  int arg2 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (int) carg2;
+  if (arg1) (arg1)->target_display_order = arg2;
+}
+
+
+SWIGEXPORTC int wi_video_VideoInstance_target_display_order_get(SwigObj* carg1) {
+  int cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  int result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (int) ((arg1)->target_display_order);
+  result = (int)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_current_frame_set(SwigObj* carg1, int carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  int arg2 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (int) carg2;
+  if (arg1) (arg1)->current_frame = arg2;
+}
+
+
+SWIGEXPORTC int wi_video_VideoInstance_current_frame_get(SwigObj* carg1) {
+  int cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  int result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (int) ((arg1)->current_frame);
+  result = (int)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_time_until_next_frame_set(SwigObj* carg1, float carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  float arg2 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (float) carg2;
+  if (arg1) (arg1)->time_until_next_frame = arg2;
+}
+
+
+SWIGEXPORTC float wi_video_VideoInstance_time_until_next_frame_get(SwigObj* carg1) {
+  float cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  float result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (float) ((arg1)->time_until_next_frame);
+  result = (float)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_barriers_set(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  wi::vector< wi::graphics::GPUBarrier,std::allocator< wi::graphics::GPUBarrier > > *arg2 = (wi::vector< wi::graphics::GPUBarrier,std::allocator< wi::graphics::GPUBarrier > > *) 0 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (wi::vector< wi::graphics::GPUBarrier,std::allocator< wi::graphics::GPUBarrier > > *) carg2;
+  if (arg1) (arg1)->barriers = *arg2;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_VideoInstance_barriers_get(SwigObj* carg1) {
+  wi::vector< wi::graphics::GPUBarrier,std::allocator< wi::graphics::GPUBarrier > > *cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  SwigObj* result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (wi::vector< wi::graphics::GPUBarrier,std::allocator< wi::graphics::GPUBarrier > > *)& ((arg1)->barriers);
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_flags_set(SwigObj* carg1, int carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  enum wi::video::VideoInstance::Flags arg2 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (enum wi::video::VideoInstance::Flags) carg2;
+  if (arg1) (arg1)->flags = arg2;
+}
+
+
+SWIGEXPORTC int wi_video_VideoInstance_flags_get(SwigObj* carg1) {
+  enum wi::video::VideoInstance::Flags cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  int result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (enum wi::video::VideoInstance::Flags) ((arg1)->flags);
+  result = (int) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC bool wi_video_VideoInstance_IsValid(SwigObj* carg1) {
+  bool cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  bool result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  cppresult = (bool)((wi::video::VideoInstance const *)arg1)->IsValid();
+  result = (bool) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC SwigObj* wi_video_VideoInstance_new() {
+  wi::video::VideoInstance *cppresult;
+  SwigObj* result;
+  
+  cppresult = (wi::video::VideoInstance *)new wi::video::VideoInstance();
+  result = (SwigObj*) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_VideoInstance_delete(SwigObj* carg1) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  delete arg1;
+}
+
+
+SWIGEXPORTC bool wi_video_CreateVideo_rcstd_string_pwi_video_Video(SwigObj* carg1, SwigObj* carg2) {
+  bool cppresult;
+  std::string *arg1 = 0 ;
+  wi::video::Video *arg2 = (wi::video::Video *) 0 ;
+  bool result;
+  
+  
+  arg1 = (std::string *) carg1;
+  
+  arg2 = (wi::video::Video *) carg2;
+  cppresult = (bool)wi::video::CreateVideo((std::string const &)*arg1,arg2);
+  result = (bool) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC bool wi_video_CreateVideo_pcuint8_t_size_t_pwi_video_Video(SwigObj* carg1, size_t carg2, SwigObj* carg3) {
+  bool cppresult;
+  uint8_t *arg1 = (uint8_t *) 0 ;
+  size_t arg2 ;
+  wi::video::Video *arg3 = (wi::video::Video *) 0 ;
+  bool result;
+  
+  arg1 = (uint8_t *) carg1;
+  arg2 = (size_t) carg2;
+  arg3 = (wi::video::Video *) carg3;
+  cppresult = (bool)wi::video::CreateVideo((uint8_t const *)arg1,SWIG_STD_MOVE(arg2),arg3);
+  result = (bool) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC bool wi_video_CreateVideoInstance(SwigObj* carg1, SwigObj* carg2) {
+  bool cppresult;
+  wi::video::Video *arg1 = (wi::video::Video *) 0 ;
+  wi::video::VideoInstance *arg2 = (wi::video::VideoInstance *) 0 ;
+  bool result;
+  
+  arg1 = (wi::video::Video *) carg1;
+  arg2 = (wi::video::VideoInstance *) carg2;
+  cppresult = (bool)wi::video::CreateVideoInstance((wi::video::Video const *)arg1,arg2);
+  result = (bool) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC bool wi_video_IsDecodingRequired(SwigObj* carg1, float carg2) {
+  bool cppresult;
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  float arg2 ;
+  bool result;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (float) carg2;
+  cppresult = (bool)wi::video::IsDecodingRequired((wi::video::VideoInstance const *)arg1,arg2);
+  result = (bool) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_video_UpdateVideo(SwigObj* carg1, float carg2, SwigObj* carg3) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  float arg2 ;
+  wi::graphics::CommandList arg3 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = (float) carg2;
+  arg3 = *(wi::graphics::CommandList *)carg3;
+  wi::video::UpdateVideo(arg1,arg2,SWIG_STD_MOVE(arg3));
+}
+
+
+SWIGEXPORTC void wi_video_ResolveVideoToRGB(SwigObj* carg1, SwigObj* carg2) {
+  wi::video::VideoInstance *arg1 = (wi::video::VideoInstance *) 0 ;
+  wi::graphics::CommandList arg2 ;
+  
+  arg1 = (wi::video::VideoInstance *) carg1;
+  arg2 = *(wi::graphics::CommandList *)carg2;
+  wi::video::ResolveVideoToRGB(arg1,SWIG_STD_MOVE(arg2));
+}
+
+
+SWIGEXPORTC void wi_input_xinput_Update() {
+  wi::input::xinput::Update();
+}
+
+
+SWIGEXPORTC int wi_input_xinput_GetMaxControllerCount() {
+  int cppresult;
+  int result;
+  
+  cppresult = (int)wi::input::xinput::GetMaxControllerCount();
+  result = (int)cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC bool wi_input_xinput_GetControllerState(SwigObj* carg1, int carg2) {
+  bool cppresult;
+  wi::input::ControllerState *arg1 = (wi::input::ControllerState *) 0 ;
+  int arg2 ;
+  bool result;
+  
+  arg1 = (wi::input::ControllerState *) carg1;
+  arg2 = (int) carg2;
+  cppresult = (bool)wi::input::xinput::GetControllerState(arg1,arg2);
+  result = (bool) cppresult;
+  return result;
+}
+
+
+SWIGEXPORTC void wi_input_xinput_SetControllerFeedback(SwigObj* carg1, int carg2) {
+  wi::input::ControllerFeedback *arg1 = 0 ;
+  int arg2 ;
+  
+  
+  arg1 = (wi::input::ControllerFeedback *) carg1;
+  
+  arg2 = (int) carg2;
+  wi::input::xinput::SetControllerFeedback((wi::input::ControllerFeedback const &)*arg1,arg2);
+}
+
+
+SWIGEXPORTC void wi_renderer_SetShaderSourcePath(char * carg1) {
+  char *arg1 = (char *) 0 ;
+  
+  arg1 = (char *) carg1;
+  wi::renderer::SetShaderSourcePath(arg1);
+}
+
+
+SWIGEXPORTC void wi_renderer_SetShaderPath(char * carg1) {
+  char *arg1 = (char *) 0 ;
+  
+  arg1 = (char *) carg1;
+  wi::renderer::SetShaderPath(arg1);
 }
 
 

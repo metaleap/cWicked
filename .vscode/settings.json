@@ -1,15 +1,13 @@
 {
     "files.exclude": {
-        "**/.wi": true,
-        "**/.cache": true,
-        "**/.build": true
+        ".wi": true,
+        ".cache": true,
+        ".build": true
     },
     "search.exclude": {
         "compile_commands.json": true,
-        ".*": true,
-        "**/.wi": true,
-        "**/.cache": true,
-        "**/.build": true
+        ".cache": true,
+        ".build": true
     },
     "C_Cpp.default.compileCommands": "${workspaceFolder}/compile_commands.json",
     "C_Cpp.default.configurationProvider": "mesonbuild.mesonbuild",

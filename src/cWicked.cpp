@@ -4,6 +4,40 @@
 
 
 
+const char* wi_version_getVersionString() {
+  return wi::version::GetVersionString();
+}
+
+const char* wi_version_getCreditsString() {
+  return wi::version::GetCreditsString();
+}
+
+int wi_version_getMajor() {
+  return wi::version::GetMajor();
+}
+
+int wi_version_getMinor() {
+  return wi::version::GetMinor();
+}
+
+int wi_version_getRevision() {
+  return wi::version::GetRevision();
+}
+
+void wi_arguments_parse(int argc, char** argv) {
+  wi::arguments::Parse(argc, argv);
+}
+
+void wi_renderer_setShaderPath(char* path) {
+  wi::renderer::SetShaderPath(std::string(path));
+}
+
+void wi_renderer_setShaderSourcePath(char* path) {
+  wi::renderer::SetShaderSourcePath(std::string(path));
+}
+
+
+
 
 void wi_tmp_main(SDL_Window* win, int argc, char** argv) {
   wi::Application app {};

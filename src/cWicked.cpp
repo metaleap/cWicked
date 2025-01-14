@@ -1,7 +1,4 @@
 #include "../pch/wi_pch.h"
-#include "wiApplication.h"
-#include "wiGraphics.h"
-#include "wiInitializer.h"
 
 #include "cWicked.h"
 

@@ -1,24 +1,14 @@
-#include "../pch/wi_pch.h"
-
-#include "cWicked.h"
+#include "./wi.hpp"
 
 
 
-class WiApp : public wi::Application {
-public:
-  WiApplicationOnFixedUpdate onFixedUpdate;
-  WiApplicationOnUpdate onUpdate;
-  void FixedUpdate() override;
-  void Update(float) override;
-};
-
-void WiApp::FixedUpdate() {
+void WiWrapApplication::FixedUpdate() {
   wi::Application::FixedUpdate();
   if (this->onFixedUpdate != nullptr)
     this->onFixedUpdate();
 }
 
-void WiApp::Update(float delta) {
+void WiWrapApplication::Update(float delta) {
   wi::Application::Update(delta);
   if (this->onUpdate != nullptr)
     this->onUpdate(delta);
@@ -27,20 +17,20 @@ void WiApp::Update(float delta) {
 
 
 WiApplication wi_Application_new(WiApplicationOnFixedUpdate onFixedUpdate, WiApplicationOnUpdate onUpdate) {
-  auto ret = new WiApp();
+  auto ret = new WiWrapApplication();
   ret->onFixedUpdate = onFixedUpdate;
   ret->onUpdate = onUpdate;
   return (WiApplication)(ret);
 }
 
 void wi_Application_dispose(WiApplication app) {
-  delete ((WiApp*)(app));
+  delete ((WiWrapApplication*)(app));
 }
 
 void wi_Application_setInfoDisplay(WiApplication app, bool active, bool watermark, bool fpsInfo, bool deviceName, bool resolution, bool logicalSize,
                                    bool colorSpace, bool heapAllocCounter, bool pipelineCount, bool pipelineCreation, bool vramUsage, int textSize,
                                    bool colorGradingHelper, WiRect* rect) {
-  wi::Application::InfoDisplayer* info = &((WiApp*)(app))->infoDisplay;
+  wi::Application::InfoDisplayer* info = &((WiWrapApplication*)(app))->infoDisplay;
   info->active = active;
   info->watermark = watermark;
   info->fpsinfo = fpsInfo;
@@ -59,9 +49,13 @@ void wi_Application_setInfoDisplay(WiApplication app, bool active, bool watermar
 }
 
 void wi_Application_setWindow(WiApplication app, SDL_Window* window) {
-  ((WiApp*)(app))->SetWindow(window);
+  ((WiWrapApplication*)(app))->SetWindow(window);
 }
 
 void wi_Application_initialize(WiApplication app) {
-  ((WiApp*)(app))->Initialize();
+  ((WiWrapApplication*)(app))->Initialize();
+}
+
+void wi_Application_activatePath(WiApplication app, WiRenderPath3D renderPath, float fadeSeconds) {
+  ((WiWrapApplication*)(app))->ActivatePath((WiWrapRenderPath3D*)(renderPath), fadeSeconds);
 }

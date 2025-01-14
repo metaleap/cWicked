@@ -8,10 +8,8 @@
 int main(int argc, char** argv) {
   wi_arguments_parse(argc, argv);
 
-  char title[123];
-  sprintf(title, "Hola: %s", wi_version_getVersionString());
-  auto sdl_win = sdlInitAndCreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 960, 600,
-                                        SDL_WINDOW_VULKAN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE);
+  auto sdl_win = sdlInitAndCreateWindow("Ensuring up-to-date shaders for this PC, please wait a minute...", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                                        960, 600, SDL_WINDOW_VULKAN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE);
 
 
   wi_renderer_setShaderPath("../../.wi/.shaders/");
@@ -23,12 +21,13 @@ int main(int argc, char** argv) {
   wi_Application_initialize(app);
   wi_initializer_waitForInitializationsToFinish();
 
-  //   auto game = wi::RenderPath3D {};
-  //   app.ActivatePath(&game);
-  //   SDL_SetWindowTitle(win, wi::version::GetVersionString());
+  auto game = wi_RenderPath3D_new(nullptr, nullptr, nullptr);
+  wi_Application_activatePath(app, game, 0);
+  SDL_SetWindowTitle(sdl_win, wi_version_getVersionString());
   //   app.SetFullScreen(true);
 
   sleep(11);
   sdlDispose(sdl_win);
+  wi_RenderPath3D_dispose(game);
   wi_Application_dispose(app);
 }

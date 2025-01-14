@@ -28,6 +28,11 @@ void wi_initializer_waitForInitializationsToFinish();
 
 void wi_renderer_setShaderPath(char* path);
 void wi_renderer_setShaderSourcePath(char* path);
+typedef void* WiRenderPath3D;
+typedef void (*WiRenderPath3DOnFixedUpdate)(void* ctx);
+typedef void (*WiRenderPath3DOnUpdate)(void* ctx, float);
+WiRenderPath3D wi_RenderPath3D_new(void* ctx, WiRenderPath3DOnFixedUpdate onFixedUpdate, WiRenderPath3DOnUpdate onUpdate);
+void wi_RenderPath3D_dispose(WiRenderPath3D app);
 
 
 
@@ -61,6 +66,10 @@ void wi_Application_setInfoDisplay(WiApplication app, bool active, bool watermar
                                    bool colorGradingHelper, WiRect* rect);
 void wi_Application_setWindow(WiApplication app, SDL_Window* window);
 void wi_Application_initialize(WiApplication app);
+void wi_Application_activatePath(WiApplication app, WiRenderPath3D renderPath, float fadeSeconds);
+
+
+
 
 
 

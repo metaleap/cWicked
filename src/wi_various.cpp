@@ -1,6 +1,4 @@
-#include "../pch/wi_pch.h"
-
-#include "cWicked.h"
+#include "./wi.hpp"
 
 
 const char* wi_version_getVersionString() {

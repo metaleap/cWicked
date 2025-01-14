@@ -13,12 +13,6 @@
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "ccache c++ -Ilibcwicked.so.p -I. -I../.. -I../../.wi/WickedEngine -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -gsplit-dwarf -fms-extensions -DSDL2 -MD -MQ libcwicked.so.p/src_swigged_cwicked_wrap.cxx.o -MF libcwicked.so.p/src_swigged_cwicked_wrap.cxx.o.d -o libcwicked.so.p/src_swigged_cwicked_wrap.cxx.o -c ../../src/swigged_cwicked_wrap.cxx",
-    "file": "../../src/swigged_cwicked_wrap.cxx",
-    "output": "libcwicked.so.p/src_swigged_cwicked_wrap.cxx.o"
-  },
-  {
-    "directory": "/home/_/c/c/cWicked/.build/debug",
     "command": "ccache cc -IcWickedDemo.exec.p -I. -I../.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c23 -O0 -g -pthread -isystem/usr/include/SDL2 -D_REENTRANT -gsplit-dwarf -fms-extensions -DSDL2 -MD -MQ cWickedDemo.exec.p/src_demos_main.c.o -MF cWickedDemo.exec.p/src_demos_main.c.o.d -o cWickedDemo.exec.p/src_demos_main.c.o -c ../../src/demos/main.c",
     "file": "../../src/demos/main.c",
     "output": "cWickedDemo.exec.p/src_demos_main.c.o"

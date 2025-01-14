@@ -1,38 +1,12 @@
 #include "../pch/wi_pch.h"
-#include <unistd.h>
 
 #include "cWicked.h"
 
 
-wi::Application app {};
-
-
-void wi_sdl2_dispose(SDL_Window* winToDestroyIfAny) {
-  if (winToDestroyIfAny != nullptr)
-    SDL_DestroyWindow(winToDestroyIfAny);
-  SDL_Quit();
-}
-
-
-SDL_Window* wi_sdl2_init_and_create_window(const char* winTitle, int winX, int winY, int winWidth, int winHeight, Uint32 winFlags) {
-  if (0 != *sdl2::make_sdlsystem(SDL_INIT_EVERYTHING)) {
-    fprintf(stderr, "Failed to init SDL2: %s", SDL_GetError());
-    wi_sdl2_dispose(nullptr);
-    exit(1);
-  }
-
-  auto sdl_win = sdl2::make_window(winTitle, winX, winY, winWidth, winHeight, winFlags);
-  if (!sdl_win) {
-    fprintf(stderr, "Failed to create SDL2 window: %s", SDL_GetError());
-    wi_sdl2_dispose(nullptr);
-    exit(1);
-  }
-
-  return sdl_win.release();
-}
 
 
 void wi_tmp_main(SDL_Window* win, int argc, char** argv) {
+  wi::Application app {};
   wi::arguments::Parse(argc, argv);
 #ifdef WickedEngine_SHADER_DIR
   wi::renderer::SetShaderSourcePath(WickedEngine_SHADER_DIR);
@@ -59,5 +33,4 @@ void wi_tmp_main(SDL_Window* win, int argc, char** argv) {
   app.ActivatePath(&game);
   SDL_SetWindowTitle(win, wi::version::GetVersionString());
   app.SetFullScreen(true);
-  sleep(22);
 }

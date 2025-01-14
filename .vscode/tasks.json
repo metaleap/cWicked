@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "mesonBuildDebug",
-            "command": "./refresh_swigged.sh && time meson compile -C .build/debug && cp .build/debug/compile_commands.json .",
+            "command": "time meson compile -C .build/debug && cp .build/debug/compile_commands.json .",
             "group": {
                 "kind": "build",
                 "isDefault": true

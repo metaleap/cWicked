@@ -3,7 +3,6 @@
 #include <SDL2/SDL.h>
 
 #include "../cWicked.h"
-#include "../swigged_cwicked_wrap.h"
 
 
 void sdlDispose(SDL_Window* winToDestroyIfAny) {

@@ -2,4 +2,4 @@ Diagnostics:
   UnusedIncludes: None
 CompileFlags:
   Remove: [-fpch-preprocess, -include]
-  Add: [-Wstrict-prototypes,-Wextra]
+  Add: [-march=native, -fno-color-diagnostics, -fsanitize=address, -Wunused-variable, -Wall, -Wextra, -Wpedantic, -Wshadow, -Wstrict-prototypes, -Wno-gnu-empty-struct, -Wenum-compare, -Wenum-compare-switch, -Wunused-variable, -Wenum-conversion, -Wenum-enum-conversion, -Wmissing-field-initializers, -Wimplicit-fallthrough, -Wimplicit-float-conversion, -Wimplicit-int, -Wimplicit-int-conversion, -Wimplicit-int-float-conversion, -Wint-in-bool-context, -Wno-incompatible-pointer-types-discards-qualifiers]

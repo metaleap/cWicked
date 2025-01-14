@@ -20,7 +20,7 @@ mkdir .build/debug/shaders
 cp $wi_build_dir/WickedEngine/libdxcompiler.so .build/debug/
 meson setup -DWICKED_BUILD_DIR=$wi_build_dir --native-file meson_native.ini .build/debug
 
-# wi_build_dir=".wi/.build_Release"
+wi_build_dir=".wi/.build_Release"
 
 mkdir .build/release_gcc
 mkdir .build/release_gcc/shaders

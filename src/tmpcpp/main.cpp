@@ -1,10 +1,12 @@
-#include "../../pch/wi_pch.h"
-
+#include "../../.wi/WickedEngine/WickedEngine.h"
 
 
 
 class Game : public wi::RenderPath3D {
 public:
+  Game() = default;
+  ~Game() = default;
+  void Load() override;
   void Start() override;
   void Stop() override;
   void PreUpdate() override;
@@ -12,6 +14,10 @@ public:
   void Update(float deltaTime) override;
   void PostUpdate() override;
 };
+
+void Game::Load() {
+  wi::RenderPath3D::Load();
+}
 
 void Game::Start() {
   wi::RenderPath3D::Start();
@@ -53,10 +59,10 @@ public:
       SDL_PumpEvents();
       this->Run();
 
-      if (!ran) {
-        ran = true;
-        wi::lua::RunFile("../../.wi/Content/scripts/character_controller/character_controller.lua");
-      }
+      // if (!ran) {
+      //   ran = true;
+      //   wi::lua::RunFile("../../.wi/Content/scripts/character_controller/character_controller.lua");
+      // }
 
       while (((bool)(SDL_PollEvent(&sdl_evt))) && !quit)
         switch (sdl_evt.type) {
@@ -97,8 +103,8 @@ int main(int argc, char** argv) {
     SDL_Quit();
     exit(1);
   }
-  auto sdl_win = sdl2::make_window("Ensuring up-to-date shaders for this PC, please wait a minute!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 960,
-                                   600, SDL_WINDOW_SHOWN | SDL_WINDOW_VULKAN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE);
+  auto sdl_win = sdl2::make_window("Ensuring up-to-date shaders for this PC — please wait a minute...", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                                   960, 600, SDL_WINDOW_SHOWN | SDL_WINDOW_VULKAN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE);
   if (!sdl_win) {
     fprintf(stderr, "Failed to make window: %s", SDL_GetError());
     SDL_Quit();
@@ -124,14 +130,17 @@ int main(int argc, char** argv) {
   app->infoDisplay.size = 22;
 
 
-  app->SetWindow(sdl_win.get());
+  auto hwnd = sdl_win.get();
+  app->SetWindow(hwnd);
   app->Initialize();
-  wi::initializer::WaitForInitializationsToFinish();
+  // wi::initializer::WaitForInitializationsToFinish();
 
   Game game = Game();
+  game.init(hwnd);
+  game.Load();
   app->ActivatePath(&game);
-  SDL_SetWindowTitle(sdl_win.get(), wi::version::GetVersionString());
+  // SDL_SetWindowTitle(hwnd, wi::version::GetVersionString());
   // app->SetFullScreen(true);
-  app->mainLoop(sdl_win.get());
+  app->mainLoop(hwnd);
   SDL_Quit();
 }

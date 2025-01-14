@@ -1,6 +1,5 @@
 {
     "files.exclude": {
-        ".wi": true,
         ".cache": true,
         ".build": true
     },

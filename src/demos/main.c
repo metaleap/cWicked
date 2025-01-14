@@ -17,14 +17,18 @@ int main(int argc, char** argv) {
   wi_renderer_setShaderPath("../../.wi/.shaders/");
   wi_renderer_setShaderSourcePath("../../.wi/WickedEngine/shaders/");
 
-  WiApplication app = wi_application_new();
-  // auto app = wi_Application_new();
-  // wi_Application_infoDisplay(app, true, true, true, true, true, false, true, false, true, true, true, 22, false);
-  // wi_Application_SetWindow(app, (SWIGTYPE_p_wi__platform__window_type*)sdl_win);
-  // wi_Application_Initialize(app);
-  // wi_initializer_WaitForInitializationsToFinish();
+  WiApplication app = wi_Application_new();
+  wi_Application_infoDisplay(app, true, true, true, true, true, false, true, false, true, true, true, 22, false, nullptr);
+  wi_Application_setWindow(app, sdl_win);
+  wi_Application_initialize(app);
+  wi_initializer_waitForInitializationsToFinish();
+
+  //   auto game = wi::RenderPath3D {};
+  //   app.ActivatePath(&game);
+  //   SDL_SetWindowTitle(win, wi::version::GetVersionString());
+  //   app.SetFullScreen(true);
 
   sleep(11);
   sdlDispose(sdl_win);
-  wi_application_dispose(app);
+  wi_Application_dispose(app);
 }

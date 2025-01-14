@@ -59,3 +59,17 @@ void wi_Application_initialize(WiApplication app) {
 void wi_Application_activatePath(WiApplication app, WiRenderPath3D renderPath, float fadeSeconds) {
   ((WiWrapApplication*)(app))->ActivatePath((WiWrapRenderPath3D*)(renderPath), fadeSeconds);
 }
+
+void wi_Application_setFullScreen(WiApplication app, bool fullscreen) {
+  ((WiWrapApplication*)(app))->SetFullScreen(fullscreen);
+}
+
+void wi_Application_run(WiApplication app) {
+  ((WiWrapApplication*)(app))->Run();
+}
+
+bool wi_Application_isWindowActive(WiApplication app, bool* set) {
+  if (set != nullptr)
+    ((WiWrapApplication*)(app))->is_window_active = *set;
+  return ((WiWrapApplication*)(app))->is_window_active;
+}

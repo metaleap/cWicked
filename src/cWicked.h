@@ -26,6 +26,10 @@ void wi_initializer_waitForInitializationsToFinish();
 
 
 
+void wi_input_sdlInput_processEvent(SDL_Event* evt);
+
+
+
 void wi_renderer_setShaderPath(char* path);
 void wi_renderer_setShaderSourcePath(char* path);
 typedef void* WiRenderPath3D;
@@ -67,6 +71,14 @@ void wi_Application_setInfoDisplay(WiApplication app, bool active, bool watermar
 void wi_Application_setWindow(WiApplication app, SDL_Window* window);
 void wi_Application_initialize(WiApplication app);
 void wi_Application_activatePath(WiApplication app, WiRenderPath3D renderPath, float fadeSeconds);
+void wi_Application_setFullScreen(WiApplication app, bool fullscreen);
+void wi_Application_run(WiApplication app);
+bool wi_Application_isWindowActive(WiApplication app, bool* set);
+
+
+
+
+
 
 
 

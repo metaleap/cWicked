@@ -1,4 +1,6 @@
 #include "./wi.hpp"
+#include ".wi/WickedEngine/wiSDLInput.h"
+#include <SDL_events.h>
 
 
 const char* wi_version_getVersionString() {
@@ -26,5 +28,10 @@ void wi_arguments_parse(int argc, char** argv) {
 }
 
 void wi_initializer_waitForInitializationsToFinish() {
+  // wi::input::sdlinput::ProcessEvent(const SDL_Event &event);
   wi::initializer::WaitForInitializationsToFinish();
+}
+
+void wi_input_sdlInput_processEvent(SDL_Event* evt) {
+  wi::input::sdlinput::ProcessEvent(*evt);
 }

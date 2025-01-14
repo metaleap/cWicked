@@ -1,9 +1,20 @@
+#include <SDL_video.h>
 #include <unistd.h>
 
 #include "./demos.h"
 #include "../cWicked.h"
 
 
+
+void upd(float dt) {
+  printf("APP>%g\n", dt);
+}
+
+void updRp(void* ctx, float dt) {
+  printf("RP>>%g\n", dt);
+}
+
+void mainLoop(WiApplication app, SDL_Window* sdlWin);
 
 int main(int argc, char** argv) {
   wi_arguments_parse(argc, argv);
@@ -15,7 +26,7 @@ int main(int argc, char** argv) {
   wi_renderer_setShaderPath("../../.wi/.shaders/");
   wi_renderer_setShaderSourcePath("../../.wi/WickedEngine/shaders/");
 
-  WiApplication app = wi_Application_new(nullptr, nullptr);
+  WiApplication app = wi_Application_new(nullptr, upd);
   wi_Application_setInfoDisplay(app, true, true, true, true, true, false, true, false, true, true, true, 22, false, nullptr);
   wi_Application_setWindow(app, sdl_win);
   wi_Application_initialize(app);
@@ -24,10 +35,55 @@ int main(int argc, char** argv) {
   auto game = wi_RenderPath3D_new(nullptr, nullptr, nullptr);
   wi_Application_activatePath(app, game, 0);
   SDL_SetWindowTitle(sdl_win, wi_version_getVersionString());
-  //   app.SetFullScreen(true);
+  // wi_Application_setFullScreen(app, true);
+  mainLoop(app, sdl_win);
 
-  sleep(11);
-  sdlDispose(sdl_win);
-  wi_RenderPath3D_dispose(game);
-  wi_Application_dispose(app);
+  // sdlDispose(sdl_win);
+  // wi_RenderPath3D_dispose(game);
+  // wi_Application_dispose(app);
+}
+
+void mainLoop(WiApplication app, SDL_Window* sdlWin) {
+  bool quit = false;
+  bool ran = false;
+  SDL_Event sdl_evt;
+
+  while (!quit) {
+    SDL_PumpEvents();
+    wi_Application_run(app);
+
+    // if (!ran) {
+    //   ran = true;
+    //   wi::lua::RunFile(std::string(engineDirPath) + "/Content/scripts/character_controller/character_controller.lua");
+    // }
+
+    while ((SDL_PollEvent(&sdl_evt) == 1) && !quit)
+      switch (sdl_evt.type) {
+        case SDL_QUIT:
+          quit = true;
+          break;
+        case SDL_WINDOWEVENT:
+          switch (sdl_evt.window.event) {
+            case SDL_WINDOWEVENT_CLOSE:
+              quit = true;
+              break;
+            case SDL_WINDOWEVENT_FOCUS_LOST:
+              bool is_window_active = false;
+              wi_Application_isWindowActive(app, &is_window_active);
+              break;
+            case SDL_WINDOWEVENT_FOCUS_GAINED:
+              is_window_active = true;
+              wi_Application_isWindowActive(app, &is_window_active);
+              break;
+            case SDL_WINDOWEVENT_SIZE_CHANGED:
+            case SDL_WINDOWEVENT_RESIZED:
+              wi_Application_setWindow(app, sdlWin);
+              break;
+          }
+          break;
+        default:
+          wi_input_sdlInput_processEvent(&sdl_evt);
+          break;
+      }
+  }
 }

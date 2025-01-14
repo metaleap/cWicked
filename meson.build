@@ -1,7 +1,7 @@
 project(
     'cWicked',
     ['cpp', 'c'],
-    version: '0.71.652',
+    version: '0.71.655',
     default_options: ['cpp_std=c++20', 'c_std=c23', 'cpp_rtti=false'],
 )
 
@@ -79,4 +79,19 @@ executable(
     implicit_include_directories: true,
     link_language: 'c',
     sources: ['src/demos/main.c'],
+)
+executable(
+    'tmpcpp.exec',
+    dependencies: [
+        dep_sdl2,
+        dep_pthread,
+        dep_faudio,
+        dep_lua,
+        dep_jolt,
+        dep_utility,
+        dep_wicked,
+    ],
+    implicit_include_directories: true,
+    link_language: 'cpp',
+    sources: ['src/tmpcpp/main.cpp'],
 )

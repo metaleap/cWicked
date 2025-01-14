@@ -1,4 +1,5 @@
 #include "../pch/wi_pch.h"
+#include "wiApplication.h"
 
 #include "cWicked.h"
 
@@ -35,6 +36,21 @@ void wi_renderer_setShaderPath(char* path) {
 void wi_renderer_setShaderSourcePath(char* path) {
   wi::renderer::SetShaderSourcePath(std::string(path));
 }
+
+WiApplication wi_application_new() {
+  return (WiApplication)(new wi::Application());
+}
+
+void wi_application_dispose(WiApplication app) {
+  delete ((wi::Application*)(app));
+}
+
+
+
+
+
+
+
 
 
 

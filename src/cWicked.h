@@ -19,6 +19,9 @@ void wi_arguments_parse(int argc, char** argv);
 void wi_renderer_setShaderPath(char* path);
 void wi_renderer_setShaderSourcePath(char* path);
 
+typedef void* WiApplication;
+WiApplication wi_application_new();
+void wi_application_dispose(WiApplication app);
 
 
 // typedef struct SwigObj_wi_Application wi_Application;

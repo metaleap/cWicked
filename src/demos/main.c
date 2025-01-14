@@ -17,14 +17,14 @@ int main(int argc, char** argv) {
   wi_renderer_setShaderPath("../../.wi/.shaders/");
   wi_renderer_setShaderSourcePath("../../.wi/WickedEngine/shaders/");
 
+  WiApplication app = wi_application_new();
   // auto app = wi_Application_new();
   // wi_Application_infoDisplay(app, true, true, true, true, true, false, true, false, true, true, true, 22, false);
   // wi_Application_SetWindow(app, (SWIGTYPE_p_wi__platform__window_type*)sdl_win);
   // wi_Application_Initialize(app);
   // wi_initializer_WaitForInitializationsToFinish();
 
-
-
-  sleep(22);
+  sleep(11);
   sdlDispose(sdl_win);
+  wi_application_dispose(app);
 }

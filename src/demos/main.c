@@ -17,8 +17,8 @@ int main(int argc, char** argv) {
   wi_renderer_setShaderPath("../../.wi/.shaders/");
   wi_renderer_setShaderSourcePath("../../.wi/WickedEngine/shaders/");
 
-  WiApplication app = wi_Application_new();
-  wi_Application_infoDisplay(app, true, true, true, true, true, false, true, false, true, true, true, 22, false, nullptr);
+  WiApplication app = wi_Application_new(nullptr, nullptr);
+  wi_Application_setInfoDisplay(app, true, true, true, true, true, false, true, false, true, true, true, 22, false, nullptr);
   wi_Application_setWindow(app, sdl_win);
   wi_Application_initialize(app);
   wi_initializer_waitForInitializationsToFinish();

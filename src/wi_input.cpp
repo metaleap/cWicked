@@ -1,5 +1,10 @@
 #include "./wi.hpp"
+#include ".wi/WickedEngine/wiCanvas.h"
+#include ".wi/WickedEngine/wiColor.h"
+#include ".wi/WickedEngine/wiInput.h"
 #include ".wi/WickedEngine/wiSDLInput.h"
+#include "src/copied.h"
+#include <SDL_video.h>
 
 
 
@@ -34,7 +39,7 @@ bool wi_input_isGamepadButton(WI_BUTTON button) {
 }
 
 WiMouseState* wi_input_getMouseState() {
-  assert(sizeof(WiMouseState) == sizeof(wi::input::MouseState));
+  static_assert(sizeof(WiMouseState) == sizeof(wi::input::MouseState));
   auto ret = wi::input::GetMouseState();
   return (WiMouseState*)(&ret); // ignore Wreturn-stack-address: it's a static in wiInput.cpp
 }
@@ -50,20 +55,41 @@ WI_XMFLOAT4 wi_input_getPointer() {
   return *((WI_XMFLOAT4*)(&tmp));
 }
 
+void wi_input_update(SDL_Window* window, WiCanvas* canvas) {
+  static_assert((sizeof(WiCanvas) + 8) == sizeof(wi::Canvas));
+  return wi::input::Update(window, *(wi::Canvas*)(canvas));
+}
+
 void wi_input_sdlInput_processEvent(SDL_Event* evt) {
   return wi::input::sdlinput::ProcessEvent(*evt);
 }
 
 void wi_input_sdlInput_getKeyboadState(WiKeyboardState* state) {
-  assert(sizeof(WiKeyboardState) == sizeof(wi::input::KeyboardState));
+  static_assert(sizeof(WiKeyboardState) == sizeof(wi::input::KeyboardState));
   return wi::input::sdlinput::GetKeyboardState((wi::input::KeyboardState*)(state));
 }
 
 void wi_input_sdlInput_getMouseState(WiMouseState* state) {
-  assert(sizeof(WiMouseState) == sizeof(wi::input::MouseState));
+  static_assert(sizeof(WiMouseState) == sizeof(wi::input::MouseState));
   return wi::input::sdlinput::GetMouseState((wi::input::MouseState*)(state));
 }
 
-// void wi_input_sdlInput_setControllerFeedback() {
-//   return wi::input::sdlinput::SetControllerFeedback();
-// }
+void wi_input_sdlInput_getControllerState(WiControllerState* state, int index) {
+  static_assert(sizeof(WiControllerState) == sizeof(wi::input::ControllerState));
+  wi::input::sdlinput::GetControllerState((wi::input::ControllerState*)(state), index);
+}
+
+void wi_input_sdlInput_setControllerFeedback(WiControllerFeedback* data, int index) {
+  static_assert(sizeof(WiControllerFeedback) == sizeof(wi::input::ControllerFeedback));
+  auto tmp = (wi::input::ControllerFeedback*)(data);
+  return wi::input::sdlinput::SetControllerFeedback(*tmp, index);
+}
+
+int wi_input_sdlInput_getMaxControllerCount() {
+  wi::input::sdlinput::Update();
+  return wi::input::sdlinput::GetMaxControllerCount();
+}
+
+void wi_input_sdlInput_update() {
+  return wi::input::sdlinput::Update();
+}

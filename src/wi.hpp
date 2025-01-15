@@ -8,8 +8,9 @@
 
 class WiWrapApplication : public wi::Application {
 public:
-  WiApplicationOnFixedUpdate onFixedUpdate;
-  WiApplicationOnUpdate onUpdate;
+  void* overrides[_WI_ON_COUNT];
+  WiApplicationOn0 onFixedUpdate;
+  WiApplicationOn1 onUpdate;
   void FixedUpdate() override;
   void Update(float) override;
 };

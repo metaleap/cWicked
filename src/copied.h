@@ -2,6 +2,10 @@
 
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+/// C-only API:
 
 
 
@@ -32,7 +36,7 @@ typedef enum WI_INITIALIZED_SYSTEM {
 
 // DirectXMath.h
 
-typedef struct WI_XMFLOAT4 {
+typedef struct WiXMFLOAT4 {
   float x;
   float y;
   float z;
@@ -40,14 +44,14 @@ typedef struct WI_XMFLOAT4 {
 } WI_XMFLOAT4;
 
 
-typedef struct WI_XMFLOAT3 {
+typedef struct WiXMFLOAT3 {
   float x;
   float y;
   float z;
 } WI_XMFLOAT3;
 
 
-typedef struct WI_XMFLOAT2 {
+typedef struct WiXMFLOAT2 {
   float x;
   float y;
 } WI_XMFLOAT2;
@@ -55,7 +59,39 @@ typedef struct WI_XMFLOAT2 {
 
 
 
+// wi::
+
+
+
+
+typedef struct WiColor {
+  uint32_t rgba;
+} WiColor;
+
+
+typedef struct WiColor16 {
+  uint64_t rgba;
+} WiColor16;
+
+
+typedef struct WiCanvas {
+  uint32_t width;
+  uint32_t height;
+  float dpi6;
+  float scaling; // custom DPI scaling factor (optional)
+} WiCanvas;
+
+
+
+
 // wi::input
+
+
+typedef struct WiControllerFeedback {
+  float vibration_left;  // left vibration motor (0: no vibration, 1: maximum vibration)
+  float vibration_right; // right vibration motor (0: no vibration, 1: maximum vibration)
+  WiColor led_color;     // led color
+} WiControllerFeedback;
 
 
 typedef enum WI_GAMEPAD_ANALOG {
@@ -65,6 +101,15 @@ typedef enum WI_GAMEPAD_ANALOG {
   WI_GAMEPAD_ANALOG_TRIGGER_R,
 
 } WI_GAMEPAD_ANALOG;
+
+
+typedef struct WiControllerState {
+  uint32_t buttons;
+  WI_XMFLOAT2 thumbstick_L;
+  WI_XMFLOAT2 thumbstick_R;
+  float trigger_L;
+  float trigger_R;
+} WiControllerState;
 
 
 typedef struct WiMouseState {
@@ -215,7 +260,7 @@ typedef enum WI_BUTTON {
 
 
 typedef struct WiKeyboardState {
-  bool buttons[WI_BUTTON_ENUM_SIZE] = {}; // it contains pressed buttons as "keyboard/typewriter" like, so no continuous presses
+  bool buttons[WI_BUTTON_ENUM_SIZE]; // it contains pressed buttons as "keyboard/typewriter" like, so no continuous presses
 } WiKeyboardState;
 
 
@@ -238,3 +283,18 @@ typedef struct WiRect {
   int32_t right;
   int32_t bottom;
 } WiRect;
+
+
+
+
+
+
+
+
+
+
+
+///
+#ifdef __cplusplus
+} // extern "C"
+#endif

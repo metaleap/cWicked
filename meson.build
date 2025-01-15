@@ -67,9 +67,10 @@ lib_cwicked = shared_library(
     sources: [
         'src/wi_various.cpp',
         'src/wi_application.cpp',
-        'src/wi_graphics.cpp',
+        'src/wi_ecs.cpp',
         'src/wi_initializer.cpp',
         'src/wi_input.cpp',
+        'src/wi_jobsystem.cpp',
         'src/wi_render.cpp',
     ],
 )

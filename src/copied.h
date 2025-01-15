@@ -287,6 +287,33 @@ typedef struct WiRect {
 
 
 
+// wi::jobsystem
+
+typedef struct WiJobArgs {
+  uint32_t jobIndex;      // job index relative to dispatch (like SV_DispatchThreadID in HLSL)
+  uint32_t groupID;       // group index relative to dispatch (like SV_GroupID in HLSL)
+  uint32_t groupIndex;    // job index relative to group (like SV_GroupIndex in HLSL)
+  bool isFirstJobInGroup; // is the current job the first one in the group?
+  bool isLastJobInGroup;  // is the current job the last one in the group?
+  void* sharedmemory;     // stack memory shared within the current group (jobs within a group execute serially)
+} WiJobArgs;
+
+
+typedef enum WiJobPriority {
+  WI_JOBPRIORITY_HIGH,
+  WI_JOBPRIORITY_LOW,
+  WI_JOBPRIORITY_STREAMING,
+  WI_JOBPRIORITY_COUNT,
+} WiJobPriority;
+
+// Defines a state of execution, can be waited on
+typedef struct WiJobContext {
+  volatile long counter;
+  WiJobPriority priority;
+} WiJobContext;
+
+
+
 
 
 

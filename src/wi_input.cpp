@@ -1,10 +1,4 @@
 #include "./wi.hpp"
-#include ".wi/WickedEngine/wiCanvas.h"
-#include ".wi/WickedEngine/wiColor.h"
-#include ".wi/WickedEngine/wiInput.h"
-#include ".wi/WickedEngine/wiSDLInput.h"
-#include "src/copied.h"
-#include <SDL_video.h>
 
 
 

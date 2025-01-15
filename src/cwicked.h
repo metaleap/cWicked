@@ -10,7 +10,10 @@
 extern "C" {
 #endif
 
+
+
 /// own stuff:
+
 
 typedef enum WI_ON {
   WI_ON_APP_INITIALIZE,
@@ -28,7 +31,12 @@ typedef enum WI_ON {
 } WI_ON;
 
 
+
 /// wrappers:
+
+
+typedef unsigned int WiEntity;
+WiEntity WiEntity_create();
 
 
 
@@ -82,6 +90,10 @@ void WiRenderPath3D_dispose(WiRenderPath3D self);
 
 
 void WiRect_fromViewport(WiRect* rect, WiViewport* viewport);
+
+
+
+typedef void (*WiJobHandler)(WiJobArgs* args);
 
 
 

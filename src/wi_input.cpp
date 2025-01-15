@@ -1,4 +1,5 @@
 #include "./wi.hpp"
+#include ".wi/WickedEngine/wiInput.h"
 
 
 
@@ -34,8 +35,11 @@ bool wi_input_isGamepadButton(WI_BUTTON button) {
 
 WiMouseState* wi_input_getMouseState() {
   static_assert(sizeof(WiMouseState) == sizeof(wi::input::MouseState));
-  auto ret = wi::input::GetMouseState();
-  return (WiMouseState*)(&ret); // ignore Wreturn-stack-address: it's a static in wiInput.cpp
+  const wi::input::MouseState& ret = wi::input::GetMouseState(); // reference to a static in wiInput.cpp, hence:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wreturn-stack-address"
+  return (WiMouseState*)(&ret);
+#pragma GCC diagnostic pop
 }
 
 bool wi_input_press(WI_BUTTON button, int playerIndex) {

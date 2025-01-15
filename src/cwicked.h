@@ -7,6 +7,7 @@
 
 
 #ifdef __cplusplus
+#include "./wi.hpp"
 extern "C" {
 #endif
 
@@ -36,6 +37,15 @@ typedef enum WI_ON {
 
 
 typedef unsigned int WiEntity;
+typedef struct WiComponent {
+  int foo;
+#ifdef __cplusplus
+  void Serialize(wi::Archive& archive, wi::ecs::EntitySerializer& seri);
+#endif
+} WiComponent;
+typedef void* WiComponentManager;
+typedef void (*WiComponentFunc)(WiComponent it);
+typedef void (*WiEntityFunc)(WiEntity it);
 WiEntity WiEntity_create();
 
 
@@ -93,10 +103,6 @@ void WiRect_fromViewport(WiRect* rect, WiViewport* viewport);
 
 
 
-typedef void (*WiJobHandler)(WiJobArgs* args);
-
-
-
 typedef void* WiApplication;
 typedef void (*WiApplicationHandler0)(void);
 typedef void (*WiApplicationHandler1)(float);
@@ -115,6 +121,7 @@ void WiApplication_set_isWindowActive(WiApplication self, bool set);
 
 
 
+typedef void (*WiJobHandler)(WiJobArgs* args);
 WiJobContext WiJobContext_create();
 void wi_jobsystem_dispatch(WiJobContext* ctx, uint32_t jobCount, uint32_t groupSize, WiJobHandler handler);
 void wi_jobsystem_execute(WiJobContext* ctx, WiJobHandler handler);

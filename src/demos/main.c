@@ -1,6 +1,7 @@
 #include <unistd.h>
 
 #include "./demos.h"
+#include "src/cwicked.h"
 
 
 

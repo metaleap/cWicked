@@ -2,6 +2,16 @@
 
 
 
+void wi_renderer_setShaderPath(char* path) {
+  return wi::renderer::SetShaderPath(std::string(path));
+}
+
+void wi_renderer_setShaderSourcePath(char* path) {
+  return wi::renderer::SetShaderSourcePath(std::string(path));
+}
+
+
+
 void WiWrapRenderPath3D::FixedUpdate() {
   wi::RenderPath3D::FixedUpdate();
   auto handler = (WiRenderPathHandler0)this->handlers[WI_ON_FIXEDUPDATE];
@@ -66,14 +76,6 @@ void WiWrapRenderPath3D::Compose(wi::graphics::CommandList cmdList) const {
 }
 
 
-
-void wi_renderer_setShaderPath(char* path) {
-  return wi::renderer::SetShaderPath(std::string(path));
-}
-
-void wi_renderer_setShaderSourcePath(char* path) {
-  return wi::renderer::SetShaderSourcePath(std::string(path));
-}
 
 WiRenderPath3D WiRenderPath3D_new() {
   auto ret = new WiWrapRenderPath3D();

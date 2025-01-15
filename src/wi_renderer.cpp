@@ -17,14 +17,14 @@ void WiWrapRenderPath3D::Update(float delta) {
 
 
 void wi_renderer_setShaderPath(char* path) {
-  wi::renderer::SetShaderPath(std::string(path));
+  return wi::renderer::SetShaderPath(std::string(path));
 }
 
 void wi_renderer_setShaderSourcePath(char* path) {
-  wi::renderer::SetShaderSourcePath(std::string(path));
+  return wi::renderer::SetShaderSourcePath(std::string(path));
 }
 
-WiRenderPath3D wi_RenderPath3D_new(void* ctx, WiRenderPath3DOnFixedUpdate onFixedUpdate, WiRenderPath3DOnUpdate onUpdate) {
+WiRenderPath3D wi_RenderPath3D_new(void* ctx, WiRenderPathOnFixedUpdate onFixedUpdate, WiRenderPathOnUpdate onUpdate) {
   auto ret = new WiWrapRenderPath3D();
   ret->ctx = ctx;
   ret->onFixedUpdate = onFixedUpdate;

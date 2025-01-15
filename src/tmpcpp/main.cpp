@@ -138,7 +138,7 @@ int main(int argc, char** argv) {
   Game game = Game();
   game.init(hwnd);
   game.Load();
-  app->ActivatePath(&game);
+  app->ActivatePath(&game, 0.5);
   // SDL_SetWindowTitle(hwnd, wi::version::GetVersionString());
   // app->SetFullScreen(true);
   app->mainLoop(hwnd);

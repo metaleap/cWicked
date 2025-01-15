@@ -2,7 +2,7 @@
 
 #include "../pch/wi_pch.h"
 
-#include "cWicked.h"
+#include "./cwicked.h"
 
 
 
@@ -16,11 +16,22 @@ public:
 
 
 
+class WiWrapRenderPath2D : public wi::RenderPath2D {
+public:
+  void* ctx;
+  WiRenderPathOnFixedUpdate onFixedUpdate;
+  WiRenderPathOnUpdate onUpdate;
+  void FixedUpdate() override;
+  void Update(float) override;
+};
+
+
+
 class WiWrapRenderPath3D : public wi::RenderPath3D {
 public:
   void* ctx;
-  WiRenderPath3DOnFixedUpdate onFixedUpdate;
-  WiRenderPath3DOnUpdate onUpdate;
+  WiRenderPathOnFixedUpdate onFixedUpdate;
+  WiRenderPathOnUpdate onUpdate;
   void FixedUpdate() override;
   void Update(float) override;
 };

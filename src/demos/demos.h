@@ -2,7 +2,7 @@
 
 #include <SDL2/SDL.h>
 
-#include "../cWicked.h"
+#include "../cwicked.h"
 
 
 void sdlDispose(SDL_Window* winToDestroyIfAny) {

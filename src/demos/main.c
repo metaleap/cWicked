@@ -1,8 +1,6 @@
-#include <SDL_video.h>
 #include <unistd.h>
 
 #include "./demos.h"
-#include "../cWicked.h"
 
 
 
@@ -10,7 +8,7 @@ void upd(float dt) {
   printf("APP>%g\n", dt);
 }
 
-void updRp(void* ctx, float dt) {
+void updRp(void* _, float dt) {
   printf("RP>>%g\n", dt);
 }
 
@@ -38,16 +36,16 @@ int main(int argc, char** argv) {
   // wi_Application_setFullScreen(app, true);
   mainLoop(app, sdl_win);
 
-  // sdlDispose(sdl_win);
-  // wi_RenderPath3D_dispose(game);
-  // wi_Application_dispose(app);
+  sdlDispose(sdl_win);
+  wi_RenderPath3D_dispose(game);
+  wi_Application_dispose(app);
 }
 
 void mainLoop(WiApplication app, SDL_Window* sdlWin) {
   bool quit = false;
-  bool ran = false;
   SDL_Event sdl_evt;
 
+  // bool ran = false;
   while (!quit) {
     SDL_PumpEvents();
     wi_Application_run(app);
@@ -68,12 +66,10 @@ void mainLoop(WiApplication app, SDL_Window* sdlWin) {
               quit = true;
               break;
             case SDL_WINDOWEVENT_FOCUS_LOST:
-              bool is_window_active = false;
-              wi_Application_isWindowActive(app, &is_window_active);
+              wi_Application_set_isWindowActive(app, false);
               break;
             case SDL_WINDOWEVENT_FOCUS_GAINED:
-              is_window_active = true;
-              wi_Application_isWindowActive(app, &is_window_active);
+              wi_Application_set_isWindowActive(app, true);
               break;
             case SDL_WINDOWEVENT_SIZE_CHANGED:
             case SDL_WINDOWEVENT_RESIZED:

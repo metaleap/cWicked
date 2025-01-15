@@ -319,8 +319,6 @@ typedef struct WiJobContext {
 
 
 
-
-
 ///
 #ifdef __cplusplus
 } // extern "C"

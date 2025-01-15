@@ -115,9 +115,12 @@ void WiApplication_set_isWindowActive(WiApplication self, bool set);
 
 
 
-
-
-
+WiJobContext WiJobContext_create();
+void wi_jobsystem_dispatch(WiJobContext* ctx, uint32_t jobCount, uint32_t groupSize, WiJobHandler handler);
+void wi_jobsystem_execute(WiJobContext* ctx, WiJobHandler handler);
+void wi_jobsystem_wait(WiJobContext* ctx);
+bool wi_jobsystem_isBusy(WiJobContext* ctx);
+uint32_t wi_jobsystem_getThreadCount(WiJobPriority priority);
 
 
 

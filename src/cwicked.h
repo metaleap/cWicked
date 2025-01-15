@@ -74,10 +74,10 @@ void wi_renderer_setShaderPath(char* path);
 void wi_renderer_setShaderSourcePath(char* path);
 typedef void* WiRenderPath2D;
 typedef void* WiRenderPath3D;
-typedef void (*WiRenderPathOnFixedUpdate)(void* ctx);
-typedef void (*WiRenderPathOnUpdate)(void* ctx, float);
-WiRenderPath3D wi_RenderPath3D_new(void* ctx, WiRenderPathOnFixedUpdate onFixedUpdate, WiRenderPathOnUpdate onUpdate);
-void wi_RenderPath3D_dispose(WiRenderPath3D app);
+typedef void (*WiRenderPathHandler0)(WiRenderPath3D self);
+typedef void (*WiRenderPathHandler1)(WiRenderPath3D self, float);
+WiRenderPath3D WiRenderPath3D_new();
+void WiRenderPath3D_dispose(WiRenderPath3D self);
 
 
 
@@ -86,20 +86,20 @@ void WiRect_fromViewport(WiRect* rect, WiViewport* viewport);
 
 
 typedef void* WiApplication;
-typedef void (*WiApplicationOn0)(void);
-typedef void (*WiApplicationOn1)(float);
+typedef void (*WiApplicationHandler0)(void);
+typedef void (*WiApplicationHandler1)(float);
 WiApplication WiApplication_new();
-void WiApplication_dispose(WiApplication app);
-void WiApplication_setInfoDisplay(WiApplication app, bool active, bool watermark, bool fpsInfo, bool deviceName, bool resolution, bool logicalSize,
+void WiApplication_dispose(WiApplication self);
+void WiApplication_setInfoDisplay(WiApplication self, bool active, bool watermark, bool fpsInfo, bool deviceName, bool resolution, bool logicalSize,
                                   bool colorSpace, bool heapAllocCounter, bool pipelineCount, bool pipelineCreation, bool vramUsage, int textSize,
                                   bool colorGradingHelper, WiRect* rect);
-void WiApplication_setWindow(WiApplication app, SDL_Window* window);
-void WiApplication_initialize(WiApplication app);
-void WiApplication_activatePath(WiApplication app, WiRenderPath3D renderPath, float fadeSeconds);
-void WiApplication_setFullScreen(WiApplication app, bool fullscreen);
-void WiApplication_run(WiApplication app);
-bool WiApplication_get_isWindowActive(WiApplication app);
-void WiApplication_set_isWindowActive(WiApplication app, bool set);
+void WiApplication_setWindow(WiApplication self, SDL_Window* window);
+void WiApplication_initialize(WiApplication self);
+void WiApplication_activatePath(WiApplication self, WiRenderPath3D renderPath, float fadeSeconds);
+void WiApplication_setFullScreen(WiApplication self, bool fullscreen);
+void WiApplication_run(WiApplication self);
+bool WiApplication_get_isWindowActive(WiApplication self);
+void WiApplication_set_isWindowActive(WiApplication self, bool set);
 
 
 

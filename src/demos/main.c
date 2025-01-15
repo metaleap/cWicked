@@ -25,14 +25,14 @@ int main(int argc, char** argv) {
   WiApplication_initialize(app);
   wi_initializer_waitForInitializationsToFinish();
 
-  auto game = wi_RenderPath3D_new(nullptr, nullptr, nullptr);
+  auto game = WiRenderPath3D_new();
   WiApplication_activatePath(app, game, 0);
   SDL_SetWindowTitle(sdl_win, wi_version_getVersionString());
   // WiApplication_setFullScreen(app, true);
   mainLoop(app, sdl_win);
 
   sdlDispose(sdl_win);
-  wi_RenderPath3D_dispose(game);
+  WiRenderPath3D_dispose(game);
   WiApplication_dispose(app);
 }
 

@@ -70,7 +70,7 @@ lib_cwicked = shared_library(
         'src/wi_graphics.cpp',
         'src/wi_initializer.cpp',
         'src/wi_input.cpp',
-        'src/wi_renderer.cpp',
+        'src/wi_render.cpp',
     ],
 )
 

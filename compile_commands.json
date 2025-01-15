@@ -37,9 +37,9 @@
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "ccache c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -DSDL2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_renderer.cpp.o -MF libcwicked.so.p/src_wi_renderer.cpp.o.d -o libcwicked.so.p/src_wi_renderer.cpp.o -c ../../src/wi_renderer.cpp",
-    "file": "../../src/wi_renderer.cpp",
-    "output": "libcwicked.so.p/src_wi_renderer.cpp.o"
+    "command": "ccache c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -DSDL2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_render.cpp.o -MF libcwicked.so.p/src_wi_render.cpp.o.d -o libcwicked.so.p/src_wi_render.cpp.o -c ../../src/wi_render.cpp",
+    "file": "../../src/wi_render.cpp",
+    "output": "libcwicked.so.p/src_wi_render.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",

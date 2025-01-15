@@ -1,5 +1,4 @@
 #include "./wi.hpp"
-#include "src/cwicked.h"
 
 
 

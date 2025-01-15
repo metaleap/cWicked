@@ -72,6 +72,7 @@ lib_cwicked = shared_library(
         'src/wi_input.cpp',
         'src/wi_jobsystem.cpp',
         'src/wi_render.cpp',
+        'src/wi_scene.cpp',
     ],
 )
 

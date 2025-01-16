@@ -43,7 +43,6 @@ void mainLoop(WiApplication app, SDL_Window* sdlWin) {
 
   // bool ran = false;
   while (!quit) {
-    SDL_PumpEvents();
     WiApplication_run(app);
 
     // if (!ran) {

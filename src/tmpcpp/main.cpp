@@ -56,7 +56,6 @@ public:
     SDL_Event sdl_evt;
 
     while (!quit) {
-      SDL_PumpEvents();
       this->Run();
 
       // if (!ran) {

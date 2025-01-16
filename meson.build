@@ -97,5 +97,5 @@ executable(
     ],
     implicit_include_directories: true,
     link_language: 'cpp',
-    sources: ['src/tmpcpp/main.cpp'],
+    sources: ['src/tmpcpp/tests.cpp'],
 )

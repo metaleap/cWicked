@@ -1,6 +1,4 @@
-#include <SDL2/SDL.h>
 #include "../../.wi/WickedEngine/WickedEngine.h"
-#include ".wi/WickedEngine/wiSDLInput.h"
 
 int sdl_loop(wi::Application& application) {
   SDL_Event event;

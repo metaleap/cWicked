@@ -49,14 +49,20 @@
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
+    "command": "ccache c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -DSDL2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_scene.cpp.o -MF libcwicked.so.p/src_wi_scene.cpp.o.d -o libcwicked.so.p/src_wi_scene.cpp.o -c ../../src/wi_scene.cpp",
+    "file": "../../src/wi_scene.cpp",
+    "output": "libcwicked.so.p/src_wi_scene.cpp.o"
+  },
+  {
+    "directory": "/home/_/c/c/cWicked/.build/debug",
     "command": "ccache cc -IcWickedDemo.exec.p -I. -I../.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c23 -O0 -g -gsplit-dwarf -fms-extensions -DSDL2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ cWickedDemo.exec.p/src_demos_main.c.o -MF cWickedDemo.exec.p/src_demos_main.c.o.d -o cWickedDemo.exec.p/src_demos_main.c.o -c ../../src/demos/main.c",
     "file": "../../src/demos/main.c",
     "output": "cWickedDemo.exec.p/src_demos_main.c.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "ccache c++ -Itmpcpp.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -DSDL2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp.exec.p/src_tmpcpp_main.cpp.o -MF tmpcpp.exec.p/src_tmpcpp_main.cpp.o.d -o tmpcpp.exec.p/src_tmpcpp_main.cpp.o -c ../../src/tmpcpp/main.cpp",
-    "file": "../../src/tmpcpp/main.cpp",
-    "output": "tmpcpp.exec.p/src_tmpcpp_main.cpp.o"
+    "command": "ccache c++ -Itmpcpp.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -DSDL2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp.exec.p/src_tmpcpp_tests.cpp.o -MF tmpcpp.exec.p/src_tmpcpp_tests.cpp.o.d -o tmpcpp.exec.p/src_tmpcpp_tests.cpp.o -c ../../src/tmpcpp/tests.cpp",
+    "file": "../../src/tmpcpp/tests.cpp",
+    "output": "tmpcpp.exec.p/src_tmpcpp_tests.cpp.o"
   }
 ]

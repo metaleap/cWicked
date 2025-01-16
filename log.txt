@@ -1,0 +1,109 @@
+[Warning] File not found: /home/_/c/c/cWicked/pso_cache_vulkan
+Created GraphicsDevice_Vulkan (26 ms)
+Adapter: AMD Radeon Graphics (RADV RENOIR)
+
+[wi::initializer] Initializing Wicked Engine, please wait...
+Version: 0.71.655
+
+No embedded shaders found, shaders will be compiled at runtime if needed.
+	Shader source path: ../../.wi/WickedEngine/shaders/
+	Shader binary path: ../../.wi/.shaders/
+
+wi::jobsystem Initialized with 16 cores in 2.92 ms
+	High priority threads: 15
+	Low priority threads: 14
+	Streaming threads: 1
+
+[Error] wi::shadercompiler: could not load library ./libdxcompiler.so
+[Error] ./libdxcompiler.so: cannot open shared object file: No such file or directory
+wi::input Initialized (1 ms)
+[Error] shader compile FAILED: ../../.wi/.shaders/emittedparticleVS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/fontVS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/imageVS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/hairparticleVS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/oceanSimulatorCS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/gpusortlib_kickoffSortCS.cso
+
+[Warning] File not found: ../../.wi/.shaders/fontVS.cso
+[Error] shader compile FAILED: ../../.wi/.shaders/bvh_primitivesCS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/trailVS.cso
+
+[Warning] File not found: ../../.wi/.shaders/bvh_primitivesCS.cso
+[Error] shader compile FAILED: ../../.wi/.shaders/bvh_hierarchyCS.cso
+
+[Warning] File not found: ../../.wi/.shaders/emittedparticleVS.cso
+[Error] shader compile FAILED: ../../.wi/.shaders/emittedparticlePS_soft.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/vertexcolorVS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/occludeeVS.cso
+
+[Warning] File not found: ../../.wi/.shaders/emittedparticlePS_soft.cso
+wi::lua Initialized [Lua 5.3] (1 ms)
+[Error] shader compile FAILED: ../../.wi/.shaders/objectPS_CARTOON.cso
+
+[Warning] File not found: ../../.wi/.shaders/hairparticleVS.cso
+[Warning] File not found: ../../.wi/.shaders/oceanSimulatorCS.cso
+[Error] shader compile FAILED: ../../.wi/.shaders/fontPS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/hairparticlePS_simple.cso
+
+wi::physics Initialized [Jolt Physics 5.2.0] (1 ms)
+[Warning] File not found: ../../.wi/.shaders/hairparticlePS_simple.cso
+[Warning] File not found: ../../.wi/.shaders/trailVS.cso
+[Warning] File not found: ../../.wi/.shaders/bvh_hierarchyCS.cso
+[Error] shader compile FAILED: ../../.wi/.shaders/objectVS_debug.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/volumetriclight_spotVS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/objectVS_prepass.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/hairparticlePS_prepass.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/bvh_propagateaabbCS.cso
+
+[Warning] File not found: ../../.wi/.shaders/imageVS.cso
+[Error] shader compile FAILED: ../../.wi/.shaders/trailPS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/objectVS_common.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/emittedparticlePS_soft_distortion.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/objectPS_TERRAINBLENDED.cso
+
+[Warning] File not found: ../../.wi/.shaders/emittedparticlePS_soft_distortion.cso
+[Error] shader compile FAILED: ../../.wi/.shaders/objectPS_PLANARREFLECTION.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/objectPS_WATER.cso
+
+[Warning] File not found: ../../.wi/.shaders/occludeeVS.cso
+[Warning] File not found: ../../.wi/.shaders/gpusortlib_kickoffSortCS.cso
+[Error] shader compile FAILED: ../../.wi/.shaders/oceanUpdateDisplacementMapCS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/shadowVS_alphatest.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/objectPS_ANISOTROPIC.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/objectPS_PARALLAXOCCLUSIONMAPPING.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/objectPS_SHEEN.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/objectPS_CLEARCOAT.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/ddgi_raytraceCS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/raytraceCS.cso
+
+[Error] shader compile FAILED: ../../.wi/.shaders/objectPS_SHEEN_CLEARCOAT.cso
+
+[Warning] File not found: ../../.wi/.shaders/objectPS_CARTOON.cso
+[Warning] File not found: ../../.wi/.shaders/objectPS_SHEEN_CLEARCOAT.cso
+[Warning] File not found: ../../.wi/.shaders/fontPS.cso
+[Error] shader compile FAILED: ../../.wi/.shaders/objectPS.cso
+

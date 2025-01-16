@@ -1,30 +1,53 @@
 #include "../../.wi/WickedEngine/WickedEngine.h"
-#include ".wi/WickedEngine/wiApplication.h"
+#include <cstdio>
 
 
 #define CONTENT_DIR "../../.wi/Content/"
 
 
-
-enum TEST_TYPE {
-  HELLOWORLD,
-  MODEL,
+class Render : public wi::RenderPath3D {
+public:
+  void Update(float dt) override;
 };
 
 
+class App : public wi::Application {
+  class Render render;
 
-class Tests : public wi::Application {
 public:
   void Initialize() override;
 };
 
 
-void Tests::Initialize() {
-  wi::Application::Initialize();
+void Render::Update(float dt) {
+  printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>A%zu<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n", wi::scene::GetScene().characters.GetCount());
+  fflush(stdout);
+  wi::RenderPath3D::Update(dt);
 }
 
 
-Tests app;
+void App::Initialize() {
+  sleep(1);
+  wi::Application::Initialize();
+  sleep(1);
+  printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>B%zu<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n", wi::scene::GetScene().characters.GetCount());
+  fflush(stdout);
+  render.init(canvas);
+  sleep(1);
+  printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>C%zu<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n", wi::scene::GetScene().characters.GetCount());
+  fflush(stdout);
+  render.Load();
+  sleep(1);
+  printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>D%zu<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n", wi::scene::GetScene().characters.GetCount());
+  fflush(stdout);
+  ActivatePath(&render);
+  sleep(1);
+  printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>E%zu<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n", wi::scene::GetScene().characters.GetCount());
+  fflush(stdout);
+}
+
+
+App app;
 
 
 int main(int argc, char** argv) {
@@ -49,7 +72,6 @@ int main(int argc, char** argv) {
 
   bool quit = false;
   while (!quit) {
-    app.Run();
     SDL_Event event;
     while (SDL_PollEvent(&event) != 0) {
       switch (event.type) {
@@ -75,6 +97,7 @@ int main(int argc, char** argv) {
       }
       wi::input::sdlinput::ProcessEvent(event);
     }
+    app.Run();
   }
 
   SDL_Quit();

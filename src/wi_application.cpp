@@ -52,13 +52,15 @@ void WiApplication_on(WiApplication self, WI_ON on, void* handler) {
 }
 
 void WiApplication_dispose(WiApplication self) {
-  delete ((WiWrapApplication*)(self));
+  auto me = (WiWrapApplication*)(self);
+  delete me;
 }
 
 void WiApplication_setInfoDisplay(WiApplication self, bool active, bool watermark, bool fpsInfo, bool deviceName, bool resolution, bool logicalSize,
                                   bool colorSpace, bool heapAllocCounter, bool pipelineCount, bool pipelineCreation, bool vramUsage, int textSize,
                                   bool colorGradingHelper, WiRect* rect) {
-  wi::Application::InfoDisplayer* info = &((WiWrapApplication*)(self))->infoDisplay;
+  auto me = (WiWrapApplication*)(self);
+  wi::Application::InfoDisplayer* info = &me->infoDisplay;
   info->active = active;
   info->watermark = watermark;
   info->fpsinfo = fpsInfo;
@@ -77,39 +79,49 @@ void WiApplication_setInfoDisplay(WiApplication self, bool active, bool watermar
 }
 
 void WiApplication_setWindow(WiApplication self, SDL_Window* window) {
-  return ((WiWrapApplication*)(self))->SetWindow(window);
+  auto me = (WiWrapApplication*)(self);
+  return me->SetWindow(window);
 }
 
 void WiApplication_initialize(WiApplication self) {
-  return ((WiWrapApplication*)(self))->Initialize();
+  auto me = (WiWrapApplication*)(self);
+  return me->Initialize();
 }
 
 void WiApplication_activatePath(WiApplication self, WiRenderPath3D renderPath, float fadeSeconds) {
-  return ((WiWrapApplication*)(self))->ActivatePath((WiWrapRenderPath3D*)(renderPath), fadeSeconds);
+  auto me = (WiWrapApplication*)(self);
+  auto it = (WiWrapRenderPath3D*)(renderPath);
+  return me->ActivatePath(it, fadeSeconds);
 }
 
 void WiApplication_setFullScreen(WiApplication self, bool fullscreen) {
-  return ((WiWrapApplication*)(self))->SetFullScreen(fullscreen);
+  auto me = (WiWrapApplication*)(self);
+  return me->SetFullScreen(fullscreen);
 }
 
 void WiApplication_setFrameSkip(WiApplication self, bool enabled) {
-  return ((WiWrapApplication*)(self))->setFrameSkip(enabled);
+  auto me = (WiWrapApplication*)(self);
+  return me->setFrameSkip(enabled);
 }
 
 void WiApplication_setFrameRateLock(WiApplication self, bool enabled) {
-  return ((WiWrapApplication*)(self))->setFrameRateLock(enabled);
+  auto me = (WiWrapApplication*)(self);
+  return me->setFrameRateLock(enabled);
 }
 
 void WiApplication_run(WiApplication self) {
-  return ((WiWrapApplication*)(self))->Run();
+  auto me = (WiWrapApplication*)(self);
+  return me->Run();
 }
 
 bool WiApplication_get_isWindowActive(WiApplication self) {
-  return ((WiWrapApplication*)(self))->is_window_active;
+  auto me = (WiWrapApplication*)(self);
+  return me->is_window_active;
 }
 
 void WiApplication_set_isWindowActive(WiApplication self, bool set) {
-  ((WiWrapApplication*)(self))->is_window_active = set;
+  auto me = (WiWrapApplication*)(self);
+  me->is_window_active = set;
 }
 
 WiCanvas* WiApplication_get_canvas(WiApplication self) {
@@ -119,17 +131,21 @@ WiCanvas* WiApplication_get_canvas(WiApplication self) {
 }
 
 SDL_Window* WiApplication_get_window(WiApplication self) {
-  return ((WiWrapApplication*)(self))->window;
+  auto me = (WiWrapApplication*)(self);
+  return me->window;
 }
 
 float WiApplication_getTargetFrameRate(WiApplication self) {
-  return ((WiWrapApplication*)(self))->getTargetFrameRate();
+  auto me = (WiWrapApplication*)(self);
+  return me->getTargetFrameRate();
 }
 
 bool WiApplication_isFaded(WiApplication self) {
-  return ((WiWrapApplication*)(self))->IsFaded();
+  auto me = (WiWrapApplication*)(self);
+  return me->IsFaded();
 }
 
-WiWrapRenderPath3D* WiApplication_(WiApplication self) {
-  return (WiWrapRenderPath3D*)(((WiWrapApplication*)(self))->GetActivePath());
+WiWrapRenderPath3D* WiApplication_getActivePath(WiApplication self) {
+  auto me = (WiWrapApplication*)(self);
+  return (WiWrapRenderPath3D*)(me->GetActivePath());
 }

@@ -2,7 +2,7 @@ project(
     'cWicked',
     ['cpp', 'c'],
     version: '0.71.657',
-    default_options: ['cpp_std=c++17', 'c_std=c23'], #, 'cpp_rtti=false'],
+    default_options: ['cpp_std=c++20', 'c_std=c23', 'cpp_rtti=false'],
 )
 
 add_global_arguments(
@@ -13,7 +13,6 @@ add_global_arguments(
     '-DSDL2',
     '-DWI_UNORDERED_MAP_TYPE=2',
     '-march=native',
-    # '-sanitize=address',
     language: ['cpp', 'c'],
 )
 
@@ -78,6 +77,22 @@ lib_cwicked = shared_library(
         'src/wi_scene.cpp',
     ],
 )
+lib_wiso = shared_library(
+    'wiso',
+    dependencies: [
+        dep_pthread,
+        dep_sdl2,
+        dep_lua,
+        dep_jolt,
+        dep_faudio,
+        dep_utility,
+        dep_wicked,
+    ],
+    cpp_pch: 'pch/wi_pch.h',
+    sources: [
+        'src/wiso/wiso.cpp',
+    ],
+)
 
 executable(
     'cWickedDemo.exec',
@@ -134,15 +149,9 @@ executable(
 )
 executable(
     'tmpcpp_main.exec',
-    dependencies: [
-        dep_sdl2,
-        dep_pthread,
-        dep_faudio,
-        dep_lua,
-        dep_jolt,
-        dep_utility,
-        dep_wicked,
-    ],
+
+    dependencies: [dep_sdl2, dep_pthread],
+    link_with: [lib_wiso],
     implicit_include_directories: true,
     link_language: 'cpp',
     sources: ['src/tmpcpp/main.cpp'],

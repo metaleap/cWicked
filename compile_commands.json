@@ -1,57 +1,69 @@
 [
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -x c++-header -MD -MQ libcwicked.so.p/wi_pch.h.gch -MF libcwicked.so.p/wi_pch.h.gch.d -o libcwicked.so.p/wi_pch.h.gch -c ../../pch/wi_pch.h",
+    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -x c++-header -MD -MQ libcwicked.so.p/wi_pch.h.gch -MF libcwicked.so.p/wi_pch.h.gch.d -o libcwicked.so.p/wi_pch.h.gch -c ../../pch/wi_pch.h",
     "file": "../../pch/wi_pch.h",
     "output": "libcwicked.so.p/wi_pch.h.gch"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_various.cpp.o -MF libcwicked.so.p/src_wi_various.cpp.o.d -o libcwicked.so.p/src_wi_various.cpp.o -c ../../src/wi_various.cpp",
+    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_various.cpp.o -MF libcwicked.so.p/src_wi_various.cpp.o.d -o libcwicked.so.p/src_wi_various.cpp.o -c ../../src/wi_various.cpp",
     "file": "../../src/wi_various.cpp",
     "output": "libcwicked.so.p/src_wi_various.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_application.cpp.o -MF libcwicked.so.p/src_wi_application.cpp.o.d -o libcwicked.so.p/src_wi_application.cpp.o -c ../../src/wi_application.cpp",
+    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_application.cpp.o -MF libcwicked.so.p/src_wi_application.cpp.o.d -o libcwicked.so.p/src_wi_application.cpp.o -c ../../src/wi_application.cpp",
     "file": "../../src/wi_application.cpp",
     "output": "libcwicked.so.p/src_wi_application.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_ecs.cpp.o -MF libcwicked.so.p/src_wi_ecs.cpp.o.d -o libcwicked.so.p/src_wi_ecs.cpp.o -c ../../src/wi_ecs.cpp",
+    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_ecs.cpp.o -MF libcwicked.so.p/src_wi_ecs.cpp.o.d -o libcwicked.so.p/src_wi_ecs.cpp.o -c ../../src/wi_ecs.cpp",
     "file": "../../src/wi_ecs.cpp",
     "output": "libcwicked.so.p/src_wi_ecs.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_initializer.cpp.o -MF libcwicked.so.p/src_wi_initializer.cpp.o.d -o libcwicked.so.p/src_wi_initializer.cpp.o -c ../../src/wi_initializer.cpp",
+    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_initializer.cpp.o -MF libcwicked.so.p/src_wi_initializer.cpp.o.d -o libcwicked.so.p/src_wi_initializer.cpp.o -c ../../src/wi_initializer.cpp",
     "file": "../../src/wi_initializer.cpp",
     "output": "libcwicked.so.p/src_wi_initializer.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_input.cpp.o -MF libcwicked.so.p/src_wi_input.cpp.o.d -o libcwicked.so.p/src_wi_input.cpp.o -c ../../src/wi_input.cpp",
+    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_input.cpp.o -MF libcwicked.so.p/src_wi_input.cpp.o.d -o libcwicked.so.p/src_wi_input.cpp.o -c ../../src/wi_input.cpp",
     "file": "../../src/wi_input.cpp",
     "output": "libcwicked.so.p/src_wi_input.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_jobsystem.cpp.o -MF libcwicked.so.p/src_wi_jobsystem.cpp.o.d -o libcwicked.so.p/src_wi_jobsystem.cpp.o -c ../../src/wi_jobsystem.cpp",
+    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_jobsystem.cpp.o -MF libcwicked.so.p/src_wi_jobsystem.cpp.o.d -o libcwicked.so.p/src_wi_jobsystem.cpp.o -c ../../src/wi_jobsystem.cpp",
     "file": "../../src/wi_jobsystem.cpp",
     "output": "libcwicked.so.p/src_wi_jobsystem.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_render.cpp.o -MF libcwicked.so.p/src_wi_render.cpp.o.d -o libcwicked.so.p/src_wi_render.cpp.o -c ../../src/wi_render.cpp",
+    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_render.cpp.o -MF libcwicked.so.p/src_wi_render.cpp.o.d -o libcwicked.so.p/src_wi_render.cpp.o -c ../../src/wi_render.cpp",
     "file": "../../src/wi_render.cpp",
     "output": "libcwicked.so.p/src_wi_render.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_scene.cpp.o -MF libcwicked.so.p/src_wi_scene.cpp.o.d -o libcwicked.so.p/src_wi_scene.cpp.o -c ../../src/wi_scene.cpp",
+    "command": "c++ -Ilibcwicked.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libcwicked.so.p/src_wi_scene.cpp.o -MF libcwicked.so.p/src_wi_scene.cpp.o.d -o libcwicked.so.p/src_wi_scene.cpp.o -c ../../src/wi_scene.cpp",
     "file": "../../src/wi_scene.cpp",
     "output": "libcwicked.so.p/src_wi_scene.cpp.o"
+  },
+  {
+    "directory": "/home/_/c/c/cWicked/.build/debug",
+    "command": "c++ -Ilibwiso.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -x c++-header -MD -MQ libwiso.so.p/wi_pch.h.gch -MF libwiso.so.p/wi_pch.h.gch.d -o libwiso.so.p/wi_pch.h.gch -c ../../pch/wi_pch.h",
+    "file": "../../pch/wi_pch.h",
+    "output": "libwiso.so.p/wi_pch.h.gch"
+  },
+  {
+    "directory": "/home/_/c/c/cWicked/.build/debug",
+    "command": "c++ -Ilibwiso.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libwiso.so.p/src_wiso_wiso.cpp.o -MF libwiso.so.p/src_wiso_wiso.cpp.o.d -o libwiso.so.p/src_wiso_wiso.cpp.o -c ../../src/wiso/wiso.cpp",
+    "file": "../../src/wiso/wiso.cpp",
+    "output": "libwiso.so.p/src_wiso_wiso.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
@@ -61,31 +73,31 @@
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Itmpcpp_Tests.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp_Tests.exec.p/src_tmpcpp_witests_main_SDL2.cpp.o -MF tmpcpp_Tests.exec.p/src_tmpcpp_witests_main_SDL2.cpp.o.d -o tmpcpp_Tests.exec.p/src_tmpcpp_witests_main_SDL2.cpp.o -c ../../src/tmpcpp/witests/main_SDL2.cpp",
+    "command": "c++ -Itmpcpp_Tests.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp_Tests.exec.p/src_tmpcpp_witests_main_SDL2.cpp.o -MF tmpcpp_Tests.exec.p/src_tmpcpp_witests_main_SDL2.cpp.o.d -o tmpcpp_Tests.exec.p/src_tmpcpp_witests_main_SDL2.cpp.o -c ../../src/tmpcpp/witests/main_SDL2.cpp",
     "file": "../../src/tmpcpp/witests/main_SDL2.cpp",
     "output": "tmpcpp_Tests.exec.p/src_tmpcpp_witests_main_SDL2.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Itmpcpp_Tests.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp_Tests.exec.p/src_tmpcpp_witests_Tests.cpp.o -MF tmpcpp_Tests.exec.p/src_tmpcpp_witests_Tests.cpp.o.d -o tmpcpp_Tests.exec.p/src_tmpcpp_witests_Tests.cpp.o -c ../../src/tmpcpp/witests/Tests.cpp",
+    "command": "c++ -Itmpcpp_Tests.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp_Tests.exec.p/src_tmpcpp_witests_Tests.cpp.o -MF tmpcpp_Tests.exec.p/src_tmpcpp_witests_Tests.cpp.o.d -o tmpcpp_Tests.exec.p/src_tmpcpp_witests_Tests.cpp.o -c ../../src/tmpcpp/witests/Tests.cpp",
     "file": "../../src/tmpcpp/witests/Tests.cpp",
     "output": "tmpcpp_Tests.exec.p/src_tmpcpp_witests_Tests.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Itmpcpp_tests.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp_tests.exec.p/src_tmpcpp_tests.cpp.o -MF tmpcpp_tests.exec.p/src_tmpcpp_tests.cpp.o.d -o tmpcpp_tests.exec.p/src_tmpcpp_tests.cpp.o -c ../../src/tmpcpp/tests.cpp",
+    "command": "c++ -Itmpcpp_tests.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp_tests.exec.p/src_tmpcpp_tests.cpp.o -MF tmpcpp_tests.exec.p/src_tmpcpp_tests.cpp.o.d -o tmpcpp_tests.exec.p/src_tmpcpp_tests.cpp.o -c ../../src/tmpcpp/tests.cpp",
     "file": "../../src/tmpcpp/tests.cpp",
     "output": "tmpcpp_tests.exec.p/src_tmpcpp_tests.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Itmpcpp_tmpl.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp_tmpl.exec.p/src_tmpcpp_tmpl.cpp.o -MF tmpcpp_tmpl.exec.p/src_tmpcpp_tmpl.cpp.o.d -o tmpcpp_tmpl.exec.p/src_tmpcpp_tmpl.cpp.o -c ../../src/tmpcpp/tmpl.cpp",
+    "command": "c++ -Itmpcpp_tmpl.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp_tmpl.exec.p/src_tmpcpp_tmpl.cpp.o -MF tmpcpp_tmpl.exec.p/src_tmpcpp_tmpl.cpp.o.d -o tmpcpp_tmpl.exec.p/src_tmpcpp_tmpl.cpp.o -c ../../src/tmpcpp/tmpl.cpp",
     "file": "../../src/tmpcpp/tmpl.cpp",
     "output": "tmpcpp_tmpl.exec.p/src_tmpcpp_tmpl.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Itmpcpp_main.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++17 -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp_main.exec.p/src_tmpcpp_main.cpp.o -MF tmpcpp_main.exec.p/src_tmpcpp_main.cpp.o.d -o tmpcpp_main.exec.p/src_tmpcpp_main.cpp.o -c ../../src/tmpcpp/main.cpp",
+    "command": "c++ -Itmpcpp_main.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ tmpcpp_main.exec.p/src_tmpcpp_main.cpp.o -MF tmpcpp_main.exec.p/src_tmpcpp_main.cpp.o.d -o tmpcpp_main.exec.p/src_tmpcpp_main.cpp.o -c ../../src/tmpcpp/main.cpp",
     "file": "../../src/tmpcpp/main.cpp",
     "output": "tmpcpp_main.exec.p/src_tmpcpp_main.cpp.o"
   }

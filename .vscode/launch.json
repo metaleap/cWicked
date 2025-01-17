@@ -5,7 +5,7 @@
             "name": "Run",
             "type": "gdb",
             "request": "launch",
-            "target": "cWickedDemo.exec",
+            "target": "tmpcpp_main.exec",
             "cwd": "${fileWorkspaceFolder}/.build/debug",
             "valuesFormatting": "disabled",
             "preLaunchTask": "mesonBuildDebug",

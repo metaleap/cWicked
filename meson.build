@@ -54,29 +54,6 @@ dep_utility = compiler.find_library(
     static: true,
 )
 
-lib_cwicked = shared_library(
-    'cwicked',
-    dependencies: [
-        dep_pthread,
-        dep_sdl2,
-        dep_lua,
-        dep_jolt,
-        dep_faudio,
-        dep_utility,
-        dep_wicked,
-    ],
-    cpp_pch: 'pch/wi_pch.h',
-    sources: [
-        'src/wi_various.cpp',
-        'src/wi_application.cpp',
-        'src/wi_ecs.cpp',
-        'src/wi_initializer.cpp',
-        'src/wi_input.cpp',
-        'src/wi_jobsystem.cpp',
-        'src/wi_render.cpp',
-        'src/wi_scene.cpp',
-    ],
-)
 lib_wiso = shared_library(
     'wiso',
     dependencies: [
@@ -95,64 +72,20 @@ lib_wiso = shared_library(
 )
 
 executable(
-    'cWickedDemo.exec',
-    dependencies: [dep_sdl2, dep_pthread],
-    link_with: [lib_cwicked],
-    implicit_include_directories: true,
-    link_language: 'c',
-    sources: ['src/demos/main.c'],
-)
-executable(
-    'tmpcpp_Tests.exec',
-    dependencies: [
-        dep_sdl2,
-        dep_pthread,
-        dep_faudio,
-        dep_lua,
-        dep_jolt,
-        dep_utility,
-        dep_wicked,
-    ],
-    implicit_include_directories: true,
-    link_language: 'cpp',
-    sources: ['src/tmpcpp/witests/main_SDL2.cpp', 'src/tmpcpp/witests/Tests.cpp'],
-)
-executable(
-    'tmpcpp_tests.exec',
-    dependencies: [
-        dep_sdl2,
-        dep_pthread,
-        dep_faudio,
-        dep_lua,
-        dep_jolt,
-        dep_utility,
-        dep_wicked,
-    ],
-    implicit_include_directories: true,
-    link_language: 'cpp',
-    sources: ['src/tmpcpp/tests.cpp'],
-)
-executable(
-    'tmpcpp_tmpl.exec',
-    dependencies: [
-        dep_sdl2,
-        dep_pthread,
-        dep_faudio,
-        dep_lua,
-        dep_jolt,
-        dep_utility,
-        dep_wicked,
-    ],
-    implicit_include_directories: true,
-    link_language: 'cpp',
-    sources: ['src/tmpcpp/tmpl.cpp'],
-)
-executable(
-    'tmpcpp_main.exec',
-
+    'wi02_tests.exec',
     dependencies: [dep_sdl2, dep_pthread],
     link_with: [lib_wiso],
     implicit_include_directories: true,
     link_language: 'cpp',
-    sources: ['src/tmpcpp/main.cpp'],
+    cpp_pch: 'pch/wi_pch.h',
+    sources: ['src/wi02_tests/main.cpp'],
+)
+executable(
+    'wi01_loadlua.exec',
+    dependencies: [dep_sdl2, dep_pthread],
+    link_with: [lib_wiso],
+    implicit_include_directories: true,
+    link_language: 'cpp',
+    cpp_pch: 'pch/wi_pch.h',
+    sources: ['src/wi01_loadlua/main.cpp'],
 )

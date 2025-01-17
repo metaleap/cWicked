@@ -87,3 +87,13 @@ WiRenderPath3D WiRenderPath3D_new() {
 void WiRenderPath3D_dispose(WiRenderPath3D self) {
   delete ((WiWrapRenderPath3D*)(self));
 }
+
+void WiRenderPath3D_load(WiRenderPath3D self) {
+  auto me = (WiWrapRenderPath3D*)(self);
+  return me->Load();
+}
+
+void WiRenderPath3D_init(WiRenderPath3D self, SDL_Window* window) {
+  auto me = (WiWrapRenderPath3D*)(self);
+  return me->init(window);
+}

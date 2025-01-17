@@ -47,8 +47,8 @@ WiApplication WiApplication_new() {
 }
 
 void WiApplication_on(WiApplication self, WI_ON on, void* handler) {
-  auto it = (WiWrapApplication*)(self);
-  it->handlers[on] = handler;
+  auto me = (WiWrapApplication*)(self);
+  me->handlers[on] = handler;
 }
 
 void WiApplication_dispose(WiApplication self) {
@@ -110,6 +110,16 @@ bool WiApplication_get_isWindowActive(WiApplication self) {
 
 void WiApplication_set_isWindowActive(WiApplication self, bool set) {
   ((WiWrapApplication*)(self))->is_window_active = set;
+}
+
+WiCanvas* WiApplication_get_canvas(WiApplication self) {
+  static_assert(sizeof(WiCanvas) == sizeof(wi::Canvas));
+  auto me = ((WiWrapApplication*)(self));
+  return (WiCanvas*)(&me->canvas);
+}
+
+SDL_Window* WiApplication_get_window(WiApplication self) {
+  return ((WiWrapApplication*)(self))->window;
 }
 
 float WiApplication_getTargetFrameRate(WiApplication self) {

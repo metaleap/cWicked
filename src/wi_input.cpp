@@ -36,6 +36,7 @@ WiMouseState* wi_input_getMouseState() {
   static_assert(sizeof(WiMouseState) == sizeof(wi::input::MouseState));
   const wi::input::MouseState& ret = wi::input::GetMouseState(); // reference to a static in wiInput.cpp, hence:
 #pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wreturn-local-addr"
 #pragma GCC diagnostic ignored "-Wreturn-stack-address"
   return (WiMouseState*)(&ret);
 #pragma GCC diagnostic pop
@@ -53,7 +54,7 @@ WI_XMFLOAT4 wi_input_getPointer() {
 }
 
 void wi_input_update(SDL_Window* window, WiCanvas* canvas) {
-  static_assert((sizeof(WiCanvas) + 8) == sizeof(wi::Canvas));
+  static_assert(sizeof(WiCanvas) == sizeof(wi::Canvas));
   return wi::input::Update(window, *(wi::Canvas*)(canvas));
 }
 

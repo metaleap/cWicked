@@ -1,14 +1,17 @@
 project(
     'cWicked',
     ['cpp', 'c'],
-    version: '0.71.655',
-    default_options: ['cpp_std=c++20', 'c_std=c23', 'cpp_rtti=false'],
+    version: '0.71.657',
+    default_options: ['cpp_std=c++17', 'c_std=c23'], #, 'cpp_rtti=false'],
 )
 
 add_global_arguments(
     '-gsplit-dwarf',
     '-fms-extensions',
+    '-msse2',
+    '-mfpmath=sse',
     '-DSDL2',
+    '-DWI_UNORDERED_MAP_TYPE=2',
     '-march=native',
     # '-sanitize=address',
     language: ['cpp', 'c'],
@@ -85,7 +88,22 @@ executable(
     sources: ['src/demos/main.c'],
 )
 executable(
-    'tmpcpp.exec',
+    'tmpcpp_Tests.exec',
+    dependencies: [
+        dep_sdl2,
+        dep_pthread,
+        dep_faudio,
+        dep_lua,
+        dep_jolt,
+        dep_utility,
+        dep_wicked,
+    ],
+    implicit_include_directories: true,
+    link_language: 'cpp',
+    sources: ['src/tmpcpp/witests/main_SDL2.cpp', 'src/tmpcpp/witests/Tests.cpp'],
+)
+executable(
+    'tmpcpp_tests.exec',
     dependencies: [
         dep_sdl2,
         dep_pthread,
@@ -98,4 +116,34 @@ executable(
     implicit_include_directories: true,
     link_language: 'cpp',
     sources: ['src/tmpcpp/tests.cpp'],
+)
+executable(
+    'tmpcpp_tmpl.exec',
+    dependencies: [
+        dep_sdl2,
+        dep_pthread,
+        dep_faudio,
+        dep_lua,
+        dep_jolt,
+        dep_utility,
+        dep_wicked,
+    ],
+    implicit_include_directories: true,
+    link_language: 'cpp',
+    sources: ['src/tmpcpp/tmpl.cpp'],
+)
+executable(
+    'tmpcpp_main.exec',
+    dependencies: [
+        dep_sdl2,
+        dep_pthread,
+        dep_faudio,
+        dep_lua,
+        dep_jolt,
+        dep_utility,
+        dep_wicked,
+    ],
+    implicit_include_directories: true,
+    link_language: 'cpp',
+    sources: ['src/tmpcpp/main.cpp'],
 )

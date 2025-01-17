@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 set -e
-wiVer="0.71.655"
+wiVer="0.71.657"
 
 thisScriptsFilePath="$(readlink --canonicalize-existing "$0")"
 thisScriptsDirPath="$(dirname "$thisScriptsFilePath")"
@@ -8,7 +8,7 @@ cd $thisScriptsDirPath
 
 
 
-# clean up, fetch zip, extract zip:
+### clean up, fetch zip, extract zip:
 
 # rm -rf .wi
 # rm -rf WickedEngine*
@@ -18,9 +18,11 @@ cd $thisScriptsDirPath
 # rm -f wi_src.zip
 # mv WickedEngine-$wiVer .wi
 
-cd .wi
 
-# build WickedEngine twice:
+
+### build WickedEngine twice:
+
+cd .wi
 
 rm -rf .build_RelWithDebInfo
 mkdir .build_RelWithDebInfo
@@ -30,12 +32,11 @@ make
 cp compile_commands.json ../compile_commands.json
 cd ..
 
-# rm -rf .build_Release
-# mkdir .build_Release
-# cd .build_Release
-# cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-# make
-# cd ..
+rm -rf .build_Release
+mkdir .build_Release
+cd .build_Release
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+make
+cd ..
 
-# done
 cd ..

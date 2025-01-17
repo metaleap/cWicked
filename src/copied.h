@@ -75,6 +75,7 @@ typedef struct WiColor16 {
 
 
 typedef struct WiCanvas {
+  uintptr_t _;
   uint32_t width;
   uint32_t height;
   float dpi6;

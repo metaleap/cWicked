@@ -120,6 +120,11 @@ void Rend::Load() {
   guiSldAudioVolume.SetPos(XMFLOAT2(789, 40));
   guiSldAudioVolume.OnSlide([&](wi::gui::EventArgs evt) { wi::audio::SetVolume(evt.fValue / 100.0f, &soundInstance); });
 
+  // GUI: audio direction slider
+  guiSldAudioDirection.Create(0, 100, 50, 100, "guiSldAudioDirection");
+  gui.AddWidget(&guiSldAudioDirection);
+  guiSldAudioDirection.SetSize(XMFLOAT2(240, 20));
+  guiSldAudioDirection.SetPos(XMFLOAT2(789, 60));
 
 
   wi::RenderPath3D::Load();

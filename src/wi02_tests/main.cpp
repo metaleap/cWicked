@@ -1,6 +1,8 @@
 #include "../../pch/wi_min_pch.h"
+#include ".wi/WickedEngine/Utility/DirectXMath.h"
 #include ".wi/WickedEngine/wiRenderer.h"
 #include ".wi/WickedEngine/wiScene.h"
+#include ".wi/WickedEngine/wiScene_Components.h"
 
 
 #define WI_CONTENT_DIR "../../.wi/Content/"
@@ -139,23 +141,25 @@ void Rend::Load() {
   guiDdnTests.SetMaxVisibleItemCount(11);
   guiDdnTests.SetSelected(-1);
   guiDdnTests.OnSelect([&](wi::gui::EventArgs evt) {
-    // reset whatever previous demo might have modified
-    wi::renderer::ClearWorld(wi::scene::GetScene());
-    this->ClearSprites();
-    wi::renderer::SetTemporalAAEnabled(false);
-    wi::renderer::SetToDrawGridHelper(false);
-    wi::eventhandler::SetVSync(true);
-    wi::profiler::SetEnabled(false);
-    wi::scene::GetScene().weather = wi::scene::WeatherComponent();
-    this->ClearFonts();
-    if (wi::lua::GetLuaState() != nullptr)
-      wi::lua::KillProcesses();
+    {   // reset whatever previous demo might have modified
+      wi::renderer::ClearWorld(wi::scene::GetScene());
+      this->ClearSprites();
+      wi::renderer::SetTemporalAAEnabled(false);
+      wi::renderer::SetToDrawGridHelper(false);
+      wi::eventhandler::SetVSync(true);
+      wi::profiler::SetEnabled(false);
+      wi::scene::GetScene().weather = wi::scene::WeatherComponent();
+      this->ClearFonts();
+      if (wi::lua::GetLuaState() != nullptr)
+        wi::lua::KillProcesses();
+    }
 
-    // // reset cam pos
-    wi::scene::TransformComponent transform;
-    transform.Translate(XMFLOAT3(0, 2, -4.5));
-    transform.UpdateTransform();
-    wi::scene::GetCamera().TransformCamera(transform);
+    {   // reset cam pos
+      wi::scene::TransformComponent transform;
+      transform.Translate(XMFLOAT3(0, 2, -4.5));
+      transform.UpdateTransform();
+      wi::scene::GetCamera().TransformCamera(transform);
+    }
 
     switch (evt.userdata) {
       case TestType::HELLOWORLD:
@@ -211,6 +215,26 @@ void Rend::Load() {
       case TestType::VOLUMETRICTEST:
         wi::renderer::SetTemporalAAEnabled(true);
         wi::scene::LoadModel(WI_CONTENT_DIR "models/volumetric_test.wiscene", XMMatrixTranslation(0, 0, 4));
+        break;
+
+      case TestType::INSTANCESTEST:
+        wi::scene::LoadModel(WI_CONTENT_DIR "models/cube.wiscene");
+        wi::scene::Scene& scene = wi::scene::GetScene();
+        scene.Entity_CreateLight("light", XMFLOAT3(0, 2, -4), XMFLOAT3(1, 1, 1), 4);
+        wi::ecs::Entity cube  = scene.Entity_FindByName("Cube");
+        const float     scale = 0.06f;
+        for (int x = 0; x < 32; x++)
+          for (int y = 0; y < 32; y++)
+            for (int z = 0; z < 64; z++) {
+              wi::ecs::Entity                dupl      = scene.Entity_Duplicate(cube);
+              wi::scene::TransformComponent* transform = scene.transforms.GetComponent(dupl);
+              transform->Scale(XMFLOAT3(scale, scale, scale));
+              transform->Translate(XMFLOAT3((-5.5f + 11 * float(x) / 32.f), (-0.5f + 5.0f * float(y) / 32.f), (float(z) * 0.5f)));
+            }
+        scene.Entity_Remove(cube);
+        break;
+
+      case TestType::INVERSEKINEMATICSTEST:
         break;
     }
   });

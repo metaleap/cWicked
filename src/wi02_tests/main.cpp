@@ -1,4 +1,5 @@
 #include "../../pch/wi_min_pch.h"
+#include ".wi/WickedEngine/Utility/DirectXMath.h"
 #include ".wi/WickedEngine/wiAudio.h"
 #include ".wi/WickedEngine/wiGUI.h"
 #include <cstdlib>
@@ -34,8 +35,8 @@ enum class TestType {
 
 class Rend : public wi::RenderPath3D {
   wi::gui::Label    guiLblTitle;
-  wi::gui::ComboBox testSelector;
-  wi::ecs::Entity   ik_entity = wi::ecs::INVALID_ENTITY;
+  wi::gui::ComboBox guiDdnTests;
+  wi::ecs::Entity   ikEntity = wi::ecs::INVALID_ENTITY;
 public:
   void Load() override;
   // void Update(float dt) override;
@@ -116,15 +117,31 @@ void Rend::Load() {
   // GUI: audio volume slider
   guiSldAudioVolume.Create(0, 100, 50, 20, "guiSldAudioVolume");
   gui.AddWidget(&guiSldAudioVolume);
+  guiSldAudioVolume.SetText("Volume");
   guiSldAudioVolume.SetSize(XMFLOAT2(240, 20));
   guiSldAudioVolume.SetPos(XMFLOAT2(789, 40));
   guiSldAudioVolume.OnSlide([&](wi::gui::EventArgs evt) { wi::audio::SetVolume(evt.fValue / 100.0f, &soundInstance); });
 
   // GUI: audio direction slider
-  guiSldAudioDirection.Create(0, 100, 50, 100, "guiSldAudioDirection");
+  guiSldAudioDirection.Create(-1, 1, 0, 10000, "guiSldAudioDirection");
   gui.AddWidget(&guiSldAudioDirection);
+  guiSldAudioDirection.SetText("Direction");
   guiSldAudioDirection.SetSize(XMFLOAT2(240, 20));
   guiSldAudioDirection.SetPos(XMFLOAT2(789, 60));
+  guiSldAudioDirection.OnSlide([&](wi::gui::EventArgs evt) {
+    wi::audio::SoundInstance3D au3d;
+    au3d.emitterPos  = XMFLOAT3(evt.fValue, 0, 0);
+    au3d.listenerPos = XMFLOAT3(0, 0, -1);
+    wi::audio::Update3D(&soundInstance, au3d);
+  });
+
+  // GUI: test selection drop-down menu
+  guiDdnTests.Create("guiDdnTests");
+  gui.AddWidget(&guiDdnTests);
+  guiDdnTests.SetText("Demo:");
+  guiDdnTests.SetSize(XMFLOAT2(240, 20));
+  guiDdnTests.SetPos(XMFLOAT2(789, 80));
+
 
 
   wi::RenderPath3D::Load();

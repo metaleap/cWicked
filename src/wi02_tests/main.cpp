@@ -1,11 +1,6 @@
 #include "../../pch/wi_min_pch.h"
-#include ".wi/WickedEngine/Utility/DirectXMath.h"
-#include ".wi/WickedEngine/wiApplication.h"
-#include ".wi/WickedEngine/wiLua.h"
 #include ".wi/WickedEngine/wiRenderer.h"
 #include ".wi/WickedEngine/wiScene.h"
-#include ".wi/WickedEngine/wiScene_Components.h"
-#include ".wi/WickedEngine/wiSprite.h"
 
 
 #define WI_CONTENT_DIR "../../.wi/Content/"
@@ -204,6 +199,18 @@ void Rend::Load() {
         break;
 
       case TestType::PHYSICSTEST:
+        wi::renderer::SetTemporalAAEnabled(true);
+        wi::scene::LoadModel(WI_CONTENT_DIR "models/physics_test.wiscene");
+        break;
+
+      case TestType::CLOTHPHYSICSTEST:
+        wi::renderer::SetTemporalAAEnabled(true);
+        wi::scene::LoadModel(WI_CONTENT_DIR "models/cloth_test.wiscene", XMMatrixTranslation(0, 3, 4));
+        break;
+
+      case TestType::VOLUMETRICTEST:
+        wi::renderer::SetTemporalAAEnabled(true);
+        wi::scene::LoadModel(WI_CONTENT_DIR "models/volumetric_test.wiscene", XMMatrixTranslation(0, 0, 4));
         break;
     }
   });

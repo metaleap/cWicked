@@ -1,7 +1,10 @@
 #include "../../pch/wi_min_pch.h"
-#include ".wi/WickedEngine/Utility/DirectXMath.h"
-#include ".wi/WickedEngine/wiFont.h"
+#include ".wi/WickedEngine/wiAudio.h"
+#include ".wi/WickedEngine/wiGUI.h"
+#include <cstdlib>
 
+
+#define WI_CONTENT_DIR "../../.wi/Content/"
 
 
 enum class TestType {
@@ -30,7 +33,7 @@ enum class TestType {
 
 
 class Rend : public wi::RenderPath3D {
-  wi::gui::Label    label;
+  wi::gui::Label    guiLblTitle;
   wi::gui::ComboBox testSelector;
   wi::ecs::Entity   ik_entity = wi::ecs::INVALID_ENTITY;
 public:
@@ -70,12 +73,54 @@ void Rend::Load() {
   setReflectionsEnabled(true);
   setFXAAEnabled(false);
 
+  static wi::audio::Sound         sound;
+  static wi::audio::SoundInstance soundInstance;
+  static wi::gui::Button          guiBtnAudioTest;
+  static wi::gui::Slider          guiSldAudioVolume;
+  static wi::gui::Slider          guiSldAudioDirection;
+
+  // GUI: title label
   wi::gui::GUI& gui = GetGUI();
-  label.Create("TheLabel");
-  label.SetText("WickedEngine Tests");
-  label.font.params.h_align = wi::font::WIFALIGN_CENTER;
-  label.SetSize(XMFLOAT2(240, 22));
-  gui.AddWidget(&label);
+  gui.AddWidget(&guiLblTitle);
+  guiLblTitle.Create("guiLblTitle");
+  guiLblTitle.SetText("WickedEngine Tests");
+  guiLblTitle.font.params.h_align = wi::font::WIFALIGN_CENTER;
+  guiLblTitle.SetSize(XMFLOAT2(240, 22));
+  guiLblTitle.SetPos(XMFLOAT2(789, 0));
+
+  // GUI: audio play/stop button
+  guiBtnAudioTest.Create("guiBtnAudioTest");
+  gui.AddWidget(&guiBtnAudioTest);
+  guiBtnAudioTest.SetText("Play Audio");
+  guiBtnAudioTest.SetSize(XMFLOAT2(240, 20));
+  guiBtnAudioTest.SetPos(XMFLOAT2(789, 20));
+  guiBtnAudioTest.OnClick([&](wi::gui::EventArgs _) {
+    static bool playing = false;
+    if (!sound.IsValid()) {
+      if (!wi::audio::CreateSound(WI_CONTENT_DIR "models/water.wav", &sound))
+        abort();
+      if (!wi::audio::CreateSoundInstance(&sound, &soundInstance))
+        abort();
+      wi::audio::SetVolume(guiSldAudioVolume.GetValue() / 100.0f, &soundInstance);
+    }
+    if (playing) {
+      wi::audio::Stop(&soundInstance);
+      guiBtnAudioTest.SetText("Play Audio");
+    } else {
+      wi::audio::Play(&soundInstance);
+      guiBtnAudioTest.SetText("Stop Audio");
+    }
+    playing = !playing;
+  });
+
+  // GUI: audio volume slider
+  guiSldAudioVolume.Create(0, 100, 50, 20, "guiSldAudioVolume");
+  gui.AddWidget(&guiSldAudioVolume);
+  guiSldAudioVolume.SetSize(XMFLOAT2(240, 20));
+  guiSldAudioVolume.SetPos(XMFLOAT2(789, 40));
+  guiSldAudioVolume.OnSlide([&](wi::gui::EventArgs evt) { wi::audio::SetVolume(evt.fValue / 100.0f, &soundInstance); });
+
+
 
   wi::RenderPath3D::Load();
 }
@@ -101,7 +146,7 @@ int main(int argc, char* argv[]) {
     SDL_Quit();
     exit(1);
   }
-  auto sdl_win = sdl2::make_window("WickedEngine simple demos?!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1440, 900,
+  auto sdl_win = sdl2::make_window("WickedEngine simple demos", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1440, 900,
                                    SDL_WINDOW_SHOWN | SDL_WINDOW_VULKAN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE);
   if (!sdl_win) {
     fprintf(stderr, "Failed to make window: %s", SDL_GetError());

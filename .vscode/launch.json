@@ -5,7 +5,7 @@
             "name": "Run",
             "type": "gdb",
             "request": "launch",
-            "target": "wi01_loadlua.exec",
+            "target": "wi02_tests.exec",
             "cwd": "${fileWorkspaceFolder}/.build/debug",
             "valuesFormatting": "disabled",
             "preLaunchTask": "mesonBuildDebug",

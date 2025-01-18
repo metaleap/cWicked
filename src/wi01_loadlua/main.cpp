@@ -1,7 +1,12 @@
-#include "../../pch/wi_pch.h"
+#include "../../pch/wi_min_pch.h"
 
 
 wi::Application app = wi::Application();
+
+
+#define WHICH "character_controller"
+// #define WHICH "fighting_game"
+
 
 
 int main(int argc, char** argv) {
@@ -60,7 +65,7 @@ int main(int argc, char** argv) {
       ran = true;
       SDL_SetWindowTitle(hwnd, wi::version::GetVersionString());
       SDL_SetWindowFullscreen(hwnd, SDL_WINDOW_FULLSCREEN_DESKTOP);
-      wi::lua::RunFile("../../.wi/Content/scripts/character_controller/character_controller.lua");
+      wi::lua::RunFile("../../.wi/Content/scripts/" WHICH "/" WHICH ".lua");
     }
   }
 

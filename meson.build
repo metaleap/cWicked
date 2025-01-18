@@ -65,7 +65,7 @@ lib_wiso = shared_library(
         dep_utility,
         dep_wicked,
     ],
-    cpp_pch: 'pch/wi_pch.h',
+    cpp_pch: 'pch/wi_full_pch.h',
     sources: [
         'src/wiso/wiso.cpp',
     ],
@@ -77,7 +77,7 @@ executable(
     link_with: [lib_wiso],
     implicit_include_directories: true,
     link_language: 'cpp',
-    cpp_pch: 'pch/wi_pch.h',
+    cpp_pch: 'pch/wi_min_pch.h',
     sources: ['src/wi02_tests/main.cpp'],
 )
 executable(
@@ -86,6 +86,6 @@ executable(
     link_with: [lib_wiso],
     implicit_include_directories: true,
     link_language: 'cpp',
-    cpp_pch: 'pch/wi_pch.h',
+    cpp_pch: 'pch/wi_min_pch.h',
     sources: ['src/wi01_loadlua/main.cpp'],
 )

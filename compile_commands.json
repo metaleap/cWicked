@@ -1,37 +1,37 @@
 [
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibwiso.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -x c++-header -MD -MQ libwiso.so.p/wi_pch.h.gch -MF libwiso.so.p/wi_pch.h.gch.d -o libwiso.so.p/wi_pch.h.gch -c ../../pch/wi_pch.h",
-    "file": "../../pch/wi_pch.h",
-    "output": "libwiso.so.p/wi_pch.h.gch"
+    "command": "ccache c++ -Ilibwiso.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -x c++-header -MD -MQ libwiso.so.p/wi_full_pch.h.gch -MF libwiso.so.p/wi_full_pch.h.gch.d -o libwiso.so.p/wi_full_pch.h.gch -c ../../pch/wi_full_pch.h",
+    "file": "../../pch/wi_full_pch.h",
+    "output": "libwiso.so.p/wi_full_pch.h.gch"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Ilibwiso.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libwiso.so.p/src_wiso_wiso.cpp.o -MF libwiso.so.p/src_wiso_wiso.cpp.o.d -o libwiso.so.p/src_wiso_wiso.cpp.o -c ../../src/wiso/wiso.cpp",
+    "command": "ccache c++ -Ilibwiso.so.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_full_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -fPIC -isystem/usr/include/SDL2 -D_REENTRANT -pthread -MD -MQ libwiso.so.p/src_wiso_wiso.cpp.o -MF libwiso.so.p/src_wiso_wiso.cpp.o.d -o libwiso.so.p/src_wiso_wiso.cpp.o -c ../../src/wiso/wiso.cpp",
     "file": "../../src/wiso/wiso.cpp",
     "output": "libwiso.so.p/src_wiso_wiso.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Iwi02_tests.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -x c++-header -MD -MQ wi02_tests.exec.p/wi_pch.h.gch -MF wi02_tests.exec.p/wi_pch.h.gch.d -o wi02_tests.exec.p/wi_pch.h.gch -c ../../pch/wi_pch.h",
-    "file": "../../pch/wi_pch.h",
-    "output": "wi02_tests.exec.p/wi_pch.h.gch"
+    "command": "ccache c++ -Iwi02_tests.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -x c++-header -MD -MQ wi02_tests.exec.p/wi_min_pch.h.gch -MF wi02_tests.exec.p/wi_min_pch.h.gch.d -o wi02_tests.exec.p/wi_min_pch.h.gch -c ../../pch/wi_min_pch.h",
+    "file": "../../pch/wi_min_pch.h",
+    "output": "wi02_tests.exec.p/wi_min_pch.h.gch"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Iwi02_tests.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ wi02_tests.exec.p/src_wi02_tests_main.cpp.o -MF wi02_tests.exec.p/src_wi02_tests_main.cpp.o.d -o wi02_tests.exec.p/src_wi02_tests_main.cpp.o -c ../../src/wi02_tests/main.cpp",
+    "command": "ccache c++ -Iwi02_tests.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_min_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ wi02_tests.exec.p/src_wi02_tests_main.cpp.o -MF wi02_tests.exec.p/src_wi02_tests_main.cpp.o.d -o wi02_tests.exec.p/src_wi02_tests_main.cpp.o -c ../../src/wi02_tests/main.cpp",
     "file": "../../src/wi02_tests/main.cpp",
     "output": "wi02_tests.exec.p/src_wi02_tests_main.cpp.o"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Iwi01_loadlua.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -x c++-header -MD -MQ wi01_loadlua.exec.p/wi_pch.h.gch -MF wi01_loadlua.exec.p/wi_pch.h.gch.d -o wi01_loadlua.exec.p/wi_pch.h.gch -c ../../pch/wi_pch.h",
-    "file": "../../pch/wi_pch.h",
-    "output": "wi01_loadlua.exec.p/wi_pch.h.gch"
+    "command": "ccache c++ -Iwi01_loadlua.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -x c++-header -MD -MQ wi01_loadlua.exec.p/wi_min_pch.h.gch -MF wi01_loadlua.exec.p/wi_min_pch.h.gch.d -o wi01_loadlua.exec.p/wi_min_pch.h.gch -c ../../pch/wi_min_pch.h",
+    "file": "../../pch/wi_min_pch.h",
+    "output": "wi01_loadlua.exec.p/wi_min_pch.h.gch"
   },
   {
     "directory": "/home/_/c/c/cWicked/.build/debug",
-    "command": "c++ -Iwi01_loadlua.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ wi01_loadlua.exec.p/src_wi01_loadlua_main.cpp.o -MF wi01_loadlua.exec.p/src_wi01_loadlua_main.cpp.o.d -o wi01_loadlua.exec.p/src_wi01_loadlua_main.cpp.o -c ../../src/wi01_loadlua/main.cpp",
+    "command": "ccache c++ -Iwi01_loadlua.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_min_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ wi01_loadlua.exec.p/src_wi01_loadlua_main.cpp.o -MF wi01_loadlua.exec.p/src_wi01_loadlua_main.cpp.o.d -o wi01_loadlua.exec.p/src_wi01_loadlua_main.cpp.o -c ../../src/wi01_loadlua/main.cpp",
     "file": "../../src/wi01_loadlua/main.cpp",
     "output": "wi01_loadlua.exec.p/src_wi01_loadlua_main.cpp.o"
   }

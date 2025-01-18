@@ -1,4 +1,8 @@
 #include "../../pch/wi_min_pch.h"
+#include ".wi/WickedEngine/Utility/DirectXMath.h"
+#include ".wi/WickedEngine/wiFont.h"
+
+
 
 enum class TestType {
   HELLOWORLD,
@@ -31,7 +35,7 @@ class Rend : public wi::RenderPath3D {
   wi::ecs::Entity   ik_entity = wi::ecs::INVALID_ENTITY;
 public:
   void Load() override;
-  void Update(float dt) override;
+  // void Update(float dt) override;
 };
 
 class App : public wi::Application {
@@ -39,6 +43,8 @@ class App : public wi::Application {
 public:
   void Initialize() override;
 };
+
+
 
 void App::Initialize() {
   wi::Application::Initialize();
@@ -58,11 +64,34 @@ void App::Initialize() {
   this->ActivatePath(&this->render, 0.321f);
 }
 
+
 void Rend::Load() {
+  setSSREnabled(false);
+  setReflectionsEnabled(true);
+  setFXAAEnabled(false);
+
+  wi::gui::GUI& gui = GetGUI();
+  label.Create("TheLabel");
+  label.SetText("WickedEngine Tests");
+  label.font.params.h_align = wi::font::WIFALIGN_CENTER;
+  label.SetSize(XMFLOAT2(240, 22));
+  gui.AddWidget(&label);
+
   wi::RenderPath3D::Load();
 }
 
+
+
+
+
+
+
+
+
+
+
 App app;
+
 
 int main(int argc, char* argv[]) {
   wi::arguments::Parse(argc, argv);

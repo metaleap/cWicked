@@ -1,10 +1,10 @@
 #include "../../pch/wi_min_pch.h"
 #include ".wi/WickedEngine/Utility/DirectXMath.h"
 #include ".wi/WickedEngine/wiECS.h"
-#include ".wi/WickedEngine/wiJobSystem.h"
+#include ".wi/WickedEngine/wiInput.h"
+#include ".wi/WickedEngine/wiRenderer.h"
 #include ".wi/WickedEngine/wiScene.h"
 #include ".wi/WickedEngine/wiScene_Components.h"
-#include ".wi/WickedEngine/wiTimer.h"
 
 
 #define WI_CONTENT_DIR "../../.wi/Content/"
@@ -31,6 +31,7 @@ enum TestType : uint64_t {
 class Rend : public wi::RenderPath3D {
   wi::gui::Label    guiLblTitle;
   wi::gui::ComboBox guiDdnTests;
+  wi::ecs::Entity   ikEntity = wi::ecs::INVALID_ENTITY;
 public:
   void Load() override;
   void Update(float dt) override;
@@ -139,6 +140,7 @@ void Rend::Load() {
       this->ClearFonts();
       if (wi::lua::GetLuaState() != nullptr)
         wi::lua::KillProcesses();
+      ikEntity = wi::ecs::INVALID_ENTITY;
     }
 
     {   // reset cam pos
@@ -232,8 +234,7 @@ void Rend::Load() {
             abort();
           wi::scene::HumanoidComponent humanoid = scene_ik.humanoids[0];
           humanoid.SetLookAtEnabled(false);
-          static wi::ecs::Entity ikEntity = wi::ecs::INVALID_ENTITY;
-          ikEntity                        = humanoid.bones[(size_t) wi::scene::HumanoidComponent::HumanoidBone::LeftHand];
+          ikEntity = humanoid.bones[(size_t) wi::scene::HumanoidComponent::HumanoidBone::LeftHand];
           if (ikEntity != wi::ecs::INVALID_ENTITY) {
             wi::scene::InverseKinematicsComponent& ik = scene_ik.inverse_kinematics.Create(ikEntity);
             ik.chain_length                           = 2;   // lower and upper arm included (two parents in hierarchy of hand)
@@ -252,7 +253,6 @@ void Rend::Load() {
   });
   wi::RenderPath3D::Load();
 }
-
 
 void Rend::Update(float delta) {
   auto idx = guiDdnTests.GetSelected();
@@ -289,6 +289,32 @@ void Rend::Update(float delta) {
         }
         break;
       case TestType::INVERSEKINEMATICSTEST:
+        if (ikEntity != wi::ecs::INVALID_ENTITY) {
+          const wi::input::MouseState& mouse = wi::input::GetMouseState();
+          wi::primitive::Ray           ray   = wi::renderer::GetPickRay(mouse.position.x, mouse.position.y, *this);
+          XMVECTOR                     plane = XMVectorSet(0, 0, 1, 0.2f);
+          XMVECTOR                     intersect
+              = XMPlaneIntersectLine(plane, XMLoadFloat3(&ray.origin), XMLoadFloat3(&ray.origin) + XMLoadFloat3(&ray.direction) * 10000.0f);
+          wi::scene::Scene&              scene_global = wi::scene::GetScene();
+          wi::scene::TransformComponent* target
+              = scene_global.transforms.GetComponent((scene_global.inverse_kinematics.GetComponent(ikEntity))->target);
+          target->ClearTransform();
+          XMFLOAT3 intersect_;
+          XMStoreFloat3(&intersect_, intersect);
+          target->Translate(intersect_);
+          target->UpdateTransform();
+          {   // draw debug ik target position:
+            wi::renderer::RenderablePoint pp;
+            pp.position = target->GetPosition();
+            pp.color    = XMFLOAT4(0, 1, 1, 1);
+            pp.size     = 0.321f;
+            wi::renderer::DrawPoint(pp);
+            pp.position = scene_global.transforms.GetComponent(ikEntity)->GetPosition();
+            pp.color    = XMFLOAT4(1, 0, 0, 1);
+            pp.size     = 0.123f;
+            wi::renderer::DrawPoint(pp);
+          }
+        }
         break;
     }
   wi::RenderPath3D::Update(delta);

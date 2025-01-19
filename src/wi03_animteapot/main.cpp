@@ -1,14 +1,6 @@
 #include "../../pch/wi_min_pch.h"
 #include ".wi/WickedEngine/Utility/DirectXMath.h"
-#include ".wi/WickedEngine/wiApplication.h"
-#include ".wi/WickedEngine/wiECS.h"
-#include ".wi/WickedEngine/wiImage.h"
-#include ".wi/WickedEngine/wiInput.h"
-#include ".wi/WickedEngine/wiLua.h"
-#include ".wi/WickedEngine/wiRenderer.h"
-#include ".wi/WickedEngine/wiScene.h"
-#include ".wi/WickedEngine/wiScene_Components.h"
-#include ".wi/WickedEngine/wiSprite.h"
+#include ".wi/WickedEngine/wiRandom.h"
 
 
 #define WI_CONTENT_DIR "../../.wi/Content/"
@@ -17,11 +9,17 @@
 
 
 class Rend : public wi::RenderPath3D {
-  wi::ecs::Entity teapot;
-  wi::Sprite      sprite;
+  wi::ecs::Entity             teapot;
+  wi::Sprite                  sprite;
+  wi::vector<wi::ecs::Entity> camAnimRoute;
+  int                         camAnimRot   = 0;
+  float                       camAnimTt    = 0.0f;
+  float                       camAnimSpeed = 0.4f;
+  XMFLOAT2 spriteVelocity = XMFLOAT2((wi::random::GetRandom(1.0f) * 2.0f - 1.0f) * 4.0f, (wi::random::GetRandom(1.0f) * 2.0f - 1.0f) * 4.0f);
 public:
   void Load() override;
   void FixedUpdate() override;
+  void Update(float dt) override;
 };
 
 class App : public wi::Application {
@@ -53,12 +51,16 @@ void App::Initialize() {
 
 
 void Rend::Load() {
-  wi::renderer::SetTemporalAAEnabled(true);
   wi::renderer::SetToDrawGridHelper(true);
-  teapot = wi::scene::LoadModel(WI_CONTENT_DIR "models/teapot.wiscene");
+  teapot = wi::scene::LoadModel(WI_CONTENT_DIR "models/teapot.wiscene", XMMatrixIdentity(), true);
+
   wi::scene::LoadModel(WI_CONTENT_DIR "models/cameras.wiscene");
-
-
+  for (int i = 0; true; i++) {
+    auto cam = scene->Entity_FindByName(std::format("cam{}", i));
+    if (cam == wi::ecs::INVALID_ENTITY)
+      break;
+    camAnimRoute.push_back(cam);
+  }
 
   sprite        = wi::Sprite(WI_CONTENT_DIR "logo_small.png");
   sprite.params = wi::image::Params(100, 100, 128, 128);
@@ -68,11 +70,50 @@ void Rend::Load() {
 
 
 
-void Rend::FixedUpdate() {
-  wi::RenderPath3D::FixedUpdate();
+void Rend::Update(float delta) {
+  wi::RenderPath3D::Update(delta);
+  auto a = scene->transforms.GetComponent(camAnimRoute[(camAnimRot - 1) % camAnimRoute.size()]);
+  auto b = scene->transforms.GetComponent(camAnimRoute[(camAnimRot + 0) % camAnimRoute.size()]);
+  auto c = scene->transforms.GetComponent(camAnimRoute[(camAnimRot + 1) % camAnimRoute.size()]);
+  auto d = scene->transforms.GetComponent(camAnimRoute[(camAnimRot + 2) % camAnimRoute.size()]);
+
+  static wi::scene::TransformComponent target;
+  target.CatmullRom(*a, *b, *c, *d, camAnimTt);
+  target.UpdateTransform();
+  camera->TransformCamera(target);
+  camera->UpdateCamera();
+
+  camAnimTt += (camAnimSpeed * delta);
+  if (camAnimTt >= 1.0f) {
+    camAnimTt = 0.0f;
+    camAnimRot++;
+  }
 }
 
 
+
+void Rend::FixedUpdate() {
+  auto pos = sprite.params.pos;
+  auto siz = sprite.params.siz;
+
+  if ((pos.x + siz.x) >= GetLogicalWidth())
+    spriteVelocity.x *= -1;
+  if ((pos.y + siz.y) >= GetLogicalHeight())
+    spriteVelocity.y *= -1;
+  if (pos.x <= 0)
+    spriteVelocity.x *= -1;
+  if (pos.y <= 0)
+    spriteVelocity.y *= -1;
+
+  pos               = XMFLOAT3(pos.x + spriteVelocity.x, pos.y + spriteVelocity.y, pos.z);
+  sprite.params.pos = pos;
+
+  auto teapot_transform = scene->transforms.GetComponent(teapot);
+  teapot_transform->RotateRollPitchYaw(XMFLOAT3(0, 0, 0.01f));
+  teapot_transform->UpdateTransform();
+
+  wi::RenderPath3D::FixedUpdate();
+}
 
 
 

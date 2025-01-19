@@ -1,8 +1,10 @@
 #include "../../pch/wi_min_pch.h"
 #include ".wi/WickedEngine/Utility/DirectXMath.h"
-#include ".wi/WickedEngine/wiRenderer.h"
+#include ".wi/WickedEngine/wiECS.h"
+#include ".wi/WickedEngine/wiJobSystem.h"
 #include ".wi/WickedEngine/wiScene.h"
 #include ".wi/WickedEngine/wiScene_Components.h"
+#include ".wi/WickedEngine/wiTimer.h"
 
 
 #define WI_CONTENT_DIR "../../.wi/Content/"
@@ -19,16 +21,9 @@ enum TestType : uint64_t {
   SHADOWSTEST,
   PHYSICSTEST,
   CLOTHPHYSICSTEST,
-  JOBSYSTEMTEST,
-  FONTTEST,
   VOLUMETRICTEST,
-  SPRITETEST,
-  LIGHTMAPBAKETEST,
-  NETWORKTEST,
-  CONTROLLERTEST,
   INVERSEKINEMATICSTEST,
   INSTANCESTEST,
-  CONTAINERPERF,
 };
 
 
@@ -36,10 +31,9 @@ enum TestType : uint64_t {
 class Rend : public wi::RenderPath3D {
   wi::gui::Label    guiLblTitle;
   wi::gui::ComboBox guiDdnTests;
-  wi::ecs::Entity   ikEntity = wi::ecs::INVALID_ENTITY;
 public:
   void Load() override;
-  // void Update(float dt) override;
+  void Update(float dt) override;
 };
 
 
@@ -128,16 +122,9 @@ void Rend::Load() {
   guiDdnTests.AddItem("Shadows Test", SHADOWSTEST);
   guiDdnTests.AddItem("Physics Test", PHYSICSTEST);
   guiDdnTests.AddItem("Cloth Physics Test", CLOTHPHYSICSTEST);
-  guiDdnTests.AddItem("Job System Test", JOBSYSTEMTEST);
-  guiDdnTests.AddItem("Font Test", FONTTEST);
   guiDdnTests.AddItem("Volumetric Test", VOLUMETRICTEST);
-  guiDdnTests.AddItem("Sprite Test", SPRITETEST);
-  guiDdnTests.AddItem("Lightmap Bake Test", LIGHTMAPBAKETEST);
-  guiDdnTests.AddItem("Network Test", NETWORKTEST);
-  guiDdnTests.AddItem("Controller Test", CONTROLLERTEST);
   guiDdnTests.AddItem("Inverse Kinematics", INVERSEKINEMATICSTEST);
   guiDdnTests.AddItem("65k Instances", INSTANCESTEST);
-  guiDdnTests.AddItem("Container perf", CONTAINERPERF);
   guiDdnTests.SetMaxVisibleItemCount(11);
   guiDdnTests.SetSelected(-1);
   guiDdnTests.OnSelect([&](wi::gui::EventArgs evt) {
@@ -218,33 +205,94 @@ void Rend::Load() {
         break;
 
       case TestType::INSTANCESTEST:
-        wi::scene::LoadModel(WI_CONTENT_DIR "models/cube.wiscene");
-        wi::scene::Scene& scene = wi::scene::GetScene();
-        scene.Entity_CreateLight("light", XMFLOAT3(0, 2, -4), XMFLOAT3(1, 1, 1), 4);
-        wi::ecs::Entity cube  = scene.Entity_FindByName("Cube");
-        const float     scale = 0.06f;
-        for (int x = 0; x < 32; x++)
-          for (int y = 0; y < 32; y++)
-            for (int z = 0; z < 64; z++) {
-              wi::ecs::Entity                dupl      = scene.Entity_Duplicate(cube);
-              wi::scene::TransformComponent* transform = scene.transforms.GetComponent(dupl);
-              transform->Scale(XMFLOAT3(scale, scale, scale));
-              transform->Translate(XMFLOAT3((-5.5f + 11 * float(x) / 32.f), (-0.5f + 5.0f * float(y) / 32.f), (float(z) * 0.5f)));
-            }
-        scene.Entity_Remove(cube);
+        {
+          wi::scene::LoadModel(WI_CONTENT_DIR "models/cube.wiscene");
+          wi::scene::Scene& scene_global = wi::scene::GetScene();
+          scene_global.Entity_CreateLight("light", XMFLOAT3(0, 2, -4), XMFLOAT3(1, 1, 1), 4);
+          wi::ecs::Entity cube  = scene_global.Entity_FindByName("Cube");
+          const float     scale = 0.06f;
+          for (int x = 0; x < 32; x++)
+            for (int y = 0; y < 32; y++)
+              for (int z = 0; z < 64; z++) {
+                wi::ecs::Entity                dupl      = scene_global.Entity_Duplicate(cube);
+                wi::scene::TransformComponent* transform = scene_global.transforms.GetComponent(dupl);
+                transform->Scale(XMFLOAT3(scale, scale, scale));
+                transform->Translate(XMFLOAT3((-5.5f + 11 * float(x) / 32.f), (-0.5f + 5.0f * float(y) / 32.f), (float(z) * 0.5f)));
+              }
+          scene_global.Entity_Remove(cube);
+        }
         break;
 
       case TestType::INVERSEKINEMATICSTEST:
+        {
+          wi::scene::Scene scene_ik;
+          wi::scene::LoadModel(scene_ik, WI_CONTENT_DIR "scripts/character_controller/assets/character.wiscene", XMMatrixScaling(2, 2, 2),
+                               false);
+          if (scene_ik.humanoids.GetCount() == 0)
+            abort();
+          wi::scene::HumanoidComponent humanoid = scene_ik.humanoids[0];
+          humanoid.SetLookAtEnabled(false);
+          static wi::ecs::Entity ikEntity = wi::ecs::INVALID_ENTITY;
+          ikEntity                        = humanoid.bones[(size_t) wi::scene::HumanoidComponent::HumanoidBone::LeftHand];
+          if (ikEntity != wi::ecs::INVALID_ENTITY) {
+            wi::scene::InverseKinematicsComponent& ik = scene_ik.inverse_kinematics.Create(ikEntity);
+            ik.chain_length                           = 2;   // lower and upper arm included (two parents in hierarchy of hand)
+            ik.iteration_count                        = 5;   // precision of ik sim
+            ik.target                                 = wi::ecs::CreateEntity();
+            scene_ik.transforms.Create(ik.target);
+          }
+          wi::scene::GetScene().Merge(scene_ik);
+          auto weather     = &wi::scene::GetScene().weather;
+          weather->ambient = XMFLOAT3(0.33f, 0.44f, 0.55f);
+          weather->horizon = XMFLOAT3(0.38f, 0.38f, 0.38f);
+          weather->zenith  = XMFLOAT3(0.42f, 0.42f, 0.42f);
+        }
         break;
     }
   });
-
-
   wi::RenderPath3D::Load();
 }
 
 
-
+void Rend::Update(float delta) {
+  auto idx = guiDdnTests.GetSelected();
+  if (idx >= 0)
+    switch (guiDdnTests.GetItemUserData(idx)) {
+      case TestType::MODEL:
+        {
+          wi::scene::Scene& scene_global = wi::scene::GetScene();
+          wi::ecs::Entity   teapot_base  = scene_global.Entity_FindByName("Base");
+          assert(teapot_base != wi::ecs::INVALID_ENTITY);
+          wi::scene::TransformComponent* transform = scene->transforms.GetComponent(teapot_base);
+          assert(transform != nullptr);
+          float rotation = delta;
+          transform->Rotate(XMVectorSet(0, rotation, 0, 1));
+        }
+        break;
+      case TestType::INSTANCESTEST:
+        {
+          static wi::Timer       timer;
+          float                  sec = (float) (timer.elapsed_seconds());
+          wi::jobsystem::context ctx;
+          scene->materials[0].SetEmissiveColor(XMFLOAT4(1, 1, 1, 1));
+          wi::jobsystem::Dispatch(ctx, (uint32_t) scene->transforms.GetCount(), 1024, [&](wi::jobsystem::JobArgs job) {
+            wi::scene::TransformComponent& transform = scene->transforms[job.jobIndex];
+            float                          y = std::sin(sec + 20.0f * (float) job.jobIndex / (float) scene->transforms.GetCount()) * 0.1f;
+            XMStoreFloat4x4(&transform.world, transform.GetLocalMatrix() * XMMatrixTranslation(0, y, 0));
+          });
+          wi::jobsystem::Dispatch(ctx, (uint32_t) scene->objects.GetCount(), 1024, [&](wi::jobsystem::JobArgs job) {
+            wi::scene::ObjectComponent& object = scene->objects[job.jobIndex];
+            float f = std::pow(std::sin(-sec * 2.0f + 4.0f * (float) job.jobIndex / (float) scene->objects.GetCount()) * 0.5f + 0.5f, 32.0f);
+            object.emissiveColor = XMFLOAT4(0, 0.25f, 1.0f, f * 3.0f);
+          });
+          wi::jobsystem::Wait(ctx);
+        }
+        break;
+      case TestType::INVERSEKINEMATICSTEST:
+        break;
+    }
+  wi::RenderPath3D::Update(delta);
+}
 
 
 

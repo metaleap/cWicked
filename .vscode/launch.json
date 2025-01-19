@@ -5,7 +5,7 @@
             "name": "Run",
             "type": "gdb",
             "request": "launch",
-            "target": "wi02_tests.exec",
+            "target": "wi03_animteapot.exec",
             "cwd": "${fileWorkspaceFolder}/.build/debug",
             "valuesFormatting": "disabled",
             "preLaunchTask": "mesonBuildDebug",

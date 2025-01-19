@@ -72,20 +72,26 @@ lib_wiso = shared_library(
 )
 
 executable(
+    'wi01_loadlua.exec',
+    dependencies: [dep_sdl2, dep_pthread],
+    link_with: [lib_wiso],
+    link_language: 'cpp',
+    cpp_pch: 'pch/wi_min_pch.h',
+    sources: ['src/wi01_loadlua/main.cpp'],
+)
+executable(
     'wi02_tests.exec',
     dependencies: [dep_sdl2, dep_pthread],
     link_with: [lib_wiso],
-    implicit_include_directories: true,
     link_language: 'cpp',
     cpp_pch: 'pch/wi_min_pch.h',
     sources: ['src/wi02_tests/main.cpp'],
 )
 executable(
-    'wi01_loadlua.exec',
+    'wi03_animteapot.exec',
     dependencies: [dep_sdl2, dep_pthread],
     link_with: [lib_wiso],
-    implicit_include_directories: true,
     link_language: 'cpp',
     cpp_pch: 'pch/wi_min_pch.h',
-    sources: ['src/wi01_loadlua/main.cpp'],
+    sources: ['src/wi03_animteapot/main.cpp'],
 )

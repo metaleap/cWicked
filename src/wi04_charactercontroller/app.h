@@ -4,6 +4,9 @@
 #include ".wi/WickedEngine/Utility/DirectXMath.h"
 #include ".wi/WickedEngine/wiECS.h"
 #include ".wi/WickedEngine/wiMath.h"
+#include ".wi/WickedEngine/wiScene_Components.h"
+#include ".wi/WickedEngine/wiUnorderedMap.h"
+#include ".wi/WickedEngine/wiVector.h"
 
 
 #define CC_DIR_PATH "../../.wi/Content/scripts/character_controller/"
@@ -18,25 +21,42 @@ enum Layers : uint32_t {
 
 class Character {
 public:
+  XMFLOAT3                                        position;
+  XMFLOAT3                                        rotation = XMFLOAT3(0, wi::math::PI, 0);
+  bool                                            controllable;
+  Layers                                          layerMask;
+  float                                           targetRotHorizontal = 0;
+  float                                           targetRotVertical   = 0;
+  wi::ecs::Entity                                 model;
+  std::string                                     state         = "idle";
+  wi::ecs::Entity                                 humanoid      = wi::ecs::INVALID_ENTITY;
+  wi::ecs::Entity                                 expression    = wi::ecs::INVALID_ENTITY;
+  wi::ecs::Entity                                 boneNeck      = wi::ecs::INVALID_ENTITY;
+  wi::ecs::Entity                                 boneHead      = wi::ecs::INVALID_ENTITY;
+  wi::ecs::Entity                                 boneHandLeft  = wi::ecs::INVALID_ENTITY;
+  wi::ecs::Entity                                 boneHandRight = wi::ecs::INVALID_ENTITY;
+  wi::ecs::Entity                                 boneFootLeft  = wi::ecs::INVALID_ENTITY;
+  wi::ecs::Entity                                 boneFootRight = wi::ecs::INVALID_ENTITY;
+  wi::ecs::Entity                                 boneToesLeft  = wi::ecs::INVALID_ENTITY;
+  wi::ecs::Entity                                 boneToesRight = wi::ecs::INVALID_ENTITY;
+  wi::vector<wi::ecs::Entity>                     objectEntities;
+  wi::ecs::Entity                                 root = wi::ecs::INVALID_ENTITY;
+  wi::unordered_map<std::string, wi::ecs::Entity> anims;
+  XMFLOAT3                                        scale = XMFLOAT3(1, 1, 1);
+  float                                           targetHeight;
+  float                                           speedWalking  = 0.1f;
+  float                                           speedJogging  = 0.2f;
+  float                                           speedRunning  = 0.4f;
+  float                                           speedJumping  = 8;
+  float                                           speedSwimming = 0.2f;
+
   Character(wi::scene::Scene*, wi::scene::TransformComponent*, bool, wi::scene::Scene&, std::string);
-  XMFLOAT3        position;
-  XMFLOAT3        rotation = XMFLOAT3(0, wi::math::PI, 0);
-  bool            controllable;
-  Layers          layerMask;
-  float           targetRotHorizontal = 0.0f;
-  wi::ecs::Entity model;
-  std::string     stateCur      = "idle";
-  std::string     statePrev     = "idle";
-  wi::ecs::Entity humanoid      = wi::ecs::INVALID_ENTITY;
-  wi::ecs::Entity expression    = wi::ecs::INVALID_ENTITY;
-  wi::ecs::Entity boneNeck      = wi::ecs::INVALID_ENTITY;
-  wi::ecs::Entity boneHead      = wi::ecs::INVALID_ENTITY;
-  wi::ecs::Entity boneHandLeft  = wi::ecs::INVALID_ENTITY;
-  wi::ecs::Entity boneHandRight = wi::ecs::INVALID_ENTITY;
-  wi::ecs::Entity boneFootLeft  = wi::ecs::INVALID_ENTITY;
-  wi::ecs::Entity boneFootRight = wi::ecs::INVALID_ENTITY;
-  wi::ecs::Entity boneToesLeft  = wi::ecs::INVALID_ENTITY;
-  wi::ecs::Entity boneToesRight = wi::ecs::INVALID_ENTITY;
+  XMFLOAT3 getFacing();
+  void     jump(float amount);
+  void     turn(XMFLOAT3& direction);
+  void     moveDir(XMFLOAT3& direction);
+  void     setAnimationAmount(float amount);
+  void     update(float delta);
 };
 
 

@@ -1,5 +1,4 @@
 #include "./app.h"
-#include ".wi/WickedEngine/wiScene_Components.h"
 
 
 

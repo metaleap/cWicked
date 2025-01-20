@@ -20,16 +20,16 @@ mkdir .build/debug/shaders
 cp $wi_build_dir/WickedEngine/libdxcompiler.so .build/debug/
 meson setup -DWICKED_BUILD_DIR=$wi_build_dir --native-file meson_native.ini .build/debug
 
-wi_build_dir=".wi/.build_Release"
+# wi_build_dir=".wi/.build_Release"
 
-mkdir .build/release_gcc
-mkdir .build/release_gcc/shaders
-cp $wi_build_dir/WickedEngine/libdxcompiler.so .build/release_gcc/
-meson setup -DWICKED_BUILD_DIR=$wi_build_dir -Dbuildtype=release -Dprefer_static=true .build/release_gcc
+# mkdir .build/release_gcc
+# mkdir .build/release_gcc/shaders
+# cp $wi_build_dir/WickedEngine/libdxcompiler.so .build/release_gcc/
+# meson setup -DWICKED_BUILD_DIR=$wi_build_dir -Dbuildtype=release -Dprefer_static=true .build/release_gcc
 
-mkdir .build/release_clang
-mkdir .build/release_clang/shaders
-cp $wi_build_dir/WickedEngine/libdxcompiler.so .build/release_clang/
-CC=clang CXX=clang++ meson setup -DWICKED_BUILD_DIR=$wi_build_dir -Dbuildtype=release -Dprefer_static=true .build/release_clang
+# mkdir .build/release_clang
+# mkdir .build/release_clang/shaders
+# cp $wi_build_dir/WickedEngine/libdxcompiler.so .build/release_clang/
+# CC=clang CXX=clang++ meson setup -DWICKED_BUILD_DIR=$wi_build_dir -Dbuildtype=release -Dprefer_static=true .build/release_clang
 
 cp .build/debug/compile_commands.json .

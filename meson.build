@@ -101,5 +101,9 @@ executable(
     link_with: [lib_wiso],
     link_language: 'cpp',
     cpp_pch: 'pch/wi_min_pch.h',
-    sources: ['src/wi04_charactercontroller/main.cpp'],
+    sources: [
+        'src/wi04_charactercontroller/main.cpp',
+        'src/wi04_charactercontroller/game.cpp',
+        'src/wi04_charactercontroller/character.cpp',
+    ],
 )

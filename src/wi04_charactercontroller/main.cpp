@@ -1,57 +1,10 @@
-#include "../../pch/wi_min_pch.h"
-#include ".wi/WickedEngine/Utility/DirectXMath.h"
-#include ".wi/WickedEngine/wiEnums.h"
-#include ".wi/WickedEngine/wiScene.h"
-#include ".wi/WickedEngine/wiScene_Components.h"
-#include ".wi/WickedEngine/wiUnorderedMap.h"
-#include ".wi/WickedEngine/wiVector.h"
-#include <cstddef>
-#include <utility>
+#include "./app.h"
 
 
 /* postponed:
     - footprints
-    - conversation
+    - conversation / dialog
 */
-
-
-#define CC_DIR_PATH "../../.wi/Content/scripts/character_controller/"
-
-
-
-class Rend : public wi::RenderPath3D {
-  bool                           debugDraws     = false;
-  float                          slopeThreshold = 0.2f;   // How much slopeiness will cause character to slide down instead of standing on it
-  float                          gravity        = -30.0f;
-  bool                           dynamicVoxelization = false;   // Set to true to revoxelize navigation every frame
-  wi::scene::CharacterComponent* player              = nullptr;
-  wi::vector<wi::scene::CharacterComponent> npcs;
-  bool                                      footprintsEnabled = false;
-  wi::vector<wi::primitive::Capsule>        characterCapsules;
-  wi::VoxelGrid                             voxelGrid;
-public:
-  void Load() override;
-  void Update(float dt) override;
-};
-
-class App : public wi::Application {
-  Rend rend;
-public:
-  void Initialize() override;
-};
-
-
-enum Layers : uint32_t {
-  Player = 1 << 0,   // 1
-  Npc    = 1 << 1,   // 2
-};
-
-
-
-
-
-App  app;
-Rend rend;
 
 
 void App::Initialize() {
@@ -67,75 +20,10 @@ void App::Initialize() {
   infoDisplay.vram_usage              = true;
   infoDisplay.watermark               = true;
   wi::Application::Initialize();
-  rend.init(window);
-  rend.Load();
-  ActivatePath(&rend, 0.321f);
+  game.init(window);
+  game.Load();
+  ActivatePath(&game, 0.321f);
 }
-
-
-
-
-
-void Rend::Load() {
-  wi::RenderPath3D::Load();
-  voxelGrid.init(128, 32, 128);
-  voxelGrid.set_voxelsize(0.25f);
-  voxelGrid.center = XMFLOAT3(0, 0.1f, 0);
-
-  setLightShaftsEnabled(false);
-  setLightShaftsStrength(0.01f);
-  setAO(AO_MSAO);
-  setAOPower(0.25f);
-  setOutlineEnabled(false);
-  setOutlineThreshold(0.11f);
-  setOutlineThickness(1.7f);
-  setOutlineColor(XMFLOAT4(0, 0, 0, 0.6f));
-  setBloomEnabled(true);
-  setBloomThreshold(5);
-  wi::renderer::SetToDrawDebugEnvProbes(false);
-  wi::renderer::SetToDrawGridHelper(false);
-  wi::renderer::SetToDrawDebugCameras(false);
-
-  auto anim_scene = wi::scene::Scene();
-  wi::scene::LoadModel(anim_scene, CC_DIR_PATH "assets/animations.wiscene");
-  wi::scene::LoadModel(CC_DIR_PATH "assets/level.wiscene");
-
-  if (scene->voxel_grids.GetCount() > 0)
-    voxelGrid = scene->voxel_grids[0];
-  else   // generate a voxel grid in code, player and NPCs not included
-    scene->VoxelizeScene(voxelGrid, false, wi::enums::FILTER_NAVIGATION_MESH | wi::enums::FILTER_COLLIDER, ~(Layers::Player | Layers::Npc));
-
-  wi::unordered_map<std::string, std::shared_ptr<wi::scene::Scene>> characters;
-  // Create characters from scene metadata components:
-  for (size_t i = 0; i < scene->metadatas.GetCount(); i++) {
-    auto metadata  = scene->metadatas[i];
-    auto entity    = scene->metadatas.GetEntity(i);
-    auto transform = scene->transforms.GetComponent(entity);
-    if (transform != nullptr) {
-      // Determine name of the placed character:
-      std::string name = "character";
-      if (metadata.string_values.has("name"))
-        name = metadata.string_values.get("name");
-
-      // Load character model if doesn't exist yet:
-      if (!characters.contains(name)) {
-        std::shared_ptr<wi::scene::Scene> tmp = std::make_shared<wi::scene::Scene>();
-        wi::scene::LoadModel(*tmp, CC_DIR_PATH "assets/" + name + ".wiscene");
-        characters.insert({name, tmp});
-      }
-    }
-  }
-}
-
-
-
-
-
-void Rend::Update(float delta) {
-  wi::RenderPath3D::Update(delta);
-}
-
-
 
 
 

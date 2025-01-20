@@ -28,7 +28,7 @@ enum TestType : uint64_t {
 
 
 
-class Rend : public wi::RenderPath3D {
+class Game : public wi::RenderPath3D {
   wi::gui::Label    guiLblTitle;
   wi::gui::ComboBox guiDdnTests;
   wi::ecs::Entity   ikEntity = wi::ecs::INVALID_ENTITY;
@@ -39,7 +39,7 @@ public:
 
 
 
-void Rend::Load() {
+void Game::Load() {
   this->scaling = 2;
 
   setSSREnabled(false);
@@ -254,7 +254,7 @@ void Rend::Load() {
   wi::RenderPath3D::Load();
 }
 
-void Rend::Update(float delta) {
+void Game::Update(float delta) {
   auto idx = guiDdnTests.GetSelected();
   if (idx >= 0)
     switch (guiDdnTests.GetItemUserData(idx)) {
@@ -328,7 +328,7 @@ void Rend::Update(float delta) {
 
 
 wi::Application app;
-Rend            rend;
+Game            rend;
 
 
 int main(int argc, char* argv[]) {

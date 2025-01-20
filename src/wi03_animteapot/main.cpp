@@ -6,7 +6,7 @@
 
 
 
-class Rend : public wi::RenderPath3D {
+class Game : public wi::RenderPath3D {
   wi::ecs::Entity             teapot;
   wi::Sprite                  sprite;
   wi::vector<wi::ecs::Entity> camAnimRoute;
@@ -21,7 +21,7 @@ public:
 };
 
 class App : public wi::Application {
-  Rend rend;
+  Game game;
 public:
   void Initialize() override;
 };
@@ -41,14 +41,14 @@ void App::Initialize() {
   infoDisplay.vram_usage              = true;
   infoDisplay.watermark               = true;
   wi::Application::Initialize();
-  rend.init(window);
-  rend.Load();
-  ActivatePath(&rend, 0.321f);
+  game.init(window);
+  game.Load();
+  ActivatePath(&game, 0.321f);
 }
 
 
 
-void Rend::Load() {
+void Game::Load() {
   wi::renderer::SetToDrawGridHelper(true);
   teapot = wi::scene::LoadModel(WI_CONTENT_DIR "models/teapot.wiscene", XMMatrixIdentity(), true);
 
@@ -68,7 +68,7 @@ void Rend::Load() {
 
 
 
-void Rend::Update(float delta) {
+void Game::Update(float delta) {
   wi::RenderPath3D::Update(delta);
   auto a = scene->transforms.GetComponent(camAnimRoute[(camAnimRot - 1) % camAnimRoute.size()]);
   auto b = scene->transforms.GetComponent(camAnimRoute[(camAnimRot + 0) % camAnimRoute.size()]);
@@ -90,7 +90,7 @@ void Rend::Update(float delta) {
 
 
 
-void Rend::FixedUpdate() {
+void Game::FixedUpdate() {
   auto pos = sprite.params.pos;
   auto siz = sprite.params.siz;
 
@@ -119,7 +119,7 @@ void Rend::FixedUpdate() {
 
 
 App  app;
-Rend rend;
+Game rend;
 
 
 int main(int argc, char* argv[]) {

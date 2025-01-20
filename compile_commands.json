@@ -58,5 +58,17 @@
     "command": "ccache c++ -Iwi04_charactercontroller.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_min_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ wi04_charactercontroller.exec.p/src_wi04_charactercontroller_main.cpp.o -MF wi04_charactercontroller.exec.p/src_wi04_charactercontroller_main.cpp.o.d -o wi04_charactercontroller.exec.p/src_wi04_charactercontroller_main.cpp.o -c ../../src/wi04_charactercontroller/main.cpp",
     "file": "../../src/wi04_charactercontroller/main.cpp",
     "output": "wi04_charactercontroller.exec.p/src_wi04_charactercontroller_main.cpp.o"
+  },
+  {
+    "directory": "/home/_/c/c/cWicked/.build/debug",
+    "command": "ccache c++ -Iwi04_charactercontroller.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_min_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ wi04_charactercontroller.exec.p/src_wi04_charactercontroller_game.cpp.o -MF wi04_charactercontroller.exec.p/src_wi04_charactercontroller_game.cpp.o.d -o wi04_charactercontroller.exec.p/src_wi04_charactercontroller_game.cpp.o -c ../../src/wi04_charactercontroller/game.cpp",
+    "file": "../../src/wi04_charactercontroller/game.cpp",
+    "output": "wi04_charactercontroller.exec.p/src_wi04_charactercontroller_game.cpp.o"
+  },
+  {
+    "directory": "/home/_/c/c/cWicked/.build/debug",
+    "command": "ccache c++ -Iwi04_charactercontroller.exec.p -I. -I../.. -fdiagnostics-color=always -D_GLIBCXX_ASSERTIONS=1 -fpch-preprocess -include wi_min_pch.h -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -fno-rtti -O0 -g -gsplit-dwarf -fms-extensions -msse2 -mfpmath=sse -DSDL2 -DWI_UNORDERED_MAP_TYPE=2 -march=native -pthread -isystem/usr/include/SDL2 -D_REENTRANT -MD -MQ wi04_charactercontroller.exec.p/src_wi04_charactercontroller_character.cpp.o -MF wi04_charactercontroller.exec.p/src_wi04_charactercontroller_character.cpp.o.d -o wi04_charactercontroller.exec.p/src_wi04_charactercontroller_character.cpp.o -c ../../src/wi04_charactercontroller/character.cpp",
+    "file": "../../src/wi04_charactercontroller/character.cpp",
+    "output": "wi04_charactercontroller.exec.p/src_wi04_charactercontroller_character.cpp.o"
   }
 ]

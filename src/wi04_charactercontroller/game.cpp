@@ -1,4 +1,5 @@
 #include "./app.h"
+#include ".wi/WickedEngine/wiScene_Components.h"
 
 
 
@@ -31,7 +32,7 @@ void Game::Load() {
   else   // generate a voxel grid in code, player and NPCs not included
     scene->VoxelizeScene(voxelGrid, false, wi::enums::FILTER_NAVIGATION_MESH | wi::enums::FILTER_COLLIDER, ~(Layers::Player | Layers::Npc));
 
-  wi::unordered_map<std::string, std::shared_ptr<wi::scene::Scene>> characters;
+  wi::unordered_map<std::string, std::shared_ptr<wi::scene::Scene>> character_models;
   // Create characters from scene metadata components:
   for (size_t i = 0; i < scene->metadatas.GetCount(); i++) {
     auto metadata  = scene->metadatas[i];
@@ -44,11 +45,13 @@ void Game::Load() {
         name = metadata.string_values.get("name");
 
       // Load character model if doesn't exist yet:
-      if (!characters.contains(name)) {
+      if (!character_models.contains(name)) {
         std::shared_ptr<wi::scene::Scene> tmp = std::make_shared<wi::scene::Scene>();
         wi::scene::LoadModel(*tmp, CC_DIR_PATH "assets/" + name + ".wiscene");
-        characters.insert({name, tmp});
+        character_models.insert({name, tmp});
       }
+      if ((player == nullptr) && metadata.preset == wi::scene::MetadataComponent::Preset::Player)
+        player = new Character(character_models[name].get(), transform, true, anim_scene, metadata.string_values.get("animset"));
     }
   }
 }

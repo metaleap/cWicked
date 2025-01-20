@@ -6,6 +6,8 @@
     - conversation / dialog
 */
 
+App app;
+
 
 void App::Initialize() {
   infoDisplay.active                  = true;

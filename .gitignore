@@ -1,5 +1,5 @@
 .build
 .cache
 .wi
-_tmp
-subprojects
+.tmp
+*.kate-swp

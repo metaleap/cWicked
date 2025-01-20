@@ -1,12 +1,7 @@
 #pragma once
 
 #include "../../pch/wi_min_pch.h"
-#include ".wi/WickedEngine/Utility/DirectXMath.h"
 #include ".wi/WickedEngine/wiECS.h"
-#include ".wi/WickedEngine/wiMath.h"
-#include ".wi/WickedEngine/wiScene_Components.h"
-#include ".wi/WickedEngine/wiUnorderedMap.h"
-#include ".wi/WickedEngine/wiVector.h"
 
 
 #define CC_DIR_PATH "../../.wi/Content/scripts/character_controller/"
@@ -49,6 +44,7 @@ public:
   float                                           speedRunning  = 0.4f;
   float                                           speedJumping  = 8;
   float                                           speedSwimming = 0.2f;
+  bool                                            groundIntersect;
 
   Character(wi::scene::Scene*, wi::scene::TransformComponent*, bool, wi::scene::Scene&, std::string);
   XMFLOAT3 getFacing();
@@ -56,7 +52,16 @@ public:
   void     turn(XMFLOAT3& direction);
   void     moveDir(XMFLOAT3& direction);
   void     setAnimationAmount(float amount);
-  void     update(float delta);
+  void     update(float delta, wi::unordered_map<wi::ecs::Entity, wi::primitive::Capsule>& characterCapsules);
+};
+
+
+class ThirdPersonCamera {
+public:
+  Character*      character;
+  wi::ecs::Entity camera;
+
+  ThirdPersonCamera(Character* character);
 };
 
 
@@ -67,9 +72,8 @@ class Game : public wi::RenderPath3D {
   bool                   dynamicVoxelization = false;   // Set to true to revoxelize navigation every frame
   Character*             player              = nullptr;
   wi::vector<Character*> npcs;
-  bool                   footprintsEnabled = false;
-  wi::vector<wi::primitive::Capsule> characterCapsules;
-  wi::VoxelGrid                      voxelGrid;
+  wi::unordered_map<wi::ecs::Entity, wi::primitive::Capsule> characterCapsules;
+  wi::VoxelGrid                                              voxelGrid;
 public:
   void Load() override;
   void Update(float dt) override;

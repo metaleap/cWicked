@@ -4,9 +4,10 @@
 
 void Game::Load() {
   wi::RenderPath3D::Load();
-  voxelGrid.init(128, 32, 128);
-  voxelGrid.set_voxelsize(0.25f);
-  voxelGrid.center = XMFLOAT3(0, 0.1f, 0);
+  wi::input::HidePointer(true);
+  this->voxelGrid.init(128, 32, 128);
+  this->voxelGrid.set_voxelsize(0.25f);
+  this->voxelGrid.center = XMFLOAT3(0, 0.1f, 0);
 
   setLightShaftsEnabled(false);
   setLightShaftsStrength(0.01f);
@@ -27,9 +28,10 @@ void Game::Load() {
   wi::scene::LoadModel(CC_DIR_PATH "assets/level.wiscene");
 
   if (scene->voxel_grids.GetCount() > 0)
-    voxelGrid = scene->voxel_grids[0];
+    this->voxelGrid = scene->voxel_grids[0];
   else   // generate a voxel grid in code, player and NPCs not included
-    scene->VoxelizeScene(voxelGrid, false, wi::enums::FILTER_NAVIGATION_MESH | wi::enums::FILTER_COLLIDER, ~(Layers::Player | Layers::Npc));
+    scene->VoxelizeScene(this->voxelGrid, false, wi::enums::FILTER_NAVIGATION_MESH | wi::enums::FILTER_COLLIDER,
+                         ~(Layers::Player | Layers::Npc));
 
   wi::unordered_map<std::string, std::shared_ptr<wi::scene::Scene>> character_models;
   // Create characters from scene metadata components:
@@ -49,10 +51,16 @@ void Game::Load() {
         wi::scene::LoadModel(*tmp, CC_DIR_PATH "assets/" + name + ".wiscene");
         character_models.insert({name, tmp});
       }
-      if ((player == nullptr) && metadata.preset == wi::scene::MetadataComponent::Preset::Player)
-        player = new Character(character_models[name].get(), transform, true, anim_scene, metadata.string_values.get("animset"));
+      if ((this->player == nullptr) && metadata.preset == wi::scene::MetadataComponent::Preset::Player)
+        this->player = new Character(character_models[name].get(), transform, true, anim_scene, metadata.string_values.get("animset"));
+      else if (metadata.preset == wi::scene::MetadataComponent::Preset::NPC) {
+        auto npc = new Character(character_models[name].get(), transform, false, anim_scene, metadata.string_values.get("animset"));
+        this->npcs.push_back(npc);
+      }
     }
   }
+
+  // local camera = ThirdPersonCamera(player)
 }
 
 

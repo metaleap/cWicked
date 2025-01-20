@@ -187,5 +187,30 @@ void Character::setAnimationAmount(float amount) {
 }
 
 
-void Character::update(float delta) {
+void Character::update(float delta, wi::unordered_map<wi::ecs::Entity, wi::primitive::Capsule>& characterCapsules) {
+  wi::scene::Scene& scene               = wi::scene::GetScene();
+  auto              character_component = scene.characters.GetComponent(this->model);
+  this->groundIntersect                 = character_component->IsGrounded();
+  this->position                        = character_component->GetPositionInterpolated();
+  auto capsule                          = character_component->GetCapsule();
+  characterCapsules[this->model]        = capsule;
+  // wi::renderer::DrawCapsule(capsule);
+  auto humanoid                         = scene.humanoids.GetComponent(this->humanoid);
+  humanoid->SetLookAtEnabled(false);
+
+  if (this->controllable) {
+    auto diff  = wi::input::GetAnalog(wi::input::GAMEPAD_ANALOG_THUMBSTICK_R);
+    diff.x    *= (delta * 4.0f);
+    diff.y    *= (delta * 4.0f);
+
+    auto mouse_diff  = wi::input::GetMouseState().delta_position;
+    mouse_diff.x    *= (delta * 0.3f);
+    mouse_diff.y    *= (delta * 0.3f);
+    diff.x          += mouse_diff.x;
+    diff.y          += mouse_diff.y;
+
+    this->targetRotHorizontal += diff.x;
+    this->targetRotVertical    = wi::math::Clamp(this->targetRotVertical + diff.y, -0.3 * wi::math::PI, 0.4 * wi::math::PI);
+  }
+  // TODO: the rest
 }

@@ -3,6 +3,7 @@
 
 /* postponed:
     - footprints
+    - waypoints patrols
     - conversation / dialog
 */
 

@@ -105,5 +105,6 @@ executable(
         'src/wi04_charactercontroller/main.cpp',
         'src/wi04_charactercontroller/game.cpp',
         'src/wi04_charactercontroller/character.cpp',
+        'src/wi04_charactercontroller/camera.cpp',
     ],
 )

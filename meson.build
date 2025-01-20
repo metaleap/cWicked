@@ -95,3 +95,11 @@ executable(
     cpp_pch: 'pch/wi_min_pch.h',
     sources: ['src/wi03_animteapot/main.cpp'],
 )
+executable(
+    'wi04_charactercontroller.exec',
+    dependencies: [dep_sdl2, dep_pthread],
+    link_with: [lib_wiso],
+    link_language: 'cpp',
+    cpp_pch: 'pch/wi_min_pch.h',
+    sources: ['src/wi04_charactercontroller/main.cpp'],
+)

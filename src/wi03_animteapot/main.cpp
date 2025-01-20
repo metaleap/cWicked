@@ -1,6 +1,4 @@
 #include "../../pch/wi_min_pch.h"
-#include ".wi/WickedEngine/Utility/DirectXMath.h"
-#include ".wi/WickedEngine/wiRandom.h"
 
 
 #define WI_CONTENT_DIR "../../.wi/Content/"

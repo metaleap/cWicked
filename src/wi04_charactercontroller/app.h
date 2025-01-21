@@ -14,14 +14,17 @@ enum Layers : uint32_t {
 };
 
 
+
 class Character {
 public:
   XMFLOAT3                                        position;
   XMFLOAT3                                        rotation = XMFLOAT3(0, wi::math::PI, 0);
   bool                                            controllable;
   Layers                                          layerMask;
-  float                                           targetRotHorizontal = 0;
-  float                                           targetRotVertical   = 0;
+  float                                           camTargetRotH = 0;
+  float                                           camTargetRotV = 0;
+  float                                           camTargetHeight;
+  float                                           camRootOffset = 0;
   wi::ecs::Entity                                 model;
   std::string                                     state         = "idle";
   wi::ecs::Entity                                 humanoid      = wi::ecs::INVALID_ENTITY;
@@ -37,8 +40,7 @@ public:
   wi::vector<wi::ecs::Entity>                     objectEntities;
   wi::ecs::Entity                                 root = wi::ecs::INVALID_ENTITY;
   wi::unordered_map<std::string, wi::ecs::Entity> anims;
-  XMFLOAT3                                        scale = XMFLOAT3(1, 1, 1);
-  float                                           targetHeight;
+  XMFLOAT3                                        scale         = XMFLOAT3(1, 1, 1);
   float                                           speedWalking  = 0.1f;
   float                                           speedJogging  = 0.2f;
   float                                           speedRunning  = 0.4f;
@@ -56,13 +58,24 @@ public:
 };
 
 
+
 class ThirdPersonCamera {
 public:
   Character*      character;
   wi::ecs::Entity camera;
+  float           distanceMin     = 0.5f;
+  float           distanceRest    = 1;
+  float           distanceRestNew = 1;
+  float           zoomSpeed       = 0.3f;
+  float           targetRotH      = 0;
+  float           targetRotV      = 0;
+  float           targetHeight    = 1;
+  float           sideOffset      = 0.2f;
 
   ThirdPersonCamera(Character* character);
+  void update(float delta);
 };
+
 
 
 class Game : public wi::RenderPath3D {
@@ -78,6 +91,7 @@ public:
   void Load() override;
   void Update(float dt) override;
 };
+
 
 
 class App : public wi::Application {

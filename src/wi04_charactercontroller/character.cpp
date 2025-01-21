@@ -35,8 +35,8 @@ Character::Character(wi::scene::Scene* model, wi::scene::TransformComponent* sta
   auto facing = XMVector3Rotate(vec3From(startTransform->GetForward()), XMQuaternionRotationRollPitchYawFromVector(vec3From(this->rotation)));
   this->controllable = controllable;
   if (this->controllable) {
-    this->layerMask           = Layers::Player;
-    this->targetRotHorizontal = wi::math::GetAngle(vec3From(0, 0, 1), facing, vec3From(0, 1, 0));   // only modify camera rot for player
+    this->layerMask     = Layers::Player;
+    this->camTargetRotH = wi::math::GetAngle(vec3From(0, 0, 1), facing, vec3From(0, 1, 0));   // only modify camera rot for player
   } else
     this->layerMask = Layers::Npc;
 
@@ -142,7 +142,7 @@ Character::Character(wi::scene::Scene* model, wi::scene::TransformComponent* sta
   model_transform->Translate(this->position);
   model_transform->UpdateTransform();
 
-  this->targetHeight = scene.transforms.GetComponent(this->boneNeck)->GetPosition().y;
+  this->camTargetHeight = scene.transforms.GetComponent(this->boneNeck)->GetPosition().y;
 }
 
 
@@ -164,7 +164,7 @@ void Character::turn(XMFLOAT3& direction) {
 
 void Character::moveDir(XMFLOAT3& direction) {
   auto character_component = wi::scene::GetScene().characters.GetComponent(this->model);
-  auto rotation_matrix     = XMMatrixMultiply(XMMatrixRotationY(this->targetRotHorizontal), XMMatrixRotationX(this->targetRotVertical));
+  auto rotation_matrix     = XMMatrixMultiply(XMMatrixRotationY(this->camTargetRotH), XMMatrixRotationX(this->camTargetRotV));
   auto dir                 = XMVector3TransformNormal(XMVector3Normalize(vec3From(direction)), rotation_matrix);
   direction                = vec3To(dir);
   direction.y              = 0;
@@ -209,8 +209,8 @@ void Character::update(float delta, wi::unordered_map<wi::ecs::Entity, wi::primi
     diff.x          += mouse_diff.x;
     diff.y          += mouse_diff.y;
 
-    this->targetRotHorizontal += diff.x;
-    this->targetRotVertical    = wi::math::Clamp(this->targetRotVertical + diff.y, -0.3 * wi::math::PI, 0.4 * wi::math::PI);
+    this->camTargetRotH += diff.x;
+    this->camTargetRotV  = wi::math::Clamp(this->camTargetRotV + diff.y, -0.3 * wi::math::PI, 0.4 * wi::math::PI);
   }
   // TODO: the rest
 }

@@ -1,4 +1,5 @@
 #include "./app.h"
+#include ".wi/WickedEngine/wiScene_Components.h"
 
 
 
@@ -50,9 +51,9 @@ void ThirdPersonCamera::update(bool debugDraws) {
   auto dist_cam   = wi::math::Length(XMFLOAT3(pos_cam.x - pos_target.x, pos_cam.y - pos_target.y, -pos_cam.z - pos_target.z));
 
   // These will store the closest collision distance and required camera position:
-  auto dist_best = dist_cam;
-  auto pos_best  = pos_cam;
-  auto cam       = wi::scene::GetCamera();
+  auto                        dist_best = dist_cam;
+  auto                        pos_best  = pos_cam;
+  wi::scene::CameraComponent& cam       = wi::scene::GetCamera();
 
   // Update global camera matrices for rest position:
   cam.TransformCamera(*cam_transform);

@@ -1,8 +1,13 @@
 #include "./app.h"
 #include ".wi/WickedEngine/Utility/DirectXMath.h"
+#include ".wi/WickedEngine/wiECS.h"
+#include ".wi/WickedEngine/wiEnums.h"
 #include ".wi/WickedEngine/wiMath.h"
+#include ".wi/WickedEngine/wiPrimitive.h"
+#include ".wi/WickedEngine/wiRenderer.h"
 #include ".wi/WickedEngine/wiScene.h"
 #include ".wi/WickedEngine/wiScene_Components.h"
+
 
 
 ThirdPersonCamera::ThirdPersonCamera(Character* character) {
@@ -11,7 +16,8 @@ ThirdPersonCamera::ThirdPersonCamera(Character* character) {
 }
 
 
-void ThirdPersonCamera::update(float delta) {
+
+void ThirdPersonCamera::update(float delta, bool debugDraws) {
   if (this->character == nullptr)
     return;
   wi::scene::Scene& scene = wi::scene::GetScene();
@@ -44,4 +50,48 @@ void ThirdPersonCamera::update(float delta) {
   camera_transform->UpdateTransform();
 
   // Camera collision:
+
+  // Compute the relation vectors between camera and target:
+  auto pos_cam    = camera_transform->GetPosition();
+  auto pos_target = target_transform.GetPosition();
+  auto dist_cam   = wi::math::Length(XMFLOAT3(pos_cam.x - pos_target.x, pos_cam.y - pos_target.y, -pos_cam.z - pos_target.z));
+
+  // These will store the closest collision distance and required camera position:
+  auto dist_best = dist_cam;
+  auto pos_best  = pos_cam;
+  auto cam       = wi::scene::GetCamera();
+
+  // Update global camera matrices for rest position:
+  cam.TransformCamera(*camera_transform);
+  cam.UpdateCamera();
+
+  // Cast rays from target to clip space points on the camera near plane to avoid clipping through objects:
+  auto            unproj = cam.GetInvViewProjection();
+  static XMVECTOR clip_coords[5]
+      = {vec4From(0, 0, 1, 1), vec4From(-1, -1, 1, 1), vec4From(-1, 1, 1, 1), vec4From(1, -1, 1, 1), vec4From(1, 1, 1, 1)};
+  for (int i = 0; i < 5; i++) {
+    auto corner           = XMVector3TransformCoord(clip_coords[i], unproj);
+    auto target_to_corner = XMVectorSubtract(corner, vec4From(pos_target.x, pos_target.y, pos_target.z, 0));
+    auto corner_to_campos = XMVectorSubtract(vec4From(pos_cam.x, pos_cam.y, pos_cam.z, 0), corner);
+
+    auto tmax       = XMVectorGetX(XMVector3Length(target_to_corner));   // optimization: limit the ray tracing distance
+    auto ray        = wi::primitive::Ray(vec4From(pos_target.x, pos_target.y, pos_target.z, 0), XMVector3Normalize(target_to_corner), 0, tmax);
+    auto coll_layer = ~(Layers::Player | Layers::Npc);
+    auto intersects = scene.Intersects(ray, wi::enums::FILTER::FILTER_NAVIGATION_MESH | wi::enums::FILTER::FILTER_COLLIDER, coll_layer);
+    if (intersects.entity != wi::ecs::INVALID_ENTITY) {   // hit something, see if it is between the player and camera:
+      auto coll_diff
+          = XMFLOAT3(intersects.position.x - pos_target.x, intersects.position.y - pos_target.y, intersects.position.z - pos_target.z);
+      auto coll_dist = wi::math::Length(coll_diff);
+      if ((coll_dist > 0) && (coll_dist < dist_best)) {
+        dist_best = coll_dist;
+        auto add  = vec3To(corner_to_campos);
+        pos_best  = XMFLOAT3(intersects.position.x + add.x, intersects.position.y + add.y, intersects.position.z + add.z);
+        if (debugDraws)
+          wi::renderer::DrawPoint(wi::renderer::RenderablePoint {.position = intersects.position, .size = 0.1f, .color = XMFLOAT4(1, 0, 0, 1)});
+      }
+    }
+  }
+
+  // We have the best candidate for new camera position now, so offset the camera with the delta between the old and new camera position:
+  auto coll_offset = XMFLOAT3(pos_best.x - pos_cam.x, pos_best.y - pos_cam.y, pos_best.z - pos_cam.z);
 }

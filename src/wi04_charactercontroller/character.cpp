@@ -1,18 +1,6 @@
 #include "./app.h"
 
 
-static XMVECTOR vec3From(XMFLOAT3 v) {
-  return XMLoadFloat3(&v);
-}
-static XMVECTOR vec3From(float x, float y, float z) {
-  return vec3From(XMFLOAT3(x, y, z));
-}
-static XMFLOAT3 vec3To(XMVECTOR it) {
-  XMFLOAT3 ret;
-  XMStoreFloat3(&ret, it);
-  return ret;
-}
-
 static void exprOverride(wi::scene::ExpressionComponent* it, wi::scene::ExpressionComponent::Preset preset,
                          wi::scene::ExpressionComponent::Override override, bool overrideBlink, bool overrideLook, bool overrideMouth) {
   if (it != nullptr) {

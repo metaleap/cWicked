@@ -85,3 +85,22 @@ int main(int argc, char* argv[]) {
   SDL_Quit();
   return 0;
 }
+
+
+XMVECTOR vec3From(XMFLOAT3 v) {
+  return XMLoadFloat3(&v);
+}
+XMVECTOR vec3From(float x, float y, float z) {
+  return vec3From(XMFLOAT3(x, y, z));
+}
+XMFLOAT3 vec3To(XMVECTOR it) {
+  XMFLOAT3 ret;
+  XMStoreFloat3(&ret, it);
+  return ret;
+}
+XMVECTOR vec4From(XMFLOAT4 v) {
+  return XMLoadFloat4(&v);
+}
+XMVECTOR vec4From(float x, float y, float z, float w) {
+  return vec4From(XMFLOAT4(x, y, z, w));
+}

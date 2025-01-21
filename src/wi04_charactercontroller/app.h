@@ -73,7 +73,7 @@ public:
   float           sideOffset      = 0.2f;
 
   ThirdPersonCamera(Character* character);
-  void update(float delta);
+  void update(float delta, bool debugDraws);
 };
 
 
@@ -101,3 +101,11 @@ public:
 };
 
 extern App app;
+
+
+
+XMVECTOR vec4From(XMFLOAT4 v);
+XMVECTOR vec4From(float x, float y, float z, float w);
+XMFLOAT3 vec3To(XMVECTOR it);
+XMVECTOR vec3From(float x, float y, float z);
+XMVECTOR vec3From(XMFLOAT3 v);

@@ -19,9 +19,9 @@ void Game::Load() {
   setOutlineColor(XMFLOAT4(0, 0, 0, 0.6f));
   setBloomEnabled(true);
   setBloomThreshold(5);
-  wi::renderer::SetToDrawDebugEnvProbes(false);
-  wi::renderer::SetToDrawGridHelper(false);
-  wi::renderer::SetToDrawDebugCameras(false);
+  wi::renderer::SetToDrawDebugEnvProbes(this->debugDraws);
+  wi::renderer::SetToDrawGridHelper(this->debugDraws);
+  wi::renderer::SetToDrawDebugCameras(this->debugDraws);
 
   auto anim_scene = wi::scene::Scene();
   wi::scene::LoadModel(anim_scene, CC_DIR_PATH "assets/animations.wiscene");

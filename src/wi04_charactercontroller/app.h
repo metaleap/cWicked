@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../../pch/wi_min_pch.h"
-#include ".wi/WickedEngine/wiECS.h"
 
 
 #define CC_DIR_PATH "../../.wi/Content/scripts/character_controller/"

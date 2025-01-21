@@ -36,9 +36,9 @@ void Game::Load() {
   wi::unordered_map<std::string, std::shared_ptr<wi::scene::Scene>> character_models;
   // Create characters from scene metadata components:
   for (size_t i = 0; i < scene->metadatas.GetCount(); i++) {
-    auto metadata  = scene->metadatas[i];
-    auto entity    = scene->metadatas.GetEntity(i);
-    auto transform = scene->transforms.GetComponent(entity);
+    auto& metadata  = scene->metadatas[i];
+    auto  entity    = scene->metadatas.GetEntity(i);
+    auto  transform = scene->transforms.GetComponent(entity);
     if (transform != nullptr) {
       // Determine name of the placed character:
       std::string name = "character";

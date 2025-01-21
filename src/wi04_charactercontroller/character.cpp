@@ -1,7 +1,4 @@
 #include "./app.h"
-#include ".wi/WickedEngine/Utility/DirectXMath.h"
-#include ".wi/WickedEngine/wiInput.h"
-#include ".wi/WickedEngine/wiScene.h"
 
 
 static void exprOverride(wi::scene::ExpressionComponent* it, wi::scene::ExpressionComponent::Preset preset,

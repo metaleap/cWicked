@@ -5,6 +5,7 @@
 ThirdPersonCamera::ThirdPersonCamera(Character* character) {
   this->character  = character;
   this->cam_entity = wi::ecs::CreateEntity();
+  // wi::scene::GetScene().transforms.Create(this->cam_entity);
 }
 
 
@@ -37,7 +38,6 @@ void ThirdPersonCamera::update(bool debugDraws) {
   auto mat           = XMMatrixTranslation(this->sideOffset, 0, -this->distanceRest);
   mat                = XMMatrixMultiply(mat, XMLoadFloat4x4(&target_transform.world));
   auto cam_transform = scene.transforms.GetComponent(this->cam_entity);
-  assert(cam_transform != nullptr);
   cam_transform->ClearTransform();
   cam_transform->MatrixTransform(mat);
   cam_transform->UpdateTransform();

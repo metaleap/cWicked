@@ -84,7 +84,7 @@ class Game : public wi::RenderPath3D {
   float                  gravity             = -30.0f;
   bool                   dynamicVoxelization = false;   // Set to true to revoxelize navigation every frame
   Character*             player              = nullptr;
-  ThirdPersonCamera      cam;
+  ThirdPersonCamera      cam                 = nullptr;
   wi::vector<Character*> npcs;
   wi::unordered_map<wi::ecs::Entity, wi::primitive::Capsule> characterCapsules;
   wi::VoxelGrid                                              voxelGrid;

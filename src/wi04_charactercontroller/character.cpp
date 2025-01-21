@@ -119,7 +119,7 @@ Character::Character(wi::scene::Scene* model, wi::scene::TransformComponent* sta
       if (anim_set_entity != wi::ecs::INVALID_ENTITY)
         anim_entity = anim_set_entity;
       this->anims[anim_state] = scene.RetargetAnimation(this->humanoid, anim_entity, false, &animScene);
-      character_component.AddAnimation(this->anims[anim_state]);
+      // character_component.AddAnimation(this->anims[anim_state]);
     }
   }
 
@@ -203,13 +203,13 @@ void Character::update(float delta, bool debugDraws, wi::unordered_map<wi::ecs::
   }
 
   // state and animation update
-  character_component->PlayAnimation(this->anims[this->state]);
-  if (this->state == "jump") {
-    if (character_component->IsAnimationEnded())
-      this->state = "idle";
-  } else if (this->groundIntersect && (this->state != "dance") && (this->state != "wave")) {
-    this->state = "idle";
-  }
+  // character_component->PlayAnimation(this->anims[this->state]);
+  // if (this->state == "jump") {
+  //   if (character_component->IsAnimationEnded())
+  //     this->state = "idle";
+  // } else if (this->groundIntersect && (this->state != "dance") && (this->state != "wave")) {
+  //   this->state = "idle";
+  // }
 
   if (character_component->IsSwimming())
     this->state = "swim_idle";

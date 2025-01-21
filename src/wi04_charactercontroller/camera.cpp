@@ -5,7 +5,7 @@
 ThirdPersonCamera::ThirdPersonCamera(Character* character) {
   this->character  = character;
   this->cam_entity = wi::ecs::CreateEntity();
-  // wi::scene::GetScene().transforms.Create(this->cam_entity);
+  wi::scene::GetScene().transforms.Create(this->cam_entity);
 }
 
 

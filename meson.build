@@ -1,7 +1,7 @@
 project(
     'cWicked',
     ['cpp', 'c'],
-    version: '0.71.657',
+    version: '0.71.661',
     default_options: ['cpp_std=c++20', 'c_std=c23', 'cpp_rtti=false'],
 )
 

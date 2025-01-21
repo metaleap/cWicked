@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
     SDL_Quit();
     exit(1);
   }
-  auto sdl_win = sdl2::make_window("WickedEngine simple demos", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1440, 900,
+  auto sdl_win = sdl2::make_window("Character Controller", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1440, 900,
                                    SDL_WINDOW_SHOWN | SDL_WINDOW_VULKAN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE);
   if (!sdl_win) {
     fprintf(stderr, "Failed to make window: %s", SDL_GetError());

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 set -e
-wiVer="0.71.657"
+wiVer="0.71.661"
 
 thisScriptsFilePath="$(readlink --canonicalize-existing "$0")"
 thisScriptsDirPath="$(dirname "$thisScriptsFilePath")"

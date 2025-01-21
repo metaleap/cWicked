@@ -61,6 +61,7 @@ void Game::Load() {
   }
 
   this->cam = ThirdPersonCamera(player);
+  this->scene->transforms.Create(this->cam.cam_entity);
 }
 
 

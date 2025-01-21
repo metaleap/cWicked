@@ -62,7 +62,7 @@ public:
 class ThirdPersonCamera {
 public:
   Character*      character;
-  wi::ecs::Entity camera;
+  wi::ecs::Entity cam_entity;
   float           distanceMin     = 0.5f;
   float           distanceRest    = 1;
   float           distanceRestNew = 1;

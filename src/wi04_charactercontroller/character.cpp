@@ -1,4 +1,7 @@
 #include "./app.h"
+#include ".wi/WickedEngine/Utility/DirectXMath.h"
+#include ".wi/WickedEngine/wiInput.h"
+#include ".wi/WickedEngine/wiScene.h"
 
 
 static void exprOverride(wi::scene::ExpressionComponent* it, wi::scene::ExpressionComponent::Preset preset,
@@ -184,11 +187,11 @@ void Character::update(float delta, bool debugDraws, wi::unordered_map<wi::ecs::
   characterCapsules[this->model]        = capsule;
   if (debugDraws)
     wi::renderer::DrawCapsule(capsule);
-  auto humanoid = scene.humanoids.GetComponent(this->humanoid);
-  humanoid->SetLookAtEnabled(false);
+  auto hum = scene.humanoids.GetComponent(this->humanoid);
+  hum->SetLookAtEnabled(false);
 
   if (this->controllable) {
-    auto diff  = wi::input::GetAnalog(wi::input::GAMEPAD_ANALOG_THUMBSTICK_R);
+    auto diff  = wi::input::GetAnalog(wi::input::GAMEPAD_ANALOG::GAMEPAD_ANALOG_THUMBSTICK_R);
     diff.x    *= (delta * 4.0f);
     diff.y    *= (delta * 4.0f);
 
@@ -201,5 +204,48 @@ void Character::update(float delta, bool debugDraws, wi::unordered_map<wi::ecs::
     this->camTargetRotH += diff.x;
     this->camTargetRotV  = wi::math::Clamp(this->camTargetRotV + diff.y, -0.3 * wi::math::PI, 0.4 * wi::math::PI);
   }
-  // TODO: the rest
+
+  // state and animation update
+  character_component->PlayAnimation(this->anims[this->state]);
+  if (this->state == "jump") {
+    if (character_component->IsAnimationEnded())
+      this->state = "idle";
+  } else if (this->groundIntersect && (this->state != "dance") && (this->state != "wave")) {
+    this->state = "idle";
+  }
+
+  if (character_component->IsSwimming())
+    this->state = "swim_idle";
+
+  if (this->controllable) {
+    auto look_dir = XMFLOAT3(0, 0, 0);
+    if (wi::input::Down(wi::input::BUTTON::KEYBOARD_BUTTON_LEFT) || wi::input::Down((wi::input::BUTTON) 'A'))
+      look_dir.x -= 1;
+    if (wi::input::Down(wi::input::BUTTON::KEYBOARD_BUTTON_RIGHT) || wi::input::Down((wi::input::BUTTON) 'D'))
+      look_dir.x += 1;
+    if (wi::input::Down(wi::input::BUTTON::KEYBOARD_BUTTON_UP) || wi::input::Down((wi::input::BUTTON) 'W'))
+      look_dir.z += 1;
+    if (wi::input::Down(wi::input::BUTTON::KEYBOARD_BUTTON_DOWN) || wi::input::Down((wi::input::BUTTON) 'S'))
+      look_dir.z -= 1;
+
+    if (wi::math::Length(look_dir) > 0.0f) {
+      if (this->state == "swim_idle") {
+        this->state = "swim";
+        this->moveDir(look_dir);
+      } else if (this->groundIntersect || character_component->IsWallIntersect()) {
+        if (this->groundIntersect) {
+          if (wi::input::Down(wi::input::BUTTON::KEYBOARD_BUTTON_LSHIFT) || wi::input::Down(wi::input::BUTTON::KEYBOARD_BUTTON_RSHIFT))
+            this->state = (wi::input::Down((wi::input::BUTTON) 'E')) ? "run" : "jog";
+          else
+            this->state = "walk";
+        }
+        this->moveDir(look_dir);
+      }
+    }
+
+    if (this->groundIntersect && wi::input::Press(wi::input::BUTTON::KEYBOARD_BUTTON_SPACE))
+      this->jump(this->speedJumping);
+  } else {   // not controllable
+    // patrol etc
+  }
 }

@@ -1,9 +1,4 @@
 #include "./app.h"
-#include ".wi/WickedEngine/Utility/DirectXMath.h"
-#include ".wi/WickedEngine/wiBacklog.h"
-#include ".wi/WickedEngine/wiEnums.h"
-#include ".wi/WickedEngine/wiInput.h"
-#include ".wi/WickedEngine/wiRenderer.h"
 
 
 
@@ -71,12 +66,13 @@ void Game::Load() {
 
 
 void Game::Update(float delta) {
-  if (wi::input::Press(wi::input::KEYBOARD_BUTTON_F5))
+  if (wi::input::Press(wi::input::BUTTON::KEYBOARD_BUTTON_F5))
     this->debugDraws = !this->debugDraws;
 
   this->player->update(delta, this->debugDraws, this->characterCapsules);
   for (auto npc : this->npcs)
     npc->update(delta, this->debugDraws, this->characterCapsules);
+  this->cam.update(this->debugDraws);
 
   if (this->dynamicVoxelization) {
     this->voxelGrid.cleardata();

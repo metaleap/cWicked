@@ -1,18 +1,10 @@
 #include "./app.h"
-#include ".wi/WickedEngine/Utility/DirectXMath.h"
-#include ".wi/WickedEngine/wiECS.h"
-#include ".wi/WickedEngine/wiEnums.h"
-#include ".wi/WickedEngine/wiMath.h"
-#include ".wi/WickedEngine/wiPrimitive.h"
-#include ".wi/WickedEngine/wiRenderer.h"
-#include ".wi/WickedEngine/wiScene.h"
-#include ".wi/WickedEngine/wiScene_Components.h"
 
 
 
 ThirdPersonCamera::ThirdPersonCamera(Character* character) {
-  this->character = character;
-  this->camera    = wi::ecs::CreateEntity();
+  this->character  = character;
+  this->cam_entity = wi::ecs::CreateEntity();
 }
 
 
@@ -44,7 +36,8 @@ void ThirdPersonCamera::update(bool debugDraws) {
   // First calculate the rest orientation (transform) of the camera:
   auto mat           = XMMatrixTranslation(this->sideOffset, 0, -this->distanceRest);
   mat                = XMMatrixMultiply(mat, XMLoadFloat4x4(&target_transform.world));
-  auto cam_transform = scene.transforms.GetComponent(this->camera);
+  auto cam_transform = scene.transforms.GetComponent(this->cam_entity);
+  assert(cam_transform != nullptr);
   cam_transform->ClearTransform();
   cam_transform->MatrixTransform(mat);
   cam_transform->UpdateTransform();

@@ -1,11 +1,13 @@
 #include "./app.h"
 
 
-/* postponed:
+/* TODO:
     - footprints
     - waypoints patrols
     - conversation / dialog
     - Interaction between two characters / hired / leader / follow
+    - mood / expression
+    - cam-pos-based character fade in / out
 */
 
 App app;

@@ -54,7 +54,7 @@ public:
   void     turn(XMFLOAT3& direction);
   void     moveDir(XMFLOAT3& direction);
   void     setAnimationAmount(float amount);
-  void     update(float delta, wi::unordered_map<wi::ecs::Entity, wi::primitive::Capsule>& characterCapsules);
+  void     update(float delta, bool debugDraws, wi::unordered_map<wi::ecs::Entity, wi::primitive::Capsule>& characterCapsules);
 };
 
 
@@ -73,7 +73,7 @@ public:
   float           sideOffset      = 0.2f;
 
   ThirdPersonCamera(Character* character);
-  void update(float delta, bool debugDraws);
+  void update(bool debugDraws);
 };
 
 
@@ -84,6 +84,7 @@ class Game : public wi::RenderPath3D {
   float                  gravity             = -30.0f;
   bool                   dynamicVoxelization = false;   // Set to true to revoxelize navigation every frame
   Character*             player              = nullptr;
+  ThirdPersonCamera      cam                 = nullptr;
   wi::vector<Character*> npcs;
   wi::unordered_map<wi::ecs::Entity, wi::primitive::Capsule> characterCapsules;
   wi::VoxelGrid                                              voxelGrid;

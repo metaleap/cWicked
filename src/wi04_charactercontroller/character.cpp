@@ -175,15 +175,16 @@ void Character::setAnimationAmount(float amount) {
 }
 
 
-void Character::update(float delta, wi::unordered_map<wi::ecs::Entity, wi::primitive::Capsule>& characterCapsules) {
+void Character::update(float delta, bool debugDraws, wi::unordered_map<wi::ecs::Entity, wi::primitive::Capsule>& characterCapsules) {
   wi::scene::Scene& scene               = wi::scene::GetScene();
   auto              character_component = scene.characters.GetComponent(this->model);
   this->groundIntersect                 = character_component->IsGrounded();
   this->position                        = character_component->GetPositionInterpolated();
   auto capsule                          = character_component->GetCapsule();
   characterCapsules[this->model]        = capsule;
-  // wi::renderer::DrawCapsule(capsule);
-  auto humanoid                         = scene.humanoids.GetComponent(this->humanoid);
+  if (debugDraws)
+    wi::renderer::DrawCapsule(capsule);
+  auto humanoid = scene.humanoids.GetComponent(this->humanoid);
   humanoid->SetLookAtEnabled(false);
 
   if (this->controllable) {

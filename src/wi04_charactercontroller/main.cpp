@@ -5,6 +5,7 @@
     - footprints
     - waypoints patrols
     - conversation / dialog
+    - Interaction between two characters / hired / leader / follow
 */
 
 App app;

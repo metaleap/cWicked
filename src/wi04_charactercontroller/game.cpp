@@ -1,4 +1,9 @@
 #include "./app.h"
+#include ".wi/WickedEngine/Utility/DirectXMath.h"
+#include ".wi/WickedEngine/wiBacklog.h"
+#include ".wi/WickedEngine/wiEnums.h"
+#include ".wi/WickedEngine/wiInput.h"
+#include ".wi/WickedEngine/wiRenderer.h"
 
 
 
@@ -60,11 +65,55 @@ void Game::Load() {
     }
   }
 
-  // local camera = ThirdPersonCamera(player)
+  this->cam = ThirdPersonCamera(player);
 }
 
 
 
 void Game::Update(float delta) {
+  if (wi::input::Press(wi::input::KEYBOARD_BUTTON_F5))
+    this->debugDraws = !this->debugDraws;
+
+  this->player->update(delta, this->debugDraws, this->characterCapsules);
+  for (auto npc : this->npcs)
+    npc->update(delta, this->debugDraws, this->characterCapsules);
+
+  if (this->dynamicVoxelization) {
+    this->voxelGrid.cleardata();
+    scene->VoxelizeScene(voxelGrid, false, wi::enums::FILTER::FILTER_NAVIGATION_MESH | wi::enums::FILTER::FILTER_COLLIDER,
+                         ~(Layers::Player | Layers::Npc));   // player and npc layers not included in voxelization
+  }
+
+  if (this->debugDraws && !wi::backlog::isActive()) {   // Do some debug draw geometry:
+    auto target_transform = scene->transforms.GetComponent(this->player->boneNeck);
+
+    // camera target box and axis
+    wi::renderer::DrawBox(target_transform->world);
+
+    wi::renderer::DrawPoint(
+        wi::renderer::RenderablePoint {.position = target_transform->GetPosition(), .size = 0.05f, .color = XMFLOAT4(0, 1, 1, 1)});
+    wi::renderer::DrawPoint(wi::renderer::RenderablePoint {
+        .position = scene->transforms.GetComponent(this->player->boneHead)->GetPosition(), .size = 0.05f, .color = XMFLOAT4(0, 1, 1, 1)});
+    wi::renderer::DrawPoint(wi::renderer::RenderablePoint {
+        .position = scene->transforms.GetComponent(this->player->boneHandLeft)->GetPosition(), .size = 0.05f, .color = XMFLOAT4(0, 1, 1, 1)});
+    wi::renderer::DrawPoint(wi::renderer::RenderablePoint {
+        .position = scene->transforms.GetComponent(this->player->boneHandRight)->GetPosition(), .size = 0.05f, .color = XMFLOAT4(0, 1, 1, 1)});
+    wi::renderer::DrawPoint(wi::renderer::RenderablePoint {
+        .position = scene->transforms.GetComponent(this->player->boneFootLeft)->GetPosition(), .size = 0.05f, .color = XMFLOAT4(0, 1, 1, 1)});
+    wi::renderer::DrawPoint(wi::renderer::RenderablePoint {
+        .position = scene->transforms.GetComponent(this->player->boneFootRight)->GetPosition(), .size = 0.05f, .color = XMFLOAT4(0, 1, 1, 1)});
+
+    auto capsule = scene->colliders.GetComponent(player->model)->capsule;
+    wi::renderer::DrawCapsule(capsule);
+
+    wi::renderer::DrawDebugText(this->player->state.c_str(),
+                                wi::renderer::DebugTextParams {.position = capsule.base,
+                                                               .scaling  = 1,
+                                                               .color    = XMFLOAT4(1, 1, 1, 1),
+                                                               .flags    = wi::renderer::DebugTextParams::FLAGS::CAMERA_FACING
+                                                                        | wi::renderer::DebugTextParams::FLAGS::CAMERA_SCALING});
+    wi::renderer::DrawVoxelGrid(&this->voxelGrid);
+  }
+
   wi::RenderPath3D::Update(delta);
 }

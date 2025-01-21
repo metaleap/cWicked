@@ -17,7 +17,7 @@ ThirdPersonCamera::ThirdPersonCamera(Character* character) {
 
 
 
-void ThirdPersonCamera::update(float delta, bool debugDraws) {
+void ThirdPersonCamera::update(bool debugDraws) {
   if (this->character == nullptr)
     return;
   wi::scene::Scene& scene = wi::scene::GetScene();
@@ -42,17 +42,17 @@ void ThirdPersonCamera::update(float delta, bool debugDraws) {
   target_transform.UpdateTransform();
 
   // First calculate the rest orientation (transform) of the camera:
-  auto mat              = XMMatrixTranslation(this->sideOffset, 0, -this->distanceRest);
-  mat                   = XMMatrixMultiply(mat, XMLoadFloat4x4(&target_transform.world));
-  auto camera_transform = scene.transforms.GetComponent(this->camera);
-  camera_transform->ClearTransform();
-  camera_transform->MatrixTransform(mat);
-  camera_transform->UpdateTransform();
+  auto mat           = XMMatrixTranslation(this->sideOffset, 0, -this->distanceRest);
+  mat                = XMMatrixMultiply(mat, XMLoadFloat4x4(&target_transform.world));
+  auto cam_transform = scene.transforms.GetComponent(this->camera);
+  cam_transform->ClearTransform();
+  cam_transform->MatrixTransform(mat);
+  cam_transform->UpdateTransform();
 
   // Camera collision:
 
   // Compute the relation vectors between camera and target:
-  auto pos_cam    = camera_transform->GetPosition();
+  auto pos_cam    = cam_transform->GetPosition();
   auto pos_target = target_transform.GetPosition();
   auto dist_cam   = wi::math::Length(XMFLOAT3(pos_cam.x - pos_target.x, pos_cam.y - pos_target.y, -pos_cam.z - pos_target.z));
 
@@ -62,7 +62,7 @@ void ThirdPersonCamera::update(float delta, bool debugDraws) {
   auto cam       = wi::scene::GetCamera();
 
   // Update global camera matrices for rest position:
-  cam.TransformCamera(*camera_transform);
+  cam.TransformCamera(*cam_transform);
   cam.UpdateCamera();
 
   // Cast rays from target to clip space points on the camera near plane to avoid clipping through objects:
@@ -94,4 +94,14 @@ void ThirdPersonCamera::update(float delta, bool debugDraws) {
 
   // We have the best candidate for new camera position now, so offset the camera with the delta between the old and new camera position:
   auto coll_offset = XMFLOAT3(pos_best.x - pos_cam.x, pos_best.y - pos_cam.y, pos_best.z - pos_cam.z);
+  mat              = XMMatrixMultiply(mat, XMMatrixTranslation(coll_offset.x, coll_offset.y, coll_offset.z));
+  cam_transform->ClearTransform();
+  cam_transform->MatrixTransform(mat);
+  cam_transform->UpdateTransform();
+  if (debugDraws)
+    wi::renderer::DrawPoint(wi::renderer::RenderablePoint {.position = pos_best, .size = 0.1f, .color = XMFLOAT4(1, 1, 0, 1)});
+
+  // Feed back camera after collision:
+  cam.TransformCamera(*cam_transform);
+  cam.UpdateCamera();
 }
